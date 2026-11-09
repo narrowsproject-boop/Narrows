@@ -13,7 +13,7 @@ from datetime import datetime, timedelta, timezone
 
 import pandas as pd
 
-from ..common import CLEAN, CONFIG, RAW, get, log, merge_csv, session
+from ..common import CLEAN, CONFIG, RAW, log, merge_csv, session
 
 API = "https://api.gdeltproject.org/api/v2/doc/doc"
 
@@ -22,8 +22,18 @@ def families() -> dict:
     return json.loads((CONFIG / "news_families.json").read_text())["families"]
 
 
+PAUSE = 6  # GDELT asks for at most one request every 5 seconds
+
+
 def _call(params: dict, sess) -> dict:
-    r = get(API, params={**params, "format": "json"}, sess=sess, timeout=90)
+    for attempt in range(5):
+        time.sleep(PAUSE * (1 + 2 * attempt))
+        r = sess.get(API, params={**params, "format": "json"}, timeout=90)
+        if r.status_code != 429:
+            break
+        log.info("GDELT busy (429), waiting before retry %d", attempt + 1)
+    if r.status_code != 200:
+        raise RuntimeError(f"GDELT HTTP {r.status_code}: {r.text[:200]}")
     try:
         return r.json()
     except ValueError:
@@ -45,7 +55,6 @@ def history(start: str = "2019-01-01") -> pd.DataFrame:
                 for p in series.get("data", []):
                     frames.append({"date": p["date"][:8], "family": key, "articles": p.get("value"), "all_articles": p.get("norm")})
             y0 = y1
-            time.sleep(1)
         log.info("GDELT history %s done", key)
     df = pd.DataFrame(frames)
     if df.empty:
@@ -63,7 +72,6 @@ def articles(hours: int = 24) -> pd.DataFrame:
         for a in js.get("articles", []):
             rows.append({"seen": a.get("seendate"), "family": key, "title": a.get("title"), "url": a.get("url"),
                          "domain": a.get("domain"), "country": a.get("sourcecountry")})
-        time.sleep(1)
     df = pd.DataFrame(rows)
     day = (datetime.now(timezone.utc) - timedelta(hours=1)).strftime("%Y-%m-%d")
     if not df.empty:

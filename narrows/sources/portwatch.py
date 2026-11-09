@@ -66,7 +66,7 @@ def chokepoints(start: str = HISTORY_START) -> pd.DataFrame:
 
 def ports(start: str = HISTORY_START) -> pd.DataFrame:
     where = f"{_names_clause('portname', PORTS)} AND date >= DATE '{start}'"
-    df = _fetch(PORTS_URL, where, "date,portid,portname,country,portcalls,portcalls_container,import,export")
+    df = _fetch(PORTS_URL, where, "*")
     if df.empty:
         raise RuntimeError("PortWatch ports returned no rows")
     df = df.rename(columns={"portname": "port"})

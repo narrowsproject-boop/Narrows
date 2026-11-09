@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import re
 from datetime import date
+from io import StringIO
 
 import pandas as pd
 
@@ -18,7 +19,7 @@ BUNKER_URL = "https://shipandbunker.com/prices"
 
 def harpex() -> pd.DataFrame:
     """The page shows the last ~4 weekly HARPEX values in a small table."""
-    tables = pd.read_html(get(HARPEX_URL).text)
+    tables = pd.read_html(StringIO(get(HARPEX_URL).text))
     rows = []
     for t in tables:
         cols = [str(c).lower() for c in t.columns]
