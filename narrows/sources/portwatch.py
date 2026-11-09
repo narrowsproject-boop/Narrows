@@ -43,8 +43,11 @@ def _fetch(url: str, where: str, fields: str) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     if df.empty:
         return df
-    # ArcGIS dates are epoch milliseconds
-    df["date"] = pd.to_datetime(df["date"], unit="ms", utc=True).dt.strftime("%Y-%m-%d")
+    # Chokepoints return epoch milliseconds; Ports uses a DateOnly field returned as text
+    if pd.api.types.is_numeric_dtype(df["date"]):
+        df["date"] = pd.to_datetime(df["date"], unit="ms", utc=True).dt.strftime("%Y-%m-%d")
+    else:
+        df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
     return df
 
 
@@ -65,8 +68,11 @@ def chokepoints(start: str = HISTORY_START) -> pd.DataFrame:
 
 
 def ports(start: str = HISTORY_START) -> pd.DataFrame:
-    where = f"{_names_clause('portname', PORTS)} AND date >= DATE '{start}'"
+    # DateOnly field: filter on the integer year column server-side, exact date client-side
+    where = f"{_names_clause('portname', PORTS)} AND year >= {int(start[:4])}"
     df = _fetch(PORTS_URL, where, "*")
+    if not df.empty:
+        df = df[df["date"] >= start].drop(columns=[c for c in ("ObjectId",) if c in df.columns])
     if df.empty:
         raise RuntimeError("PortWatch ports returned no rows")
     df = df.rename(columns={"portname": "port"})

@@ -103,3 +103,43 @@ def articles_range(days: int = 15, chunk_days: int = 3) -> pd.DataFrame:
         merge_csv(df, RAW / "news" / f"recent_{days}d_{end.strftime('%Y-%m-%d')}.csv", ["url", "family"])
     log.info("GDELT recent %dd: %d articles", days, len(df))
     return df
+
+
+def history_step(max_calls: int = 12, start_year: int = 2019) -> pd.DataFrame:
+    """Fill the news-volume history a few (family, year) chunks per day.
+
+    GDELT throttles shared cloud IPs hard, so the full 2019+ history is built progressively
+    by the daily run instead of in one go. Stops early on the first refusal.
+    """
+    global PAUSE
+    PAUSE = 20
+    path = CLEAN / "news_volume.csv"
+    done = set()
+    if path.exists():
+        old = pd.read_csv(path, dtype=str)
+        done = set(zip(old["family"], old["date"].str[:4]))
+    now = datetime.now(timezone.utc)
+    todo = [(k, y) for k in families() for y in range(start_year, now.year + 1)
+            if (k, str(y)) not in done or y == now.year]
+    sess, frames, calls = session(), [], 0
+    for key, year in todo[:max_calls]:
+        y0 = datetime(year, 1, 1, tzinfo=timezone.utc)
+        y1 = min(datetime(year + 1, 1, 1, tzinfo=timezone.utc), now)
+        try:
+            js = _call({"query": families()[key]["query"] + " sourcelang:english", "mode": "timelinevolraw",
+                        "startdatetime": y0.strftime("%Y%m%d%H%M%S"), "enddatetime": y1.strftime("%Y%m%d%H%M%S")}, sess)
+        except RuntimeError as e:
+            log.info("GDELT history step stopped: %s", str(e)[:120])
+            break
+        calls += 1
+        for series in js.get("timeline", []):
+            for p in series.get("data", []):
+                frames.append({"date": p["date"][:8], "family": key, "articles": p.get("value"), "all_articles": p.get("norm")})
+    df = pd.DataFrame(frames)
+    if not df.empty:
+        df["date"] = pd.to_datetime(df["date"], format="%Y%m%d").dt.strftime("%Y-%m-%d")
+        merge_csv(df, path, ["date", "family"])
+    log.info("GDELT history step: %d calls, %d chunks left", calls, max(0, len(todo) - calls))
+    if calls == 0 and todo:
+        raise RuntimeError("GDELT refused every request today")
+    return df
