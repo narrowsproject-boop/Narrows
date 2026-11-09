@@ -78,3 +78,28 @@ def articles(hours: int = 24) -> pd.DataFrame:
         merge_csv(df, RAW / "news" / f"{day}.csv", ["url", "family"])
     log.info("GDELT articles: %d", len(df))
     return df
+
+
+def articles_range(days: int = 15, chunk_days: int = 3) -> pd.DataFrame:
+    """Every matching article over the last `days`, in small windows so the 250-per-call cap is rarely hit."""
+    sess, rows = session(), []
+    end = datetime.now(timezone.utc)
+    for key, fam in families().items():
+        t1 = end
+        while t1 > end - timedelta(days=days):
+            t0 = max(t1 - timedelta(days=chunk_days), end - timedelta(days=days))
+            js = _call({"query": fam["query"] + " sourcelang:english", "mode": "artlist", "maxrecords": 250,
+                        "startdatetime": t0.strftime("%Y%m%d%H%M%S"), "enddatetime": t1.strftime("%Y%m%d%H%M%S"),
+                        "sort": "datedesc"}, sess)
+            arts = js.get("articles", [])
+            if len(arts) >= 250:
+                log.info("GDELT %s %s->%s hit the 250 cap", key, t0.date(), t1.date())
+            for a in arts:
+                rows.append({"seen": a.get("seendate"), "family": key, "title": a.get("title"), "url": a.get("url"),
+                             "domain": a.get("domain"), "country": a.get("sourcecountry")})
+            t1 = t0
+    df = pd.DataFrame(rows).drop_duplicates(["url", "family"])
+    if not df.empty:
+        merge_csv(df, RAW / "news" / f"recent_{days}d_{end.strftime('%Y-%m-%d')}.csv", ["url", "family"])
+    log.info("GDELT recent %dd: %d articles", days, len(df))
+    return df

@@ -1,0 +1,33 @@
+name: Recent news (one-off)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python scripts/collect.py recent_news
+      - name: Commit data
+        if: always()
+        run: |
+          git config user.name "narrows-bot"
+          git config user.email "narrows-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "data: recent news $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push

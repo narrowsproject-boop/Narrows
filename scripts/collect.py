@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from narrows.common import log, now_utc, write_status  # noqa: E402
+from narrows import weekly  # noqa: E402
 from narrows.sources import context, drewry, ec_futures, gdelt, markets, portwatch  # noqa: E402
 
 RECENT = (date.today() - timedelta(days=21)).isoformat()
@@ -30,6 +31,10 @@ JOBS = {
         ("news_articles", False, gdelt.articles),
         ("harpex", False, context.harpex),
         ("bunker", False, context.bunker),
+        ("drewry_weekly", False, weekly.build),
+    ],
+    "recent_news": [
+        ("news_recent_15d", True, gdelt.articles_range),
     ],
     "backfill": [
         ("drewry", True, drewry.fetch),
@@ -41,6 +46,7 @@ JOBS = {
         ("news_volume", False, gdelt.history),
         ("harpex", False, context.harpex),
         ("bunker", False, context.bunker),
+        ("drewry_weekly", False, weekly.build),
     ],
 }
 
