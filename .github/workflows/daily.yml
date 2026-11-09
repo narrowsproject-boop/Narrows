@@ -28,6 +28,9 @@ jobs:
         id: collect
         run: python scripts/collect.py daily
         continue-on-error: true
+      - name: Export Power BI workbook
+        run: python scripts/export_powerbi.py
+        continue-on-error: true
       - name: Commit data
         run: |
           git config user.name "narrows-bot"
