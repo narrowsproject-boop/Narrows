@@ -28,7 +28,7 @@
     "carriers": {
       "label": "Carrier decisions",
       "effect": "supply",
-      "query": "(Maersk OR MSC OR \"CMA CGM\" OR \"Hapag-Lloyd\" OR COSCO OR ONE OR Evergreen) (\"rate increase\" OR \"blank sailing\" OR \"Suez\" OR \"Cape of Good Hope\" OR reroute OR alliance OR FAK)",
+      "query": "(Maersk OR MSC OR \"CMA CGM\" OR \"Hapag-Lloyd\" OR COSCO OR \"Ocean Network Express\" OR \"Premier Alliance\" OR \"Gemini Cooperation\" OR Evergreen OR \"Yang Ming\" OR HMM) (\"rate increase\" OR \"blank sailing\" OR \"Suez\" OR \"Cape of Good Hope\" OR reroute OR alliance OR FAK)",
       "zones": ["red_sea_suez", "cape"]
     },
     "ports": {
