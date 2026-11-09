@@ -60,6 +60,7 @@ def derive(contracts: pd.DataFrame) -> pd.DataFrame:
     c = contracts.copy()
     for col in ("settle", "close", "hold"):
         c[col] = pd.to_numeric(c[col], errors="coerce")
+    c = c[c["settle"] > 0]  # Sina sometimes returns 0 for a missing settlement
     c["expiry"] = pd.to_datetime("20" + c["contract"].str[2:4] + "-" + c["contract"].str[4:6] + "-01")
     rows = []
     for d, g in c.groupby("date"):
