@@ -86,7 +86,29 @@ def main() -> None:
         readme.to_excel(xw, sheet_name="README", index=False)
         for name, df in sheets.items():
             df.to_excel(xw, sheet_name=name[:31], index=False)
+    as_excel_tables(OUT)
     print(OUT, {k: len(v) for k, v in sheets.items()})
+
+
+def as_excel_tables(path: Path) -> None:
+    """Power BI (web) only imports data formatted as Excel tables, not plain ranges."""
+    from openpyxl import load_workbook
+    from openpyxl.utils import get_column_letter
+    from openpyxl.worksheet.table import Table, TableStyleInfo
+
+    wb = load_workbook(path)
+    for ws in wb.worksheets:
+        if ws.max_row < 2:
+            continue
+        ref = f"A1:{get_column_letter(ws.max_column)}{ws.max_row}"
+        t = Table(displayName="t_" + ws.title.replace(" ", "_"), ref=ref)
+        t.tableStyleInfo = TableStyleInfo(name="TableStyleLight9", showRowStripes=True)
+        ws.add_table(t)
+        for col in ws.iter_cols(min_row=2, max_row=2):
+            if hasattr(col[0].value, "year"):
+                for c in ws[col[0].column_letter][1:]:
+                    c.number_format = "yyyy-mm-dd"
+    wb.save(path)
 
 
 if __name__ == "__main__":
