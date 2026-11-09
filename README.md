@@ -17,7 +17,7 @@ baselines ("no change" and "trend continues").
 | Forecast | Drewry WCI Shanghai → Genoa | drewry.co.uk | Weekly (Thu) | 2019 → |
 | Forecast | INE Containerized Freight Index (Europe) futures, front month | INE via Sina | Daily | Aug 2023 → |
 | Control | Drewry WCI Shanghai → Los Angeles | drewry.co.uk | Weekly (Thu) | 2019 → |
-| Signal | News volume and articles per family | GDELT DOC 2.0 API | Daily | 2019 → |
+| Signal | Geolocated events near the routes, and matching articles per news family | GDELT via Google BigQuery | Daily | 2019 → |
 | Signal | Strait transits (Suez, Bab el-Mandeb, Cape, Malacca…) | IMF PortWatch | Daily, updated weekly | 2019 → |
 | Signal | Port calls (Rotterdam, Genoa, Singapore, Colombo…) | IMF PortWatch | Daily, updated weekly | 2019 → |
 | Signal | EC futures curve (front vs next contract) | INE via Sina | Daily | Aug 2023 → |

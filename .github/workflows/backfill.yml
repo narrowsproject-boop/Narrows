@@ -10,6 +10,10 @@ concurrency:
   group: data
   cancel-in-progress: false
 
+env:
+  GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+  GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+
 jobs:
   backfill:
     runs-on: ubuntu-latest

@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from narrows.common import log, now_utc, write_status  # noqa: E402
 from narrows import weekly  # noqa: E402
-from narrows.sources import context, drewry, ec_futures, gdelt, markets, portwatch  # noqa: E402
+from narrows.sources import context, drewry, ec_futures, gdelt_bq, markets, portwatch  # noqa: E402
 
 RECENT = (date.today() - timedelta(days=21)).isoformat()
 
@@ -28,14 +28,14 @@ JOBS = {
         ("portwatch_straits", True, lambda: portwatch.chokepoints(start=RECENT)),
         ("portwatch_ports", False, lambda: portwatch.ports(start=RECENT)),
         ("markets", True, lambda: markets.fetch(start=RECENT)),
-        ("news_articles", False, gdelt.articles),
-        ("news_volume_step", False, gdelt.history_step),
+        ("news_articles", False, gdelt_bq.articles),
+        ("news_events_recent", False, lambda: gdelt_bq.events_history(start=RECENT)),
         ("harpex", False, context.harpex),
         ("bunker", False, context.bunker),
         ("drewry_weekly", False, weekly.build),
     ],
     "recent_news": [
-        ("news_recent_15d", True, gdelt.articles_range),
+        ("news_recent_15d", True, gdelt_bq.articles_15d),
     ],
     "backfill": [
         ("drewry", True, drewry.fetch),
@@ -44,7 +44,7 @@ JOBS = {
         ("portwatch_straits", True, portwatch.chokepoints),
         ("portwatch_ports", False, portwatch.ports),
         ("markets", True, markets.fetch),
-        ("news_volume_step", False, gdelt.history_step),
+        ("news_events_history", False, gdelt_bq.events_history),
         ("harpex", False, context.harpex),
         ("bunker", False, context.bunker),
         ("drewry_weekly", False, weekly.build),
