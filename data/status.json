@@ -1,0 +1,57 @@
+{
+  "_last_run": "2026-11-09T15:35:13Z",
+  "bunker": {
+    "at": "2026-11-09T15:35:13Z",
+    "core": false,
+    "ok": true,
+    "rows": 2
+  },
+  "drewry": {
+    "at": "2026-11-09T15:24:17Z",
+    "core": true,
+    "ok": true,
+    "rows": 1170
+  },
+  "drewry_press": {
+    "at": "2026-11-09T15:27:42Z",
+    "core": false,
+    "ok": true,
+    "rows": 19
+  },
+  "ec_futures": {
+    "at": "2026-11-09T15:28:06Z",
+    "core": true,
+    "ok": true,
+    "rows": 779
+  },
+  "harpex": {
+    "at": "2026-11-09T15:35:13Z",
+    "core": false,
+    "error": "[Errno 36] File name too long: '<!DOCTYPE html>\\n<html lang=\"en\">\\n<head>\\n\\n<meta charset=\"utf-8\">\\n<!-- \\n\\tThis website is powered by TYPO3 - inspiring people to share!\\n\\tTYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.\\n\\t",
+    "ok": false
+  },
+  "markets": {
+    "at": "2026-11-09T15:34:24Z",
+    "core": true,
+    "ok": true,
+    "rows": 5940
+  },
+  "news_volume": {
+    "at": "2026-11-09T15:35:11Z",
+    "core": false,
+    "error": "HTTP 429 for https://api.gdeltproject.org/api/v2/doc/doc?query=%28%22Red+Sea%22+OR+Houthi+OR+%22Bab+el-Mandeb%22+OR+%22Strait+of+Hormuz%22+OR+%22Taiwan+Strait%22%29+%28ship+OR+vessel+OR+tanker+OR+%22container+ship%22+OR+shipping%29+sourcelang%3Aenglish&mode=timelinevolraw&startdatetime=2019010100000",
+    "ok": false
+  },
+  "portwatch_ports": {
+    "at": "2026-11-09T15:34:23Z",
+    "core": false,
+    "error": "{'code': 400, 'message': 'Cannot perform query. Invalid query parameters.', 'details': ['Unable to perform query. Please check your parameters.']}",
+    "ok": false
+  },
+  "portwatch_straits": {
+    "at": "2026-11-09T15:31:04Z",
+    "core": true,
+    "ok": true,
+    "rows": 22896
+  }
+}
