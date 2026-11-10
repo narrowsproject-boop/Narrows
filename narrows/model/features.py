@@ -53,6 +53,32 @@ def _traffic(weeks: pd.DatetimeIndex) -> pd.DataFrame:
     return pd.DataFrame(out).T.add_prefix("traffic_").reindex(weeks)
 
 
+NEWS_ZONES = {"news_redsea": ["red_sea_bab_el_mandeb", "gulf_of_aden"],
+              "news_suez": ["suez_canal"], "news_hormuz": ["hormuz_gulf"]}
+HOSTILE = ["conflict", "coercion", "threat"]
+
+
+def _news(weeks: pd.DatetimeIndex) -> pd.DataFrame:
+    """Hostile events (conflict, coercion, threat) in the 7 days before Thursday,
+    as a z-score against the previous 52 weeks. Only days up to Wednesday are used."""
+    path = CLEAN / "news_events_by_zone.csv"
+    if not path.exists():
+        return pd.DataFrame(index=weeks)
+    n = pd.read_csv(path, parse_dates=["date"])
+    n = n[n["event_class"].isin(HOSTILE)]
+    daily = n.pivot_table(index="date", columns="zone", values="events", aggfunc="sum").asfreq("D").fillna(0)
+    out = pd.DataFrame(index=weeks)
+    for name, zones in NEWS_ZONES.items():
+        s = daily[[z for z in zones if z in daily]].sum(axis=1)
+        wk = s.rolling(7).sum()                       # 7 days ending on the day
+        wk = wk.reindex(weeks - pd.Timedelta(days=1))  # ending Wednesday
+        wk.index = weeks
+        mu = wk.rolling(52, min_periods=26).mean().shift(1)
+        sd = wk.rolling(52, min_periods=26).std().shift(1)
+        out[name] = ((wk - mu) / sd).clip(-5, 30)
+    return out
+
+
 def _brent(weeks: pd.DatetimeIndex) -> pd.Series:
     m = pd.read_csv(CLEAN / "markets.csv", parse_dates=["date"])
     b = m[m["series"] == "brent_usd_bbl"].set_index("date")["value"].sort_index()
@@ -104,7 +130,7 @@ def build() -> pd.DataFrame:
     weeks = dw.index
     ec = EC()
     feats = pd.DataFrame(index=weeks)
-    feats = feats.join(_traffic(weeks)).join(_brent(weeks))
+    feats = feats.join(_traffic(weeks)).join(_brent(weeks)).join(_news(weeks))
 
     # EC features on the main contract
     ec1, ec4, slope, ec_basis = [], [], [], []
@@ -124,7 +150,7 @@ def build() -> pd.DataFrame:
     ec_level = pd.Series(ec_basis, index=weeks)
 
     rows = []
-    for target in ["shanghai_rotterdam", "shanghai_genoa", "ec_front"]:
+    for target in ["shanghai_rotterdam", "shanghai_genoa", "shanghai_los_angeles", "ec_front"]:
         f = feats.copy()
         f["target"] = target
         if target == "ec_front":

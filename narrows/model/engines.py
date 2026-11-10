@@ -34,6 +34,8 @@ RULES = {
     "R-03b price fell >5% in 4 weeks": lambda f: f["mom_4w"] < -5,
     "R-04 Bab el-Mandeb traffic -20% vs last year": lambda f: f["traffic_bab"] < -20,
     "R-05 Suez traffic +10% vs last year": lambda f: f["traffic_suez"] > 10,
+    "R-06 Red Sea / Aden hostile news > 3 sd above normal": lambda f: f["news_redsea"] > 3,
+    "R-07 Hormuz hostile news > 3 sd above normal": lambda f: f["news_hormuz"] > 3,
 }
 
 
