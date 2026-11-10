@@ -1185,6 +1185,6 @@ date,route,usd_per_40ft,source
 2026-10-22,shanghai_genoa,4152,press:https://www.hellenicshippingnews.com/drewry-world-container-index-up-2/
 2026-10-22,shanghai_los_angeles,8007,press:https://www.hellenicshippingnews.com/drewry-world-container-index-up-2/
 2026-10-22,shanghai_rotterdam,3632,press:https://www.hellenicshippingnews.com/drewry-world-container-index-up-2/
-2026-11-05,shanghai_genoa,4166,press:https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-last-week-13/
-2026-11-05,shanghai_los_angeles,7539,press:https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-last-week-13/
-2026-11-05,shanghai_rotterdam,3615,press:https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-last-week-13/
+2026-11-05,shanghai_genoa,4166,drewry_page
+2026-11-05,shanghai_los_angeles,7539,drewry_page
+2026-11-05,shanghai_rotterdam,3615,drewry_page
