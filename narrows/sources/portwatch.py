@@ -24,14 +24,13 @@ PORTS = [
 ]
 
 
-def _fetch(url: str, where: str, fields: str) -> pd.DataFrame:
+def _fetch(url: str, where: str, fields: str, order: bool = True) -> pd.DataFrame:
     sess = session()
     rows, offset = [], 0
     while True:
-        params = {
-            "where": where, "outFields": fields, "orderByFields": "date ASC",
-            "resultOffset": offset, "resultRecordCount": 1000, "f": "json",
-        }
+        params = {"where": where, "outFields": fields, "resultOffset": offset, "resultRecordCount": 1000, "f": "json"}
+        if order:
+            params["orderByFields"] = "date ASC"
         js = get(url, params=params, sess=sess).json()
         if "error" in js:
             raise RuntimeError(js["error"])
@@ -68,14 +67,25 @@ def chokepoints(start: str = HISTORY_START) -> pd.DataFrame:
 
 
 def ports(start: str = HISTORY_START) -> pd.DataFrame:
-    # DateOnly field: filter on the integer year column server-side, exact date client-side
-    where = f"{_names_clause('portname', PORTS)} AND year >= {int(start[:4])}"
-    df = _fetch(PORTS_URL, where, "*")
-    if not df.empty:
-        df = df[df["date"] >= start].drop(columns=[c for c in ("ObjectId",) if c in df.columns])
-    if df.empty:
+    """One request per port and year (at most 366 rows): this layer rejects deep pagination."""
+    from datetime import date as _date
+
+    frames = []
+    for port in PORTS:
+        for year in range(int(start[:4]), _date.today().year + 1):
+            where = f"portname = '{port}' AND year = {year}"
+            try:
+                part = _fetch(PORTS_URL, where, "*", order=False)
+            except Exception as e:
+                log.warning("PortWatch port %s %d failed: %s", port, year, e)
+                continue
+            if not part.empty:
+                frames.append(part)
+    if not frames:
         raise RuntimeError("PortWatch ports returned no rows")
+    df = pd.concat(frames, ignore_index=True)
+    df = df[df["date"] >= start].drop(columns=[c for c in ("ObjectId",) if c in df.columns])
     df = df.rename(columns={"portname": "port"})
     merge_csv(df, CLEAN / "portwatch_ports.csv", ["date", "port"])
-    log.info("PortWatch ports: %d rows, last %s", len(df), df["date"].max())
+    log.info("PortWatch ports: %d rows, %d ports, last %s", len(df), df["port"].nunique(), df["date"].max())
     return df
