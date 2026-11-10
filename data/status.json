@@ -1,5 +1,5 @@
 {
-  "_last_run": "2026-11-10T07:14:03Z",
+  "_last_run": "2026-11-10T07:59:12Z",
   "bunker": {
     "at": "2026-11-10T07:14:03Z",
     "core": false,
@@ -55,10 +55,10 @@
     "ok": false
   },
   "news_recent_15d": {
-    "at": "2026-11-09T16:16:47Z",
+    "at": "2026-11-10T07:59:12Z",
     "core": true,
-    "error": "GDELT HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the",
-    "ok": false
+    "ok": true,
+    "rows": 1289
   },
   "news_volume": {
     "at": "2026-11-09T15:35:11Z",
