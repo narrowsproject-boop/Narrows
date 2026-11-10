@@ -1,0 +1,13 @@
+{
+  "_note": "Model settings v0.1, fixed on 10 Nov 2026 before any forecast. Stability band = the move (in %) under which a change counts as 'stable'. Each band is the 33rd percentile of absolute moves, so about one period in three is stable. Computed on Drewry weekly 2019-2026 excluding the Covid regime (Jul 2020 - Jun 2022), and on EC same-contract daily settlements since Aug 2023. Rounded to 0.5 point. Recomputed at most once a quarter, and every change is logged.",
+  "horizons_weeks": [1, 4],
+  "covid_regime": ["2020-07-01", "2022-06-30"],
+  "stability_band_pct": {
+    "shanghai_rotterdam": {"1": 2.0, "4": 9.5},
+    "shanghai_genoa": {"1": 1.5, "4": 8.5},
+    "shanghai_los_angeles": {"1": 2.5, "4": 7.5},
+    "ec_front": {"1": 2.5, "4": 7.5}
+  },
+  "lock": "Thursday 18:00 UTC",
+  "baselines": ["no_change", "trend_continues"]
+}
