@@ -77,7 +77,8 @@ class OrdinalLogit:
     def __init__(self, l2: float = 1.0):
         self.l2 = l2
 
-    def fit(self, X: np.ndarray, c: np.ndarray):
+    def fit(self, X: np.ndarray, c: np.ndarray, w: np.ndarray | None = None):
+        w = np.ones(len(c)) if w is None else w * len(c) / w.sum()
         self.mu, self.sd = X.mean(0), X.std(0) + 1e-9
         Z = (X - self.mu) / self.sd
         p = Z.shape[1]
@@ -88,7 +89,7 @@ class OrdinalLogit:
             P0 = expit(c1 - s)
             P01 = expit(c1 + gap - s)
             pr = np.choose(c, [P0, P01 - P0, 1 - P01])
-            return -np.log(np.clip(pr, 1e-9, None)).sum() + self.l2 * (b ** 2).sum()
+            return -(w * np.log(np.clip(pr, 1e-9, None))).sum() + self.l2 * (b ** 2).sum()
 
         x0 = np.zeros(p + 2); x0[p] = -0.5
         self.theta = minimize(nll, x0, method="L-BFGS-B").x

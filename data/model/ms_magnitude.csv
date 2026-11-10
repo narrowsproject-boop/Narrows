@@ -1,0 +1,29 @@
+period,method,n,pinball,mae,coverage80,width80
+holdout,average kNN40+QR+boosting,274,2.9137,8.4286,0.8285,34.1693
+holdout,average kNN40+QR+boosting +conformal,274,2.9723,8.4286,0.8832,39.8960
+holdout,boosting-quantile,274,3.2427,8.6819,0.7044,31.4653
+holdout,boosting-quantile +conformal,274,3.2347,8.6819,0.8869,46.7456
+holdout,kNN k=20,274,3.2339,8.5984,0.8467,42.7611
+holdout,kNN k=20 +conformal,274,3.2784,8.5984,0.8613,43.8246
+holdout,kNN k=40,274,3.1103,9.3371,0.8686,38.5428
+holdout,kNN k=40 +conformal,274,3.1163,9.3371,0.8759,37.9109
+holdout,kNN k=80,274,3.4094,10.4727,0.8613,41.2236
+holdout,kNN k=80 +conformal,274,3.4169,10.4727,0.8650,40.1615
+holdout,quantile regression,274,2.9766,8.6053,0.8029,32.4997
+holdout,quantile regression +conformal,274,3.0531,8.6053,0.8723,39.7041
+holdout,ref_no_change,274,3.9310,12.0331,0.8139,45.5262
+holdout,ref_no_change +conformal,274,3.9685,12.0331,0.8175,44.9807
+select,average kNN40+QR+boosting,92,4.3108,12.5500,0.7283,41.7404
+select,average kNN40+QR+boosting +conformal,92,4.2874,12.5500,0.8370,52.3245
+select,boosting-quantile,92,5.1667,13.1582,0.5652,38.3545
+select,boosting-quantile +conformal,92,4.8160,13.1582,0.8043,58.0139
+select,kNN k=20,92,4.5302,12.1082,0.7935,61.5447
+select,kNN k=20 +conformal,92,4.6263,12.1082,0.9022,69.8674
+select,kNN k=40,92,3.8842,11.6388,0.8370,46.2001
+select,kNN k=40 +conformal,92,3.9946,11.6388,0.8913,51.7759
+select,kNN k=80,92,3.5005,10.1343,0.8804,46.9685
+select,kNN k=80 +conformal,92,3.5995,10.1343,0.9130,49.9629
+select,quantile regression,92,4.6173,13.8755,0.6957,40.6666
+select,quantile regression +conformal,92,4.5798,13.8755,0.8152,53.3458
+select,ref_no_change,92,3.5472,10.4334,0.8696,47.2972
+select,ref_no_change +conformal,92,3.5945,10.4334,0.8587,48.9674
