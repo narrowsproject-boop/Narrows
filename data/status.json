@@ -1,52 +1,58 @@
 {
-  "_last_run": "2026-11-10T07:59:12Z",
+  "_last_run": "2026-11-10T09:51:54Z",
   "bunker": {
-    "at": "2026-11-10T07:14:03Z",
+    "at": "2026-11-10T09:51:54Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "drewry": {
-    "at": "2026-11-10T07:12:22Z",
+    "at": "2026-11-10T08:00:39Z",
     "core": true,
     "ok": true,
-    "rows": 3
+    "rows": 1170
   },
   "drewry_press": {
-    "at": "2026-11-09T15:27:42Z",
+    "at": "2026-11-10T08:04:20Z",
     "core": false,
     "ok": true,
-    "rows": 19
+    "rows": 0
   },
   "drewry_weekly": {
-    "at": "2026-11-10T07:14:03Z",
+    "at": "2026-11-10T09:51:54Z",
     "core": false,
     "ok": true,
     "rows": 1230
   },
   "ec_futures": {
-    "at": "2026-11-10T07:13:00Z",
+    "at": "2026-11-10T08:04:45Z",
     "core": true,
     "ok": true,
-    "rows": 778
+    "rows": 779
   },
   "harpex": {
-    "at": "2026-11-10T07:14:03Z",
+    "at": "2026-11-10T09:51:54Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-10T07:14:01Z",
+    "at": "2026-11-10T09:51:31Z",
     "core": true,
     "ok": true,
-    "rows": 46
+    "rows": 5943
   },
   "news_articles": {
     "at": "2026-11-10T07:14:01Z",
     "core": false,
     "error": "GCP_SA_KEY / GCP_PROJECT secrets are not set",
     "ok": false
+  },
+  "news_events_history": {
+    "at": "2026-11-10T09:51:52Z",
+    "core": false,
+    "ok": true,
+    "rows": 145274
   },
   "news_events_recent": {
     "at": "2026-11-10T07:14:01Z",
@@ -67,15 +73,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-10T07:14:01Z",
+    "at": "2026-11-10T09:51:30Z",
     "core": false,
-    "error": "{'code': 400, 'message': 'Cannot perform query. Invalid query parameters.', 'details': ['Unable to perform query. Please check your parameters.']}",
-    "ok": false
+    "ok": true,
+    "rows": 1034
   },
   "portwatch_straits": {
-    "at": "2026-11-10T07:13:05Z",
+    "at": "2026-11-10T08:09:19Z",
     "core": true,
     "ok": true,
-    "rows": 104
+    "rows": 22896
   }
 }
