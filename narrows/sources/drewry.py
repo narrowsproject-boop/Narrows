@@ -59,10 +59,25 @@ def from_akshare() -> pd.DataFrame:
 VALUE_RE = r"[^$]{0,120}?(?:to|at)\s*(?:US)?\$\s?([\d,]{3,6})\s*per\s*40\s?ft"
 
 
+# patterns for the context series in the weekly release text, so the daily run keeps them current
+PAGE_EXTRA = {
+    "composite": r"(?:WCI|World Container Index)\)?\s*composite",
+    "rotterdam_shanghai": r"Rotterdam\s*(?:–|-|to)\s*Shanghai",
+    "los_angeles_shanghai": r"Los Angeles\s*(?:–|-|to)\s*Shanghai",
+    "shanghai_new_york": r"Shanghai\s*(?:–|-|to)\s*New York",
+    "new_york_rotterdam": r"New York\s*(?:–|-|to)\s*Rotterdam",
+    "rotterdam_new_york": r"Rotterdam\s*(?:–|-|to)\s*New York",
+}
+
+
 def parse_release(text: str) -> dict[str, int]:
     """Extract route values from one weekly Drewry release text (Drewry page or a press reprint)."""
     text = re.sub(r"\s+", " ", text)
     found = {}
+    for route, pattern in PAGE_EXTRA.items():
+        m = re.search(pattern + VALUE_RE, text, flags=re.I)
+        if m:
+            found[route] = int(m.group(1).replace(",", ""))
     for route, cfg in ROUTES.items():
         m = re.search(cfg["pattern"] + VALUE_RE, text, flags=re.I)
         if m:
@@ -90,19 +105,25 @@ def from_page() -> pd.DataFrame:
 
 
 def fetch() -> pd.DataFrame:
-    errors = []
+    """Chart history (akshare) and this week's page text; both are merged, the newest value wins.
+
+    The chart can lag the page by several weeks, so the page is always read too.
+    """
+    errors, got = [], []
     for fn in (from_akshare, from_page):
         try:
             df = fn()
             df = df[df["date"] >= HISTORY_START]
             if not df.empty:
                 merge_csv(df, OUT, KEYS)
+                got.append(df)
                 log.info("Drewry via %s: %d rows, %s -> %s", fn.__name__, len(df), df["date"].min(), df["date"].max())
-                return df
         except Exception as e:
             errors.append(f"{fn.__name__}: {e}")
             log.warning("Drewry %s failed: %s", fn.__name__, e)
-    raise RuntimeError("; ".join(errors))
+    if not got:
+        raise RuntimeError("; ".join(errors))
+    return pd.concat(got, ignore_index=True)
 
 
 # ---------- press backfill (fills weeks the chart does not cover) ----------
