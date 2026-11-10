@@ -1,65 +1,91 @@
 {
-  "_note": "DRAFT v0 (9 Nov 2026), to be reviewed by Ethan in phase 2. GDELT DOC 2.0 query syntax. Each family has an effect (supply, demand, cost) and default zones.",
+  "_note": "v0.2 (10 Nov 2026), validated by Ethan after the 26 Oct - 10 Nov review: sanctions, trade, carriers, regulation and weather tightened. Every parenthesised group must match (title, URL words, organisations).",
   "families": {
     "conflict": {
       "label": "Geopolitics and conflict",
       "effect": "supply",
       "query": "(\"Red Sea\" OR Houthi OR \"Bab el-Mandeb\" OR \"Strait of Hormuz\" OR \"Taiwan Strait\") (ship OR vessel OR tanker OR \"container ship\" OR shipping)",
-      "zones": ["red_sea_suez", "asia_origin"]
+      "zones": [
+        "red_sea_suez",
+        "asia_origin"
+      ]
     },
     "sanctions": {
       "label": "Sanctions and diplomacy",
       "effect": "supply",
-      "query": "(sanctions OR ceasefire OR \"peace deal\" OR embargo) (shipping OR tanker OR \"shadow fleet\" OR \"Red Sea\" OR Iran)",
-      "zones": ["red_sea_suez"]
+      "query": "(sanctions OR ceasefire OR \"peace deal\" OR \"peace talks\" OR embargo OR blockade) (shipping OR tanker OR tankers OR vessel OR vessels OR \"shadow fleet\" OR \"Red Sea\" OR \"Strait of Hormuz\" OR Houthi OR Houthis OR strait)",
+      "zones": [
+        "red_sea_suez"
+      ]
     },
     "trade": {
       "label": "Trade and tariffs",
       "effect": "demand",
-      "query": "(tariff OR tariffs OR \"anti-dumping\" OR \"trade deal\") (China OR EU OR \"European Union\") (imports OR exports)",
-      "zones": ["asia_origin", "europe_arrival"]
+      "query": "(tariff OR tariffs OR \"anti-dumping\" OR \"anti-subsidy\" OR \"trade deal\" OR \"trade defence\" OR \"trade defense\" OR safeguard OR safeguards OR countermeasures OR \"kill switch\") (China OR Chinese OR Beijing OR EU OR \"European Union\" OR Brussels OR European) (imports OR exports OR trade OR goods)",
+      "zones": [
+        "asia_origin",
+        "europe_arrival"
+      ]
     },
     "economy": {
       "label": "Economy and demand",
       "effect": "demand",
       "query": "(\"China exports\" OR \"export orders\" OR PMI OR \"consumer demand\" OR \"retail inventories\") (Europe OR China)",
-      "zones": ["asia_origin", "europe_arrival"]
+      "zones": [
+        "asia_origin",
+        "europe_arrival"
+      ]
     },
     "carriers": {
       "label": "Carrier decisions",
       "effect": "supply",
-      "query": "(Maersk OR MSC OR \"CMA CGM\" OR \"Hapag-Lloyd\" OR COSCO OR \"Ocean Network Express\" OR \"Premier Alliance\" OR \"Gemini Cooperation\" OR Evergreen OR \"Yang Ming\" OR HMM) (\"rate increase\" OR \"blank sailing\" OR \"Suez\" OR \"Cape of Good Hope\" OR reroute OR alliance OR FAK)",
-      "zones": ["red_sea_suez", "cape"]
+      "query": "(Maersk OR MSC OR \"CMA CGM\" OR \"Hapag-Lloyd\" OR COSCO OR \"Ocean Network Express\" OR \"Premier Alliance\" OR \"Gemini Cooperation\" OR Evergreen OR \"Yang Ming\" OR HMM) (\"rate increase\" OR \"general rate\" OR \"blank sailing\" OR \"blank sailings\" OR Suez OR \"Red Sea\" OR \"Cape of Good Hope\" OR reroute OR rerouting OR resume OR resumes OR FAK OR surcharge) (ship OR ships OR shipping OR vessel OR vessels OR container OR containers OR carrier OR carriers OR line OR service)",
+      "zones": [
+        "red_sea_suez",
+        "cape"
+      ]
     },
     "ports": {
       "label": "Ports and logistics",
       "effect": "supply",
       "query": "(port OR terminal OR dockworkers) (strike OR congestion OR fire OR closure OR outage) (Rotterdam OR Antwerp OR Hamburg OR Genoa OR Piraeus OR Singapore OR Colombo OR Shanghai OR Ningbo OR Jeddah)",
-      "zones": ["europe_arrival", "asia_origin"]
+      "zones": [
+        "europe_arrival",
+        "asia_origin"
+      ]
     },
     "energy": {
       "label": "Energy and fuel",
       "effect": "cost",
       "query": "(OPEC OR \"oil price\" OR \"bunker fuel\" OR \"Brent crude\") (shipping OR freight OR tanker)",
-      "zones": ["global"]
+      "zones": [
+        "global"
+      ]
     },
     "regulation": {
       "label": "Regulation",
       "effect": "cost",
-      "query": "(\"EU ETS\" OR \"emissions trading\" OR FuelEU OR IMO) (shipping OR maritime OR carriers)",
-      "zones": ["europe_arrival"]
+      "query": "(\"EU ETS\" OR \"emissions trading\" OR FuelEU OR \"International Maritime Organization\" OR \"net-zero framework\" OR \"carbon levy\") (shipping OR maritime OR carriers OR vessels)",
+      "zones": [
+        "europe_arrival"
+      ]
     },
     "calendar": {
       "label": "Calendar and seasonality",
       "effect": "demand",
       "query": "(\"Chinese New Year\" OR \"Lunar New Year\" OR \"Golden Week\" OR \"peak season\") (shipping OR freight OR factories OR containers)",
-      "zones": ["asia_origin"]
+      "zones": [
+        "asia_origin"
+      ]
     },
     "weather": {
       "label": "Weather and climate",
       "effect": "supply",
-      "query": "(typhoon OR storm OR drought OR fog) (port OR shipping OR vessels OR \"Cape of Good Hope\" OR \"Panama Canal\")",
-      "zones": ["asia_origin", "cape"]
+      "query": "(typhoon OR cyclone OR storm OR storms OR drought OR fog OR swell) (port OR ports OR shipping OR vessels OR \"container ship\" OR \"Cape of Good Hope\" OR \"Panama Canal\") (closed OR closure OR closes OR suspended OR suspends OR delays OR delayed OR disrupted OR disruption OR halted)",
+      "zones": [
+        "asia_origin",
+        "cape"
+      ]
     }
   },
   "zones": {

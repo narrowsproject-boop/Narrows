@@ -165,8 +165,25 @@ def articles(days: int = 1) -> pd.DataFrame:
     df = df.drop(columns=["ts"]).drop_duplicates(["url", "family"])
     name = f"{end.strftime('%Y-%m-%d')}.csv" if days == 1 else f"recent_{days}d_{end.strftime('%Y-%m-%d')}.csv"
     merge_csv(df, RAW / "news" / name, ["url", "family"])
+    events(df).to_csv(RAW / "news" / name.replace(".csv", "_events.csv"), index=False)
     log.info("GDELT articles (%dd): %d rows, %d families", days, len(df), df["family"].nunique())
     return df
+
+
+def events(df: pd.DataFrame) -> pd.DataFrame:
+    """Group articles that are the same story: same family and same first 7 title words."""
+    import html
+
+    d = df.copy()
+    d["title"] = d["title"].fillna("").map(html.unescape).str.strip()
+    d = d[d["title"].str.len() > 25]
+    d["event_key"] = (d["title"].str.lower().str.replace(r"[^a-z0-9 ]", "", regex=True)
+                      .str.split().str[:7].str.join(" "))
+    g = (d.sort_values("seen").groupby(["family", "event_key"])
+         .agg(first_seen=("seen", "first"), articles=("url", "count"), title=("title", "first"),
+              url=("url", "first"), place=("place", "first"), lat=("lat", "first"), lon=("lon", "first"))
+         .reset_index().sort_values(["articles", "first_seen"], ascending=[False, True]))
+    return g
 
 
 def articles_15d() -> pd.DataFrame:
