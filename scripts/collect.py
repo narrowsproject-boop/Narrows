@@ -34,6 +34,11 @@ JOBS = {
         ("bunker", False, context.bunker),
         ("drewry_weekly", False, weekly.build),
     ],
+    "prices": [
+        ("drewry", True, drewry.fetch),
+        ("markets", True, markets.fetch),
+        ("drewry_weekly", False, weekly.build),
+    ],
     "recent_news": [
         ("news_recent_15d", True, gdelt_bq.articles_15d),
     ],

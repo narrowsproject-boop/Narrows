@@ -9,6 +9,8 @@ TICKERS = {
     "BZ=F": "brent_usd_bbl",          # Brent crude front-month future
     "MAERSK-B.CO": "maersk_b_dkk",    # A.P. Moller-Maersk B
     "HLAG.DE": "hapag_lloyd_eur",     # Hapag-Lloyd
+    "HO=F": "heating_oil_usd_gal",    # NY Harbor ULSD (diesel/gasoil) future, proxy for marine fuel
+    "EURUSD=X": "eurusd",             # euro in dollars, to convert freight into EUR per container
 }
 
 

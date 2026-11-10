@@ -1,4 +1,7 @@
-"""Drewry World Container Index: Shanghai -> Rotterdam, Shanghai -> Genoa, Shanghai -> Los Angeles.
+"""Drewry World Container Index: the composite and its 8 East-West routes.
+
+Forecast routes: Shanghai -> Rotterdam, Shanghai -> Genoa (Los Angeles is the control). The composite and the
+other routes (backhauls, New York, transatlantic) are context for the dashboard.
 
 Published every Thursday at drewry.co.uk. Three ways in, tried in order:
   1. akshare.drewry_wci_index (reads the Infogram chart behind Drewry's page, multi-year weekly history)
@@ -20,6 +23,15 @@ ROUTES = {
     "shanghai_genoa": {"akshare": "shanghai-genoa", "pattern": r"Shanghai\s*(?:–|-|to)\s*Genoa"},
     "shanghai_los_angeles": {"akshare": "shanghai-los angeles", "pattern": r"Shanghai\s*(?:–|-|to)\s*Los Angeles"},
 }
+# context series: akshare only (the weekly page text is parsed for the three core routes)
+EXTRA = {
+    "composite": "composite",
+    "rotterdam_shanghai": "rotterdam-shanghai",
+    "los_angeles_shanghai": "los angeles-shanghai",
+    "shanghai_new_york": "shanghai-new york",
+    "new_york_rotterdam": "new york-rotterdam",
+    "rotterdam_new_york": "rotterdam-new york",
+}
 OUT = CLEAN / "drewry_wci.csv"
 KEYS = ["date", "route"]
 
@@ -27,14 +39,20 @@ KEYS = ["date", "route"]
 def from_akshare() -> pd.DataFrame:
     import akshare as ak
 
-    frames = []
-    for route, cfg in ROUTES.items():
-        df = ak.drewry_wci_index(symbol=cfg["akshare"])
+    def one(route: str, symbol: str) -> pd.DataFrame:
+        df = ak.drewry_wci_index(symbol=symbol)
         df = df.rename(columns={df.columns[0]: "date", df.columns[1]: "usd_per_40ft"})
         df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
         df["route"] = route
         df["source"] = "drewry_infogram"
-        frames.append(df[["date", "route", "usd_per_40ft", "source"]])
+        return df[["date", "route", "usd_per_40ft", "source"]]
+
+    frames = [one(route, cfg["akshare"]) for route, cfg in ROUTES.items()]
+    for route, symbol in EXTRA.items():
+        try:
+            frames.append(one(route, symbol))
+        except Exception as e:  # context only: never fail the run for these
+            log.warning("Drewry %s not available: %s", route, e)
     return pd.concat(frames, ignore_index=True)
 
 

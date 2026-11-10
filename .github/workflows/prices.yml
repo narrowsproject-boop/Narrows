@@ -1,0 +1,42 @@
+name: Refresh prices (full history)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+env:
+  GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+  GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+
+jobs:
+  prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Backfill
+        id: collect
+        run: python scripts/collect.py prices
+        continue-on-error: true
+      - name: Commit data
+        run: |
+          git config user.name "narrows-bot"
+          git config user.email "narrows-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "data: prices refresh $(date -u +%Y-%m-%d)"
+          git pull --rebase -X theirs
+          git push
+      - name: Fail if a core source failed
+        if: steps.collect.outcome == 'failure'
+        run: exit 1
