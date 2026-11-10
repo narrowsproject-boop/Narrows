@@ -1,0 +1,713 @@
+target,h,track,period,method,n,rps,hit,kind,pinball,mae,coverage,width
+shanghai_genoa,1,socle,holdout,boosting | socle_rich(no EC),122,0.1889,0.5574,direction,,,,
+shanghai_genoa,1,socle,holdout,ensemble(logit+boosting+forest) | socle_rich(no EC),122,0.1777,0.5820,direction,,,,
+shanghai_genoa,1,socle,holdout,forest | socle_rich(no EC),122,0.1806,0.5984,direction,,,,
+shanghai_genoa,1,socle,holdout,logit l2=10 | socle_rich(no EC),122,0.1924,0.5902,direction,,,,
+shanghai_genoa,1,socle,holdout,logit l2=30 | socle_rich(no EC),122,0.1935,0.5902,direction,,,,
+shanghai_genoa,1,socle,holdout,ref_no_change,122,0.2241,0.2459,direction,,,,
+shanghai_genoa,1,socle,holdout,ref_trend,122,0.2079,0.5082,direction,,,,
+shanghai_genoa,1,socle,select,boosting | socle_rich(no EC),88,0.2395,0.3977,direction,,,,
+shanghai_genoa,1,socle,select,ensemble(logit+boosting+forest) | socle_rich(no EC),88,0.1927,0.4091,direction,,,,
+shanghai_genoa,1,socle,select,forest | socle_rich(no EC),88,0.1952,0.4205,direction,,,,
+shanghai_genoa,1,socle,select,logit l2=10 | socle_rich(no EC),88,0.1898,0.5000,direction,,,,
+shanghai_genoa,1,socle,select,logit l2=30 | socle_rich(no EC),88,0.1917,0.4659,direction,,,,
+shanghai_genoa,1,socle,select,ref_no_change,88,0.2168,0.3182,direction,,,,
+shanghai_genoa,1,socle,select,ref_trend,88,0.1691,0.6136,direction,,,,
+shanghai_genoa,1,socle,holdout,boosting-quantile | socle_rich(no EC),122,,,magnitude,1.7344,4.8285,0.7459,12.5946
+shanghai_genoa,1,socle,holdout,boosting-quantile | socle_rich(no EC) +conformal,122,,,magnitude,1.7450,4.8285,0.8443,18.5716
+shanghai_genoa,1,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC),122,,,magnitude,1.7147,4.8509,0.7377,12.6404
+shanghai_genoa,1,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,122,,,magnitude,1.7159,4.8509,0.8525,16.4007
+shanghai_genoa,1,socle,holdout,kNN k=40 | socle_rich(no EC),122,,,magnitude,1.7655,4.9964,0.7213,12.6861
+shanghai_genoa,1,socle,holdout,kNN k=40 | socle_rich(no EC) +conformal,122,,,magnitude,1.7555,4.9964,0.8197,16.5539
+shanghai_genoa,1,socle,holdout,ref_no_change,122,,,magnitude,1.8432,5.2833,0.7131,16.5625
+shanghai_genoa,1,socle,holdout,ref_no_change +conformal,122,,,magnitude,1.8301,5.2833,0.7951,19.1943
+shanghai_genoa,1,socle,holdout,ref_trend,122,,,magnitude,1.8956,5.6391,0.7295,16.5625
+shanghai_genoa,1,socle,holdout,ref_trend +conformal,122,,,magnitude,1.8795,5.6391,0.8115,20.2945
+shanghai_genoa,1,socle,select,boosting-quantile | socle_rich(no EC),68,,,magnitude,2.3822,6.3795,0.5735,10.0981
+shanghai_genoa,1,socle,select,boosting-quantile | socle_rich(no EC) +conformal,68,,,magnitude,2.2985,6.3795,0.6912,13.7906
+shanghai_genoa,1,socle,select,ensemble(kNN+boosting) | socle_rich(no EC),68,,,magnitude,2.2540,6.0129,0.6029,9.8309
+shanghai_genoa,1,socle,select,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,68,,,magnitude,2.2163,6.0129,0.6324,10.7367
+shanghai_genoa,1,socle,select,kNN k=40 | socle_rich(no EC),68,,,magnitude,2.2543,5.8858,0.5735,9.5637
+shanghai_genoa,1,socle,select,kNN k=40 | socle_rich(no EC) +conformal,68,,,magnitude,2.2376,5.8858,0.5441,9.1831
+shanghai_genoa,1,socle,select,ref_no_change,68,,,magnitude,2.2755,6.0381,0.7059,13.4013
+shanghai_genoa,1,socle,select,ref_no_change +conformal,68,,,magnitude,2.2697,6.0381,0.7206,13.1744
+shanghai_genoa,1,socle,select,ref_trend,68,,,magnitude,2.5438,6.3929,0.7500,13.4013
+shanghai_genoa,1,socle,select,ref_trend +conformal,68,,,magnitude,2.5309,6.3929,0.7647,14.3782
+shanghai_genoa,4,socle,holdout,boosting | socle_rich(no EC),119,0.2786,0.3782,direction,,,,
+shanghai_genoa,4,socle,holdout,ensemble(logit+boosting+forest) | socle_rich(no EC),119,0.2486,0.3866,direction,,,,
+shanghai_genoa,4,socle,holdout,forest | socle_rich(no EC),119,0.2302,0.3950,direction,,,,
+shanghai_genoa,4,socle,holdout,logit l2=10 | socle_rich(no EC),119,0.2753,0.3193,direction,,,,
+shanghai_genoa,4,socle,holdout,logit l2=30 | socle_rich(no EC),119,0.2598,0.3109,direction,,,,
+shanghai_genoa,4,socle,holdout,ref_no_change,119,0.2462,0.2017,direction,,,,
+shanghai_genoa,4,socle,holdout,ref_trend,119,0.2492,0.4202,direction,,,,
+shanghai_genoa,4,socle,select,boosting | socle_rich(no EC),85,0.3083,0.2941,direction,,,,
+shanghai_genoa,4,socle,select,ensemble(logit+boosting+forest) | socle_rich(no EC),85,0.2443,0.2941,direction,,,,
+shanghai_genoa,4,socle,select,forest | socle_rich(no EC),85,0.2305,0.2235,direction,,,,
+shanghai_genoa,4,socle,select,logit l2=10 | socle_rich(no EC),85,0.2589,0.3412,direction,,,,
+shanghai_genoa,4,socle,select,logit l2=30 | socle_rich(no EC),85,0.2464,0.3412,direction,,,,
+shanghai_genoa,4,socle,select,ref_no_change,85,0.2091,0.4588,direction,,,,
+shanghai_genoa,4,socle,select,ref_trend,85,0.1826,0.5176,direction,,,,
+shanghai_genoa,4,socle,holdout,boosting-quantile | socle_rich(no EC),119,,,magnitude,6.4230,17.8475,0.5630,45.2041
+shanghai_genoa,4,socle,holdout,boosting-quantile | socle_rich(no EC) +conformal,119,,,magnitude,6.0501,17.8475,0.7899,69.2402
+shanghai_genoa,4,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC),119,,,magnitude,6.1042,17.8783,0.6471,48.1130
+shanghai_genoa,4,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,119,,,magnitude,5.9079,17.8783,0.8067,66.2227
+shanghai_genoa,4,socle,holdout,kNN k=40 | socle_rich(no EC),119,,,magnitude,6.0826,18.4572,0.6807,51.0220
+shanghai_genoa,4,socle,holdout,kNN k=40 | socle_rich(no EC) +conformal,119,,,magnitude,5.9286,18.4572,0.8067,66.9805
+shanghai_genoa,4,socle,holdout,ref_no_change,119,,,magnitude,5.8135,19.0654,0.6807,55.2848
+shanghai_genoa,4,socle,holdout,ref_no_change +conformal,119,,,magnitude,5.7926,19.0654,0.8403,66.6282
+shanghai_genoa,4,socle,holdout,ref_trend,119,,,magnitude,7.3826,21.5683,0.6555,55.2848
+shanghai_genoa,4,socle,holdout,ref_trend +conformal,119,,,magnitude,7.1727,21.5683,0.7563,70.0707
+shanghai_genoa,4,socle,select,boosting-quantile | socle_rich(no EC),62,,,magnitude,11.8170,28.7364,0.3065,25.7512
+shanghai_genoa,4,socle,select,boosting-quantile | socle_rich(no EC) +conformal,62,,,magnitude,10.9695,28.7364,0.4839,39.2357
+shanghai_genoa,4,socle,select,ensemble(kNN+boosting) | socle_rich(no EC),62,,,magnitude,11.4473,28.5350,0.3871,30.1276
+shanghai_genoa,4,socle,select,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,62,,,magnitude,11.2842,28.5350,0.3710,31.5927
+shanghai_genoa,4,socle,select,kNN k=40 | socle_rich(no EC),62,,,magnitude,11.6337,28.4455,0.5484,34.5040
+shanghai_genoa,4,socle,select,kNN k=40 | socle_rich(no EC) +conformal,62,,,magnitude,11.7809,28.4455,0.2903,28.1186
+shanghai_genoa,4,socle,select,ref_no_change,62,,,magnitude,10.8110,27.4030,0.5806,39.2337
+shanghai_genoa,4,socle,select,ref_no_change +conformal,62,,,magnitude,10.7092,27.4030,0.6774,43.2548
+shanghai_genoa,4,socle,select,ref_trend,62,,,magnitude,14.8794,35.6095,0.5968,39.2337
+shanghai_genoa,4,socle,select,ref_trend +conformal,62,,,magnitude,14.7072,35.6095,0.5968,43.1046
+shanghai_rotterdam,1,socle,holdout,boosting | socle_rich(no EC),122,0.2138,0.4426,direction,,,,
+shanghai_rotterdam,1,socle,holdout,ensemble(logit+boosting+forest) | socle_rich(no EC),122,0.1895,0.4836,direction,,,,
+shanghai_rotterdam,1,socle,holdout,forest | socle_rich(no EC),122,0.1917,0.4754,direction,,,,
+shanghai_rotterdam,1,socle,holdout,logit l2=10 | socle_rich(no EC),122,0.1866,0.5246,direction,,,,
+shanghai_rotterdam,1,socle,holdout,logit l2=30 | socle_rich(no EC),122,0.1887,0.4918,direction,,,,
+shanghai_rotterdam,1,socle,holdout,ref_no_change,122,0.2184,0.3197,direction,,,,
+shanghai_rotterdam,1,socle,holdout,ref_trend,122,0.1995,0.4918,direction,,,,
+shanghai_rotterdam,1,socle,select,boosting | socle_rich(no EC),88,0.2610,0.3750,direction,,,,
+shanghai_rotterdam,1,socle,select,ensemble(logit+boosting+forest) | socle_rich(no EC),88,0.2117,0.4091,direction,,,,
+shanghai_rotterdam,1,socle,select,forest | socle_rich(no EC),88,0.2209,0.4545,direction,,,,
+shanghai_rotterdam,1,socle,select,logit l2=10 | socle_rich(no EC),88,0.2059,0.4545,direction,,,,
+shanghai_rotterdam,1,socle,select,logit l2=30 | socle_rich(no EC),88,0.2070,0.3864,direction,,,,
+shanghai_rotterdam,1,socle,select,ref_no_change,88,0.2279,0.3295,direction,,,,
+shanghai_rotterdam,1,socle,select,ref_trend,88,0.2030,0.4773,direction,,,,
+shanghai_rotterdam,1,socle,holdout,boosting-quantile | socle_rich(no EC),122,,,magnitude,1.7950,4.8365,0.7295,11.7808
+shanghai_rotterdam,1,socle,holdout,boosting-quantile | socle_rich(no EC) +conformal,122,,,magnitude,1.7794,4.8365,0.8607,18.7232
+shanghai_rotterdam,1,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC),122,,,magnitude,1.7379,4.7853,0.7787,13.8337
+shanghai_rotterdam,1,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,122,,,magnitude,1.7437,4.7853,0.8197,18.0926
+shanghai_rotterdam,1,socle,holdout,kNN k=40 | socle_rich(no EC),122,,,magnitude,1.7528,4.9678,0.7951,15.8866
+shanghai_rotterdam,1,socle,holdout,kNN k=40 | socle_rich(no EC) +conformal,122,,,magnitude,1.7767,4.9678,0.8852,19.7192
+shanghai_rotterdam,1,socle,holdout,ref_no_change,122,,,magnitude,1.8851,5.3474,0.7951,18.3926
+shanghai_rotterdam,1,socle,holdout,ref_no_change +conformal,122,,,magnitude,1.9078,5.3474,0.8689,22.4888
+shanghai_rotterdam,1,socle,holdout,ref_trend,122,,,magnitude,1.8417,5.2702,0.8115,18.3926
+shanghai_rotterdam,1,socle,holdout,ref_trend +conformal,122,,,magnitude,1.8518,5.2702,0.8607,20.6011
+shanghai_rotterdam,1,socle,select,boosting-quantile | socle_rich(no EC),68,,,magnitude,2.7520,7.3297,0.6176,11.5712
+shanghai_rotterdam,1,socle,select,boosting-quantile | socle_rich(no EC) +conformal,68,,,magnitude,2.6787,7.3297,0.7941,18.3916
+shanghai_rotterdam,1,socle,select,ensemble(kNN+boosting) | socle_rich(no EC),68,,,magnitude,2.6549,7.1828,0.6471,12.4372
+shanghai_rotterdam,1,socle,select,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,68,,,magnitude,2.6252,7.1828,0.7794,15.6436
+shanghai_rotterdam,1,socle,select,kNN k=40 | socle_rich(no EC),68,,,magnitude,2.6663,7.2047,0.7059,13.3031
+shanghai_rotterdam,1,socle,select,kNN k=40 | socle_rich(no EC) +conformal,68,,,magnitude,2.6437,7.2047,0.7647,15.5964
+shanghai_rotterdam,1,socle,select,ref_no_change,68,,,magnitude,2.6677,7.1557,0.7500,15.9803
+shanghai_rotterdam,1,socle,select,ref_no_change +conformal,68,,,magnitude,2.6661,7.1557,0.8088,20.6952
+shanghai_rotterdam,1,socle,select,ref_trend,68,,,magnitude,2.9427,7.8001,0.7059,15.9803
+shanghai_rotterdam,1,socle,select,ref_trend +conformal,68,,,magnitude,2.9293,7.8001,0.7353,17.5794
+shanghai_rotterdam,4,socle,holdout,boosting | socle_rich(no EC),119,0.2808,0.3782,direction,,,,
+shanghai_rotterdam,4,socle,holdout,ensemble(logit+boosting+forest) | socle_rich(no EC),119,0.2492,0.3697,direction,,,,
+shanghai_rotterdam,4,socle,holdout,forest | socle_rich(no EC),119,0.2409,0.3193,direction,,,,
+shanghai_rotterdam,4,socle,holdout,logit l2=10 | socle_rich(no EC),119,0.2625,0.3782,direction,,,,
+shanghai_rotterdam,4,socle,holdout,logit l2=30 | socle_rich(no EC),119,0.2455,0.3613,direction,,,,
+shanghai_rotterdam,4,socle,holdout,ref_no_change,119,0.2377,0.2689,direction,,,,
+shanghai_rotterdam,4,socle,holdout,ref_trend,119,0.2439,0.3950,direction,,,,
+shanghai_rotterdam,4,socle,select,boosting | socle_rich(no EC),85,0.2993,0.3176,direction,,,,
+shanghai_rotterdam,4,socle,select,ensemble(logit+boosting+forest) | socle_rich(no EC),85,0.2509,0.2824,direction,,,,
+shanghai_rotterdam,4,socle,select,forest | socle_rich(no EC),85,0.2382,0.3765,direction,,,,
+shanghai_rotterdam,4,socle,select,logit l2=10 | socle_rich(no EC),85,0.2723,0.3765,direction,,,,
+shanghai_rotterdam,4,socle,select,logit l2=30 | socle_rich(no EC),85,0.2648,0.3647,direction,,,,
+shanghai_rotterdam,4,socle,select,ref_no_change,85,0.2264,0.4000,direction,,,,
+shanghai_rotterdam,4,socle,select,ref_trend,85,0.2031,0.4824,direction,,,,
+shanghai_rotterdam,4,socle,holdout,boosting-quantile | socle_rich(no EC),119,,,magnitude,7.2714,19.9709,0.5546,48.4104
+shanghai_rotterdam,4,socle,holdout,boosting-quantile | socle_rich(no EC) +conformal,119,,,magnitude,6.8643,19.9709,0.8739,87.5724
+shanghai_rotterdam,4,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC),119,,,magnitude,6.4305,19.1871,0.6639,53.0297
+shanghai_rotterdam,4,socle,holdout,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,119,,,magnitude,6.4287,19.1871,0.8908,75.5442
+shanghai_rotterdam,4,socle,holdout,kNN k=40 | socle_rich(no EC),119,,,magnitude,6.1075,18.8442,0.7899,57.6489
+shanghai_rotterdam,4,socle,holdout,kNN k=40 | socle_rich(no EC) +conformal,119,,,magnitude,6.2615,18.8442,0.8655,73.0435
+shanghai_rotterdam,4,socle,holdout,ref_no_change,119,,,magnitude,6.0567,18.6578,0.7479,55.6566
+shanghai_rotterdam,4,socle,holdout,ref_no_change +conformal,119,,,magnitude,6.0882,18.6578,0.8487,73.8471
+shanghai_rotterdam,4,socle,holdout,ref_trend,119,,,magnitude,7.6218,23.3502,0.5798,55.6566
+shanghai_rotterdam,4,socle,holdout,ref_trend +conformal,119,,,magnitude,7.1996,23.3502,0.8319,83.0992
+shanghai_rotterdam,4,socle,select,boosting-quantile | socle_rich(no EC),62,,,magnitude,14.0970,32.0878,0.3065,28.0998
+shanghai_rotterdam,4,socle,select,boosting-quantile | socle_rich(no EC) +conformal,62,,,magnitude,12.9212,32.0878,0.5645,51.1322
+shanghai_rotterdam,4,socle,select,ensemble(kNN+boosting) | socle_rich(no EC),62,,,magnitude,13.1632,32.2585,0.4032,36.9270
+shanghai_rotterdam,4,socle,select,ensemble(kNN+boosting) | socle_rich(no EC) +conformal,62,,,magnitude,12.6082,32.2585,0.5968,46.6754
+shanghai_rotterdam,4,socle,select,kNN k=40 | socle_rich(no EC),62,,,magnitude,12.5437,32.6809,0.4839,45.7542
+shanghai_rotterdam,4,socle,select,kNN k=40 | socle_rich(no EC) +conformal,62,,,magnitude,12.3678,32.6809,0.5806,43.9302
+shanghai_rotterdam,4,socle,select,ref_no_change,62,,,magnitude,11.6082,31.4840,0.5806,44.9020
+shanghai_rotterdam,4,socle,select,ref_no_change +conformal,62,,,magnitude,11.3207,31.4840,0.7258,60.0756
+shanghai_rotterdam,4,socle,select,ref_trend,62,,,magnitude,16.6233,41.4853,0.3871,44.9020
+shanghai_rotterdam,4,socle,select,ref_trend +conformal,62,,,magnitude,15.8192,41.4853,0.6129,61.9333
+shanghai_genoa,1,market,holdout,boosting | champion(reduced),70,0.1529,0.6000,direction,,,,
+shanghai_genoa,1,market,holdout,boosting | everything,70,0.1666,0.6429,direction,,,,
+shanghai_genoa,1,market,holdout,boosting | reduced+equity,70,0.1444,0.6429,direction,,,,
+shanghai_genoa,1,market,holdout,boosting | reduced+news,70,0.1744,0.6429,direction,,,,
+shanghai_genoa,1,market,holdout,boosting | reduced+traffic,70,0.1535,0.6571,direction,,,,
+shanghai_genoa,1,market,holdout,boosting | reduced+traffic+news+equity,70,0.1604,0.6714,direction,,,,
+shanghai_genoa,1,market,holdout,ensemble(logit+boosting+forest) | champion(reduced),70,0.1359,0.6286,direction,,,,
+shanghai_genoa,1,market,holdout,ensemble(logit+boosting+forest) | everything,70,0.1554,0.6429,direction,,,,
+shanghai_genoa,1,market,holdout,ensemble(logit+boosting+forest) | reduced+equity,70,0.1360,0.6857,direction,,,,
+shanghai_genoa,1,market,holdout,ensemble(logit+boosting+forest) | reduced+news,70,0.1531,0.6857,direction,,,,
+shanghai_genoa,1,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic,70,0.1462,0.6571,direction,,,,
+shanghai_genoa,1,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,70,0.1526,0.6571,direction,,,,
+shanghai_genoa,1,market,holdout,forest | champion(reduced),70,0.1388,0.6857,direction,,,,
+shanghai_genoa,1,market,holdout,forest | everything,70,0.1733,0.6286,direction,,,,
+shanghai_genoa,1,market,holdout,forest | reduced+equity,70,0.1438,0.7000,direction,,,,
+shanghai_genoa,1,market,holdout,forest | reduced+news,70,0.1526,0.6571,direction,,,,
+shanghai_genoa,1,market,holdout,forest | reduced+traffic,70,0.1527,0.7143,direction,,,,
+shanghai_genoa,1,market,holdout,forest | reduced+traffic+news+equity,70,0.1635,0.6857,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=10 | champion(reduced),70,0.1469,0.6857,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=10 | everything,70,0.1711,0.6714,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=10 | reduced+equity,70,0.1489,0.6714,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=10 | reduced+news,70,0.1650,0.5857,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=10 | reduced+traffic,70,0.1636,0.6143,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=10 | reduced+traffic+news+equity,70,0.1798,0.6143,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=30 | champion(reduced),70,0.1716,0.6571,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=30 | everything,70,0.1758,0.6143,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=30 | reduced+equity,70,0.1731,0.6714,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=30 | reduced+news,70,0.1785,0.6000,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=30 | reduced+traffic,70,0.1773,0.6143,direction,,,,
+shanghai_genoa,1,market,holdout,logit l2=30 | reduced+traffic+news+equity,70,0.1841,0.6143,direction,,,,
+shanghai_genoa,1,market,holdout,ref_no_change,70,0.2449,0.2000,direction,,,,
+shanghai_genoa,1,market,holdout,ref_trend,70,0.2023,0.5857,direction,,,,
+shanghai_genoa,1,market,select,boosting | champion(reduced),44,0.1800,0.5909,direction,,,,
+shanghai_genoa,1,market,select,boosting | everything,44,0.1853,0.5000,direction,,,,
+shanghai_genoa,1,market,select,boosting | reduced+equity,44,0.1932,0.5227,direction,,,,
+shanghai_genoa,1,market,select,boosting | reduced+news,44,0.1551,0.6136,direction,,,,
+shanghai_genoa,1,market,select,boosting | reduced+traffic,44,0.1772,0.5455,direction,,,,
+shanghai_genoa,1,market,select,boosting | reduced+traffic+news+equity,44,0.1836,0.5455,direction,,,,
+shanghai_genoa,1,market,select,ensemble(logit+boosting+forest) | champion(reduced),44,0.1501,0.5909,direction,,,,
+shanghai_genoa,1,market,select,ensemble(logit+boosting+forest) | everything,44,0.1583,0.5909,direction,,,,
+shanghai_genoa,1,market,select,ensemble(logit+boosting+forest) | reduced+equity,44,0.1584,0.5682,direction,,,,
+shanghai_genoa,1,market,select,ensemble(logit+boosting+forest) | reduced+news,44,0.1451,0.6136,direction,,,,
+shanghai_genoa,1,market,select,ensemble(logit+boosting+forest) | reduced+traffic,44,0.1519,0.6136,direction,,,,
+shanghai_genoa,1,market,select,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,44,0.1541,0.5909,direction,,,,
+shanghai_genoa,1,market,select,forest | champion(reduced),44,0.1563,0.6591,direction,,,,
+shanghai_genoa,1,market,select,forest | everything,44,0.1806,0.6591,direction,,,,
+shanghai_genoa,1,market,select,forest | reduced+equity,44,0.1562,0.6136,direction,,,,
+shanghai_genoa,1,market,select,forest | reduced+news,44,0.1618,0.6364,direction,,,,
+shanghai_genoa,1,market,select,forest | reduced+traffic,44,0.1723,0.6364,direction,,,,
+shanghai_genoa,1,market,select,forest | reduced+traffic+news+equity,44,0.1747,0.6818,direction,,,,
+shanghai_genoa,1,market,select,logit l2=10 | champion(reduced),44,0.1641,0.6364,direction,,,,
+shanghai_genoa,1,market,select,logit l2=10 | everything,44,0.1658,0.6364,direction,,,,
+shanghai_genoa,1,market,select,logit l2=10 | reduced+equity,44,0.1677,0.6364,direction,,,,
+shanghai_genoa,1,market,select,logit l2=10 | reduced+news,44,0.1593,0.6136,direction,,,,
+shanghai_genoa,1,market,select,logit l2=10 | reduced+traffic,44,0.1511,0.6591,direction,,,,
+shanghai_genoa,1,market,select,logit l2=10 | reduced+traffic+news+equity,44,0.1542,0.6591,direction,,,,
+shanghai_genoa,1,market,select,logit l2=30 | champion(reduced),44,0.1801,0.6364,direction,,,,
+shanghai_genoa,1,market,select,logit l2=30 | everything,44,0.1783,0.6364,direction,,,,
+shanghai_genoa,1,market,select,logit l2=30 | reduced+equity,44,0.1796,0.5909,direction,,,,
+shanghai_genoa,1,market,select,logit l2=30 | reduced+news,44,0.1783,0.5909,direction,,,,
+shanghai_genoa,1,market,select,logit l2=30 | reduced+traffic,44,0.1747,0.6591,direction,,,,
+shanghai_genoa,1,market,select,logit l2=30 | reduced+traffic+news+equity,44,0.1725,0.6364,direction,,,,
+shanghai_genoa,1,market,select,ref_no_change,44,0.2025,0.2727,direction,,,,
+shanghai_genoa,1,market,select,ref_trend,44,0.1982,0.4773,direction,,,,
+shanghai_genoa,1,market,holdout,boosting-quantile | champion(reduced),70,,,magnitude,1.5183,4.4090,0.6857,12.2136
+shanghai_genoa,1,market,holdout,boosting-quantile | champion(reduced) +conformal,70,,,magnitude,1.5344,4.4090,0.9143,18.6888
+shanghai_genoa,1,market,holdout,boosting-quantile | everything,70,,,magnitude,1.5561,4.3978,0.6857,11.2780
+shanghai_genoa,1,market,holdout,boosting-quantile | everything +conformal,70,,,magnitude,1.5603,4.3978,0.8571,16.6538
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+equity,70,,,magnitude,1.5011,4.3225,0.6571,12.4740
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+equity +conformal,70,,,magnitude,1.4958,4.3225,0.9143,18.0253
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+news,70,,,magnitude,1.6334,4.6976,0.7143,13.3345
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+news +conformal,70,,,magnitude,1.6330,4.6976,0.8571,19.1351
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+traffic,70,,,magnitude,1.6289,4.6020,0.6143,11.4227
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+traffic +conformal,70,,,magnitude,1.5848,4.6020,0.8571,17.9580
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+traffic+news+equity,70,,,magnitude,1.6204,4.5382,0.6286,11.6233
+shanghai_genoa,1,market,holdout,boosting-quantile | reduced+traffic+news+equity +conformal,70,,,magnitude,1.5977,4.5382,0.8429,18.3289
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | champion(reduced),70,,,magnitude,1.4680,4.4041,0.8143,14.2678
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | champion(reduced) +conformal,70,,,magnitude,1.4915,4.4041,0.8571,16.6189
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | everything,70,,,magnitude,1.5852,4.6336,0.8000,14.8537
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | everything +conformal,70,,,magnitude,1.6105,4.6336,0.8286,17.7058
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+equity,70,,,magnitude,1.4760,4.3650,0.8000,15.1706
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+equity +conformal,70,,,magnitude,1.5020,4.3650,0.8714,17.1643
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+news,70,,,magnitude,1.5421,4.5696,0.8000,14.7619
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+news +conformal,70,,,magnitude,1.5583,4.5696,0.8429,17.1367
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic,70,,,magnitude,1.5812,4.6843,0.7571,13.5125
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic +conformal,70,,,magnitude,1.5961,4.6843,0.8429,17.1959
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity,70,,,magnitude,1.5934,4.7369,0.7714,14.2647
+shanghai_genoa,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,70,,,magnitude,1.6035,4.7369,0.8571,17.6008
+shanghai_genoa,1,market,holdout,kNN k=40 | champion(reduced),70,,,magnitude,1.5496,4.6123,0.8143,16.3220
+shanghai_genoa,1,market,holdout,kNN k=40 | champion(reduced) +conformal,70,,,magnitude,1.5621,4.6123,0.8286,17.4900
+shanghai_genoa,1,market,holdout,kNN k=40 | everything,70,,,magnitude,1.7073,5.1323,0.8000,18.4295
+shanghai_genoa,1,market,holdout,kNN k=40 | everything +conformal,70,,,magnitude,1.7150,5.1323,0.8000,19.0745
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+equity,70,,,magnitude,1.5552,4.6275,0.8429,17.8673
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+equity +conformal,70,,,magnitude,1.5746,4.6275,0.8571,18.8132
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+news,70,,,magnitude,1.5643,4.7587,0.8143,16.1893
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+news +conformal,70,,,magnitude,1.5681,4.7587,0.8143,16.8496
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+traffic,70,,,magnitude,1.7175,5.0481,0.7571,15.6024
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+traffic +conformal,70,,,magnitude,1.7050,5.0481,0.8286,18.6305
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+traffic+news+equity,70,,,magnitude,1.6885,5.1211,0.7714,16.9062
+shanghai_genoa,1,market,holdout,kNN k=40 | reduced+traffic+news+equity +conformal,70,,,magnitude,1.6938,5.1211,0.8000,17.8077
+shanghai_genoa,1,market,holdout,ref_no_change,70,,,magnitude,1.7501,5.4249,0.7000,16.5944
+shanghai_genoa,1,market,holdout,ref_no_change +conformal,70,,,magnitude,1.7389,5.4249,0.8143,19.2312
+shanghai_genoa,1,market,holdout,ref_trend,70,,,magnitude,1.7205,5.4667,0.7286,16.5944
+shanghai_genoa,1,market,holdout,ref_trend +conformal,70,,,magnitude,1.7208,5.4667,0.8286,20.2820
+shanghai_genoa,1,market,select,boosting-quantile | champion(reduced),24,,,magnitude,1.7689,4.6206,0.6667,15.1956
+shanghai_genoa,1,market,select,boosting-quantile | champion(reduced) +conformal,24,,,magnitude,1.8247,4.6206,0.9167,23.7945
+shanghai_genoa,1,market,select,boosting-quantile | everything,24,,,magnitude,1.7724,4.2477,0.7917,12.1812
+shanghai_genoa,1,market,select,boosting-quantile | everything +conformal,24,,,magnitude,1.8367,4.2477,0.9167,21.0860
+shanghai_genoa,1,market,select,boosting-quantile | reduced+equity,24,,,magnitude,1.8223,4.6333,0.6667,14.3770
+shanghai_genoa,1,market,select,boosting-quantile | reduced+equity +conformal,24,,,magnitude,1.8750,4.6333,0.8750,22.3089
+shanghai_genoa,1,market,select,boosting-quantile | reduced+news,24,,,magnitude,1.8256,4.3645,0.6667,12.3133
+shanghai_genoa,1,market,select,boosting-quantile | reduced+news +conformal,24,,,magnitude,1.9450,4.3645,0.9167,20.8286
+shanghai_genoa,1,market,select,boosting-quantile | reduced+traffic,24,,,magnitude,1.8011,4.3606,0.6250,11.6359
+shanghai_genoa,1,market,select,boosting-quantile | reduced+traffic +conformal,24,,,magnitude,1.8420,4.3606,0.8750,20.0406
+shanghai_genoa,1,market,select,boosting-quantile | reduced+traffic+news+equity,24,,,magnitude,1.8167,4.2071,0.7083,13.0574
+shanghai_genoa,1,market,select,boosting-quantile | reduced+traffic+news+equity +conformal,24,,,magnitude,1.9213,4.2071,0.8750,21.9927
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | champion(reduced),24,,,magnitude,1.8151,4.5953,0.8333,17.5511
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | champion(reduced) +conformal,24,,,magnitude,1.9156,4.5953,0.8750,24.6517
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | everything,24,,,magnitude,1.8179,4.2903,0.8333,16.4738
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | everything +conformal,24,,,magnitude,1.9371,4.2903,0.9167,24.8368
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+equity,24,,,magnitude,1.8052,4.4134,0.8333,17.1192
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+equity +conformal,24,,,magnitude,1.9107,4.4134,0.8750,23.8376
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+news,24,,,magnitude,1.7322,4.1248,0.8333,14.7148
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+news +conformal,24,,,magnitude,1.8647,4.1248,0.9167,21.3085
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+traffic,24,,,magnitude,1.8282,4.2960,0.8333,15.8368
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+traffic +conformal,24,,,magnitude,1.9479,4.2960,0.9167,22.9683
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity,24,,,magnitude,1.7321,3.9591,0.8333,15.0576
+shanghai_genoa,1,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,24,,,magnitude,1.8622,3.9591,0.9167,22.2557
+shanghai_genoa,1,market,select,kNN k=40 | champion(reduced),24,,,magnitude,1.9294,4.5700,0.7917,19.9067
+shanghai_genoa,1,market,select,kNN k=40 | champion(reduced) +conformal,24,,,magnitude,2.0070,4.5700,0.8750,26.7902
+shanghai_genoa,1,market,select,kNN k=40 | everything,24,,,magnitude,1.9168,4.5549,0.8750,20.7664
+shanghai_genoa,1,market,select,kNN k=40 | everything +conformal,24,,,magnitude,2.0165,4.5549,0.9583,26.3404
+shanghai_genoa,1,market,select,kNN k=40 | reduced+equity,24,,,magnitude,1.8953,4.4495,0.8333,19.8615
+shanghai_genoa,1,market,select,kNN k=40 | reduced+equity +conformal,24,,,magnitude,1.9960,4.4495,0.8750,26.3563
+shanghai_genoa,1,market,select,kNN k=40 | reduced+news,24,,,magnitude,1.7440,4.3446,0.8750,17.1163
+shanghai_genoa,1,market,select,kNN k=40 | reduced+news +conformal,24,,,magnitude,1.8472,4.3446,0.9167,21.7641
+shanghai_genoa,1,market,select,kNN k=40 | reduced+traffic,24,,,magnitude,1.9775,4.5536,0.8750,20.0376
+shanghai_genoa,1,market,select,kNN k=40 | reduced+traffic +conformal,24,,,magnitude,2.0842,4.5536,0.9167,25.0716
+shanghai_genoa,1,market,select,kNN k=40 | reduced+traffic+news+equity,24,,,magnitude,1.7503,4.1559,0.8750,17.0578
+shanghai_genoa,1,market,select,kNN k=40 | reduced+traffic+news+equity +conformal,24,,,magnitude,1.8492,4.1559,0.9167,21.6491
+shanghai_genoa,1,market,select,ref_no_change,24,,,magnitude,1.8975,4.7877,0.8333,16.6719
+shanghai_genoa,1,market,select,ref_no_change +conformal,24,,,magnitude,1.9153,4.7877,0.8333,19.4476
+shanghai_genoa,1,market,select,ref_trend,24,,,magnitude,2.0399,5.2702,0.7917,16.6719
+shanghai_genoa,1,market,select,ref_trend +conformal,24,,,magnitude,2.0401,5.2702,0.8333,20.4640
+shanghai_genoa,4,market,holdout,boosting | champion(reduced),67,0.1669,0.6567,direction,,,,
+shanghai_genoa,4,market,holdout,boosting | everything,67,0.2070,0.5970,direction,,,,
+shanghai_genoa,4,market,holdout,boosting | reduced+equity,67,0.1621,0.6866,direction,,,,
+shanghai_genoa,4,market,holdout,boosting | reduced+news,67,0.1505,0.7015,direction,,,,
+shanghai_genoa,4,market,holdout,boosting | reduced+traffic,67,0.1717,0.5821,direction,,,,
+shanghai_genoa,4,market,holdout,boosting | reduced+traffic+news+equity,67,0.1762,0.6418,direction,,,,
+shanghai_genoa,4,market,holdout,ensemble(logit+boosting+forest) | champion(reduced),67,0.1383,0.7164,direction,,,,
+shanghai_genoa,4,market,holdout,ensemble(logit+boosting+forest) | everything,67,0.1897,0.6269,direction,,,,
+shanghai_genoa,4,market,holdout,ensemble(logit+boosting+forest) | reduced+equity,67,0.1410,0.7313,direction,,,,
+shanghai_genoa,4,market,holdout,ensemble(logit+boosting+forest) | reduced+news,67,0.1462,0.7164,direction,,,,
+shanghai_genoa,4,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic,67,0.1622,0.6716,direction,,,,
+shanghai_genoa,4,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,67,0.1732,0.6716,direction,,,,
+shanghai_genoa,4,market,holdout,forest | champion(reduced),67,0.1557,0.7164,direction,,,,
+shanghai_genoa,4,market,holdout,forest | everything,67,0.1954,0.6418,direction,,,,
+shanghai_genoa,4,market,holdout,forest | reduced+equity,67,0.1630,0.7015,direction,,,,
+shanghai_genoa,4,market,holdout,forest | reduced+news,67,0.1696,0.7015,direction,,,,
+shanghai_genoa,4,market,holdout,forest | reduced+traffic,67,0.1796,0.7313,direction,,,,
+shanghai_genoa,4,market,holdout,forest | reduced+traffic+news+equity,67,0.1856,0.6567,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=10 | champion(reduced),67,0.1391,0.7463,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=10 | everything,67,0.2371,0.5224,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=10 | reduced+equity,67,0.1438,0.7463,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=10 | reduced+news,67,0.1581,0.7164,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=10 | reduced+traffic,67,0.2013,0.6119,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=10 | reduced+traffic+news+equity,67,0.2194,0.5821,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=30 | champion(reduced),67,0.1709,0.7463,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=30 | everything,67,0.2295,0.6119,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=30 | reduced+equity,67,0.1763,0.7015,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=30 | reduced+news,67,0.1783,0.6567,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=30 | reduced+traffic,67,0.2058,0.6567,direction,,,,
+shanghai_genoa,4,market,holdout,logit l2=30 | reduced+traffic+news+equity,67,0.2209,0.5970,direction,,,,
+shanghai_genoa,4,market,holdout,ref_no_change,67,0.2613,0.1493,direction,,,,
+shanghai_genoa,4,market,holdout,ref_trend,67,0.2522,0.4627,direction,,,,
+shanghai_genoa,4,market,select,boosting | champion(reduced),41,0.3712,0.4634,direction,,,,
+shanghai_genoa,4,market,select,boosting | everything,41,0.2993,0.4390,direction,,,,
+shanghai_genoa,4,market,select,boosting | reduced+equity,41,0.3595,0.4878,direction,,,,
+shanghai_genoa,4,market,select,boosting | reduced+news,41,0.3153,0.3415,direction,,,,
+shanghai_genoa,4,market,select,boosting | reduced+traffic,41,0.3074,0.4634,direction,,,,
+shanghai_genoa,4,market,select,boosting | reduced+traffic+news+equity,41,0.3073,0.3659,direction,,,,
+shanghai_genoa,4,market,select,ensemble(logit+boosting+forest) | champion(reduced),41,0.2510,0.5122,direction,,,,
+shanghai_genoa,4,market,select,ensemble(logit+boosting+forest) | everything,41,0.2424,0.3902,direction,,,,
+shanghai_genoa,4,market,select,ensemble(logit+boosting+forest) | reduced+equity,41,0.2558,0.4878,direction,,,,
+shanghai_genoa,4,market,select,ensemble(logit+boosting+forest) | reduced+news,41,0.2297,0.3659,direction,,,,
+shanghai_genoa,4,market,select,ensemble(logit+boosting+forest) | reduced+traffic,41,0.2423,0.4634,direction,,,,
+shanghai_genoa,4,market,select,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,41,0.2299,0.4146,direction,,,,
+shanghai_genoa,4,market,select,forest | champion(reduced),41,0.2210,0.4878,direction,,,,
+shanghai_genoa,4,market,select,forest | everything,41,0.2398,0.3659,direction,,,,
+shanghai_genoa,4,market,select,forest | reduced+equity,41,0.2331,0.4878,direction,,,,
+shanghai_genoa,4,market,select,forest | reduced+news,41,0.2129,0.4634,direction,,,,
+shanghai_genoa,4,market,select,forest | reduced+traffic,41,0.2460,0.3659,direction,,,,
+shanghai_genoa,4,market,select,forest | reduced+traffic+news+equity,41,0.2269,0.4390,direction,,,,
+shanghai_genoa,4,market,select,logit l2=10 | champion(reduced),41,0.2341,0.4634,direction,,,,
+shanghai_genoa,4,market,select,logit l2=10 | everything,41,0.2621,0.3415,direction,,,,
+shanghai_genoa,4,market,select,logit l2=10 | reduced+equity,41,0.2388,0.4390,direction,,,,
+shanghai_genoa,4,market,select,logit l2=10 | reduced+news,41,0.2166,0.4634,direction,,,,
+shanghai_genoa,4,market,select,logit l2=10 | reduced+traffic,41,0.2242,0.4878,direction,,,,
+shanghai_genoa,4,market,select,logit l2=10 | reduced+traffic+news+equity,41,0.2179,0.4634,direction,,,,
+shanghai_genoa,4,market,select,logit l2=30 | champion(reduced),41,0.2331,0.4634,direction,,,,
+shanghai_genoa,4,market,select,logit l2=30 | everything,41,0.2525,0.3171,direction,,,,
+shanghai_genoa,4,market,select,logit l2=30 | reduced+equity,41,0.2336,0.4390,direction,,,,
+shanghai_genoa,4,market,select,logit l2=30 | reduced+news,41,0.2228,0.4146,direction,,,,
+shanghai_genoa,4,market,select,logit l2=30 | reduced+traffic,41,0.2374,0.3902,direction,,,,
+shanghai_genoa,4,market,select,logit l2=30 | reduced+traffic+news+equity,41,0.2268,0.4634,direction,,,,
+shanghai_genoa,4,market,select,ref_no_change,41,0.2357,0.2683,direction,,,,
+shanghai_genoa,4,market,select,ref_trend,41,0.2341,0.4146,direction,,,,
+shanghai_genoa,4,market,holdout,boosting-quantile | champion(reduced),67,,,magnitude,4.7659,12.9192,0.7164,53.7964
+shanghai_genoa,4,market,holdout,boosting-quantile | champion(reduced) +conformal,67,,,magnitude,4.9397,12.9192,0.9254,78.5014
+shanghai_genoa,4,market,holdout,boosting-quantile | everything,67,,,magnitude,5.1286,15.5569,0.5672,43.3326
+shanghai_genoa,4,market,holdout,boosting-quantile | everything +conformal,67,,,magnitude,4.9689,15.5569,0.8507,61.8195
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+equity,67,,,magnitude,4.8888,12.8700,0.7164,53.6307
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+equity +conformal,67,,,magnitude,4.9575,12.8700,0.9254,75.3670
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+news,67,,,magnitude,5.5442,14.7696,0.5970,49.5757
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+news +conformal,67,,,magnitude,5.3389,14.7696,0.8806,72.8338
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+traffic,67,,,magnitude,4.6700,14.7429,0.6866,44.1516
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+traffic +conformal,67,,,magnitude,4.7465,14.7429,0.9403,62.3140
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+traffic+news+equity,67,,,magnitude,4.9953,14.9353,0.6418,45.1643
+shanghai_genoa,4,market,holdout,boosting-quantile | reduced+traffic+news+equity +conformal,67,,,magnitude,4.9201,14.9353,0.8806,65.6087
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | champion(reduced),67,,,magnitude,4.4422,13.2060,0.8657,56.8185
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | champion(reduced) +conformal,67,,,magnitude,4.5665,13.2060,0.9552,65.5271
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | everything,67,,,magnitude,5.2326,16.5998,0.7463,52.7065
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | everything +conformal,67,,,magnitude,5.2550,16.5998,0.7761,56.2405
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+equity,67,,,magnitude,4.5365,13.4096,0.8507,56.6293
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+equity +conformal,67,,,magnitude,4.6381,13.4096,0.9254,63.7080
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+news,67,,,magnitude,4.9617,14.5497,0.7463,54.8152
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+news +conformal,67,,,magnitude,4.9929,14.5497,0.8358,62.2843
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic,67,,,magnitude,4.8146,15.1654,0.7463,50.0537
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic +conformal,67,,,magnitude,4.8305,15.1654,0.8358,56.6654
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity,67,,,magnitude,5.0927,16.1939,0.7761,51.8657
+shanghai_genoa,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,67,,,magnitude,5.1160,16.1939,0.8060,55.9680
+shanghai_genoa,4,market,holdout,kNN k=40 | champion(reduced),67,,,magnitude,4.6983,14.8292,0.9104,59.8406
+shanghai_genoa,4,market,holdout,kNN k=40 | champion(reduced) +conformal,67,,,magnitude,4.6417,14.8292,0.8955,56.1199
+shanghai_genoa,4,market,holdout,kNN k=40 | everything,67,,,magnitude,6.0767,20.1868,0.7612,62.0805
+shanghai_genoa,4,market,holdout,kNN k=40 | everything +conformal,67,,,magnitude,6.1902,20.1868,0.7612,62.2525
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+equity,67,,,magnitude,4.9300,15.5428,0.8955,59.6279
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+equity +conformal,67,,,magnitude,4.9042,15.5428,0.8806,57.7712
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+news,67,,,magnitude,5.1544,16.4291,0.8358,60.0547
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+news +conformal,67,,,magnitude,5.2427,16.4291,0.7761,57.4251
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+traffic,67,,,magnitude,5.8534,19.2363,0.7910,55.9559
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+traffic +conformal,67,,,magnitude,5.9055,19.2363,0.7910,57.2768
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+traffic+news+equity,67,,,magnitude,5.9510,19.9563,0.7761,58.5670
+shanghai_genoa,4,market,holdout,kNN k=40 | reduced+traffic+news+equity +conformal,67,,,magnitude,6.1609,19.9563,0.7313,56.5303
+shanghai_genoa,4,market,holdout,ref_no_change,67,,,magnitude,5.8727,19.8293,0.7015,56.4500
+shanghai_genoa,4,market,holdout,ref_no_change +conformal,67,,,magnitude,5.8718,19.8293,0.8657,67.5234
+shanghai_genoa,4,market,holdout,ref_trend,67,,,magnitude,7.2494,21.8164,0.6567,56.4500
+shanghai_genoa,4,market,holdout,ref_trend +conformal,67,,,magnitude,7.0748,21.8164,0.7761,72.1136
+shanghai_genoa,4,market,select,boosting-quantile | champion(reduced),18,,,magnitude,10.1514,25.6020,0.5000,80.0601
+shanghai_genoa,4,market,select,boosting-quantile | champion(reduced) +conformal,18,,,magnitude,9.3176,25.6020,0.7222,112.8063
+shanghai_genoa,4,market,select,boosting-quantile | everything,18,,,magnitude,8.9015,24.8837,0.5556,110.2335
+shanghai_genoa,4,market,select,boosting-quantile | everything +conformal,18,,,magnitude,8.7508,24.8837,0.8889,132.6161
+shanghai_genoa,4,market,select,boosting-quantile | reduced+equity,18,,,magnitude,9.7662,26.4166,0.5556,84.2303
+shanghai_genoa,4,market,select,boosting-quantile | reduced+equity +conformal,18,,,magnitude,9.3458,26.4166,0.7222,113.1785
+shanghai_genoa,4,market,select,boosting-quantile | reduced+news,18,,,magnitude,7.4136,22.8415,0.3889,53.6813
+shanghai_genoa,4,market,select,boosting-quantile | reduced+news +conformal,18,,,magnitude,6.6217,22.8415,0.8333,79.1293
+shanghai_genoa,4,market,select,boosting-quantile | reduced+traffic,18,,,magnitude,9.8652,28.6865,0.6111,105.6963
+shanghai_genoa,4,market,select,boosting-quantile | reduced+traffic +conformal,18,,,magnitude,9.6550,28.6865,0.7778,130.0464
+shanghai_genoa,4,market,select,boosting-quantile | reduced+traffic+news+equity,18,,,magnitude,8.5896,20.5718,0.6111,106.4007
+shanghai_genoa,4,market,select,boosting-quantile | reduced+traffic+news+equity +conformal,18,,,magnitude,8.2563,20.5718,0.7778,133.3060
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | champion(reduced),18,,,magnitude,8.1190,23.8727,0.6667,77.4156
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | champion(reduced) +conformal,18,,,magnitude,8.0219,23.8727,0.7222,93.9093
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | everything,18,,,magnitude,6.4607,20.2825,0.8889,87.9040
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | everything +conformal,18,,,magnitude,6.5289,20.2825,0.8889,92.3349
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+equity,18,,,magnitude,7.5355,22.8940,0.7222,74.2408
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+equity +conformal,18,,,magnitude,7.5369,22.8940,0.7222,87.0570
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+news,18,,,magnitude,5.7110,19.3377,0.5556,54.6627
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+news +conformal,18,,,magnitude,5.5738,19.3377,0.7222,60.3340
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+traffic,18,,,magnitude,7.4597,24.3116,0.6667,85.4327
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+traffic +conformal,18,,,magnitude,7.5973,24.3116,0.7778,94.9427
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity,18,,,magnitude,6.0444,18.1391,0.7778,82.7661
+shanghai_genoa,4,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,18,,,magnitude,6.0773,18.1391,0.8889,88.5617
+shanghai_genoa,4,market,select,kNN k=40 | champion(reduced),18,,,magnitude,6.6790,22.1433,0.8333,74.7712
+shanghai_genoa,4,market,select,kNN k=40 | champion(reduced) +conformal,18,,,magnitude,6.7502,22.1433,0.7778,75.2562
+shanghai_genoa,4,market,select,kNN k=40 | everything,18,,,magnitude,5.1559,16.0285,0.7778,65.5745
+shanghai_genoa,4,market,select,kNN k=40 | everything +conformal,18,,,magnitude,5.3358,16.0285,0.7778,51.9189
+shanghai_genoa,4,market,select,kNN k=40 | reduced+equity,18,,,magnitude,5.8804,20.4225,0.7778,64.2512
+shanghai_genoa,4,market,select,kNN k=40 | reduced+equity +conformal,18,,,magnitude,5.9926,20.4225,0.7222,62.8657
+shanghai_genoa,4,market,select,kNN k=40 | reduced+news,18,,,magnitude,5.4165,16.4355,0.7778,55.6442
+shanghai_genoa,4,market,select,kNN k=40 | reduced+news +conformal,18,,,magnitude,5.5650,16.4355,0.6667,44.8873
+shanghai_genoa,4,market,select,kNN k=40 | reduced+traffic,18,,,magnitude,6.4448,21.4640,0.7222,65.1690
+shanghai_genoa,4,market,select,kNN k=40 | reduced+traffic +conformal,18,,,magnitude,6.6897,21.4640,0.6667,57.9184
+shanghai_genoa,4,market,select,kNN k=40 | reduced+traffic+news+equity,18,,,magnitude,5.4203,16.4707,0.7778,59.1316
+shanghai_genoa,4,market,select,kNN k=40 | reduced+traffic+news+equity +conformal,18,,,magnitude,5.6002,16.4707,0.7778,45.4761
+shanghai_genoa,4,market,select,ref_no_change,18,,,magnitude,5.6430,17.8041,0.6667,51.4660
+shanghai_genoa,4,market,select,ref_no_change +conformal,18,,,magnitude,5.5598,17.8041,0.7778,62.3477
+shanghai_genoa,4,market,select,ref_trend,18,,,magnitude,8.0945,21.2204,0.6667,51.4660
+shanghai_genoa,4,market,select,ref_trend +conformal,18,,,magnitude,7.8533,21.2204,0.7222,65.4003
+shanghai_rotterdam,1,market,holdout,boosting | champion(reduced),70,0.1715,0.5000,direction,,,,
+shanghai_rotterdam,1,market,holdout,boosting | everything,70,0.1908,0.5143,direction,,,,
+shanghai_rotterdam,1,market,holdout,boosting | reduced+equity,70,0.1791,0.4714,direction,,,,
+shanghai_rotterdam,1,market,holdout,boosting | reduced+news,70,0.1911,0.4714,direction,,,,
+shanghai_rotterdam,1,market,holdout,boosting | reduced+traffic,70,0.1883,0.5429,direction,,,,
+shanghai_rotterdam,1,market,holdout,boosting | reduced+traffic+news+equity,70,0.2013,0.4571,direction,,,,
+shanghai_rotterdam,1,market,holdout,ensemble(logit+boosting+forest) | champion(reduced),70,0.1487,0.5714,direction,,,,
+shanghai_rotterdam,1,market,holdout,ensemble(logit+boosting+forest) | everything,70,0.1590,0.6000,direction,,,,
+shanghai_rotterdam,1,market,holdout,ensemble(logit+boosting+forest) | reduced+equity,70,0.1544,0.5571,direction,,,,
+shanghai_rotterdam,1,market,holdout,ensemble(logit+boosting+forest) | reduced+news,70,0.1642,0.4857,direction,,,,
+shanghai_rotterdam,1,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic,70,0.1623,0.5143,direction,,,,
+shanghai_rotterdam,1,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,70,0.1729,0.4857,direction,,,,
+shanghai_rotterdam,1,market,holdout,forest | champion(reduced),70,0.1514,0.5429,direction,,,,
+shanghai_rotterdam,1,market,holdout,forest | everything,70,0.1744,0.6000,direction,,,,
+shanghai_rotterdam,1,market,holdout,forest | reduced+equity,70,0.1612,0.5286,direction,,,,
+shanghai_rotterdam,1,market,holdout,forest | reduced+news,70,0.1648,0.5143,direction,,,,
+shanghai_rotterdam,1,market,holdout,forest | reduced+traffic,70,0.1685,0.6143,direction,,,,
+shanghai_rotterdam,1,market,holdout,forest | reduced+traffic+news+equity,70,0.1787,0.5429,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=10 | champion(reduced),70,0.1549,0.6286,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=10 | everything,70,0.1651,0.6000,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=10 | reduced+equity,70,0.1536,0.6429,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=10 | reduced+news,70,0.1722,0.5571,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=10 | reduced+traffic,70,0.1670,0.5571,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=10 | reduced+traffic+news+equity,70,0.1778,0.5857,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=30 | champion(reduced),70,0.1731,0.5857,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=30 | everything,70,0.1675,0.5714,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=30 | reduced+equity,70,0.1716,0.5857,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=30 | reduced+news,70,0.1806,0.5429,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=30 | reduced+traffic,70,0.1787,0.5857,direction,,,,
+shanghai_rotterdam,1,market,holdout,logit l2=30 | reduced+traffic+news+equity,70,0.1825,0.6143,direction,,,,
+shanghai_rotterdam,1,market,holdout,ref_no_change,70,0.2278,0.3143,direction,,,,
+shanghai_rotterdam,1,market,holdout,ref_trend,70,0.1920,0.5429,direction,,,,
+shanghai_rotterdam,1,market,select,boosting | champion(reduced),44,0.2331,0.5000,direction,,,,
+shanghai_rotterdam,1,market,select,boosting | everything,44,0.1912,0.4318,direction,,,,
+shanghai_rotterdam,1,market,select,boosting | reduced+equity,44,0.2137,0.5455,direction,,,,
+shanghai_rotterdam,1,market,select,boosting | reduced+news,44,0.1700,0.5909,direction,,,,
+shanghai_rotterdam,1,market,select,boosting | reduced+traffic,44,0.1831,0.5455,direction,,,,
+shanghai_rotterdam,1,market,select,boosting | reduced+traffic+news+equity,44,0.1810,0.5227,direction,,,,
+shanghai_rotterdam,1,market,select,ensemble(logit+boosting+forest) | champion(reduced),44,0.1721,0.5227,direction,,,,
+shanghai_rotterdam,1,market,select,ensemble(logit+boosting+forest) | everything,44,0.1697,0.5455,direction,,,,
+shanghai_rotterdam,1,market,select,ensemble(logit+boosting+forest) | reduced+equity,44,0.1686,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,ensemble(logit+boosting+forest) | reduced+news,44,0.1521,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,ensemble(logit+boosting+forest) | reduced+traffic,44,0.1582,0.5909,direction,,,,
+shanghai_rotterdam,1,market,select,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,44,0.1542,0.5227,direction,,,,
+shanghai_rotterdam,1,market,select,forest | champion(reduced),44,0.1657,0.5455,direction,,,,
+shanghai_rotterdam,1,market,select,forest | everything,44,0.1924,0.5227,direction,,,,
+shanghai_rotterdam,1,market,select,forest | reduced+equity,44,0.1713,0.5909,direction,,,,
+shanghai_rotterdam,1,market,select,forest | reduced+news,44,0.1710,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,forest | reduced+traffic,44,0.1798,0.5455,direction,,,,
+shanghai_rotterdam,1,market,select,forest | reduced+traffic+news+equity,44,0.1785,0.5909,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=10 | champion(reduced),44,0.1629,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=10 | everything,44,0.1654,0.5909,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=10 | reduced+equity,44,0.1688,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=10 | reduced+news,44,0.1595,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=10 | reduced+traffic,44,0.1499,0.6364,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=10 | reduced+traffic+news+equity,44,0.1525,0.6136,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=30 | champion(reduced),44,0.1818,0.5909,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=30 | everything,44,0.1815,0.5227,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=30 | reduced+equity,44,0.1840,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=30 | reduced+news,44,0.1820,0.5682,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=30 | reduced+traffic,44,0.1749,0.6136,direction,,,,
+shanghai_rotterdam,1,market,select,logit l2=30 | reduced+traffic+news+equity,44,0.1760,0.5909,direction,,,,
+shanghai_rotterdam,1,market,select,ref_no_change,44,0.2094,0.2955,direction,,,,
+shanghai_rotterdam,1,market,select,ref_trend,44,0.2005,0.4773,direction,,,,
+shanghai_rotterdam,1,market,holdout,boosting-quantile | champion(reduced),70,,,magnitude,1.4304,4.1358,0.7000,12.4469
+shanghai_rotterdam,1,market,holdout,boosting-quantile | champion(reduced) +conformal,70,,,magnitude,1.4275,4.1358,0.8857,17.1206
+shanghai_rotterdam,1,market,holdout,boosting-quantile | everything,70,,,magnitude,1.5169,4.2132,0.6571,10.4638
+shanghai_rotterdam,1,market,holdout,boosting-quantile | everything +conformal,70,,,magnitude,1.5044,4.2132,0.8714,16.7050
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+equity,70,,,magnitude,1.4707,4.3059,0.6857,11.5418
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+equity +conformal,70,,,magnitude,1.4667,4.3059,0.8571,16.1781
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+news,70,,,magnitude,1.4322,4.4128,0.7000,11.3708
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+news +conformal,70,,,magnitude,1.4243,4.4128,0.8714,15.4626
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+traffic,70,,,magnitude,1.4254,4.1563,0.7143,10.8722
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+traffic +conformal,70,,,magnitude,1.4506,4.1563,0.8714,15.7911
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+traffic+news+equity,70,,,magnitude,1.5308,4.3073,0.6286,9.7566
+shanghai_rotterdam,1,market,holdout,boosting-quantile | reduced+traffic+news+equity +conformal,70,,,magnitude,1.4662,4.3073,0.8286,14.9127
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | champion(reduced),70,,,magnitude,1.4125,4.0421,0.8286,14.7888
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | champion(reduced) +conformal,70,,,magnitude,1.4241,4.0421,0.8571,16.4151
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | everything,70,,,magnitude,1.5188,4.2005,0.7857,14.2840
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | everything +conformal,70,,,magnitude,1.5326,4.2005,0.8571,17.1875
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+equity,70,,,magnitude,1.4461,4.1037,0.8429,15.2996
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+equity +conformal,70,,,magnitude,1.4666,4.1037,0.8571,17.6193
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+news,70,,,magnitude,1.3923,4.2506,0.8429,14.1981
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+news +conformal,70,,,magnitude,1.4075,4.2506,0.9000,15.8800
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic,70,,,magnitude,1.4684,4.1759,0.7857,13.2158
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic +conformal,70,,,magnitude,1.4840,4.1759,0.8571,16.2306
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity,70,,,magnitude,1.4922,4.3277,0.7857,13.5784
+shanghai_rotterdam,1,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,70,,,magnitude,1.5073,4.3277,0.8571,16.0317
+shanghai_rotterdam,1,market,holdout,kNN k=40 | champion(reduced),70,,,magnitude,1.5084,4.2514,0.8714,17.1307
+shanghai_rotterdam,1,market,holdout,kNN k=40 | champion(reduced) +conformal,70,,,magnitude,1.5272,4.2514,0.9000,18.6273
+shanghai_rotterdam,1,market,holdout,kNN k=40 | everything,70,,,magnitude,1.6750,4.6879,0.8857,18.1041
+shanghai_rotterdam,1,market,holdout,kNN k=40 | everything +conformal,70,,,magnitude,1.6840,4.6879,0.8857,18.3135
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+equity,70,,,magnitude,1.5611,4.3939,0.8571,19.0574
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+equity +conformal,70,,,magnitude,1.5772,4.3939,0.8857,19.9640
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+news,70,,,magnitude,1.4884,4.4407,0.9000,17.0254
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+news +conformal,70,,,magnitude,1.5031,4.4407,0.9143,17.5973
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+traffic,70,,,magnitude,1.6726,4.8026,0.8286,15.5595
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+traffic +conformal,70,,,magnitude,1.6849,4.8026,0.8571,17.2155
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+traffic+news+equity,70,,,magnitude,1.6322,4.7522,0.8714,17.4002
+shanghai_rotterdam,1,market,holdout,kNN k=40 | reduced+traffic+news+equity +conformal,70,,,magnitude,1.6389,4.7522,0.8714,17.5217
+shanghai_rotterdam,1,market,holdout,ref_no_change,70,,,magnitude,1.7680,5.0427,0.8143,18.2257
+shanghai_rotterdam,1,market,holdout,ref_no_change +conformal,70,,,magnitude,1.7894,5.0427,0.8714,21.6274
+shanghai_rotterdam,1,market,holdout,ref_trend,70,,,magnitude,1.7395,5.0322,0.8429,18.2257
+shanghai_rotterdam,1,market,holdout,ref_trend +conformal,70,,,magnitude,1.7597,5.0322,0.8857,20.0695
+shanghai_rotterdam,1,market,select,boosting-quantile | champion(reduced),24,,,magnitude,2.2488,6.1643,0.5833,16.7669
+shanghai_rotterdam,1,market,select,boosting-quantile | champion(reduced) +conformal,24,,,magnitude,2.1569,6.1643,0.8750,24.6674
+shanghai_rotterdam,1,market,select,boosting-quantile | everything,24,,,magnitude,2.0297,5.3381,0.6250,12.3009
+shanghai_rotterdam,1,market,select,boosting-quantile | everything +conformal,24,,,magnitude,1.9769,5.3381,0.8750,21.9394
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+equity,24,,,magnitude,2.1746,6.0638,0.6667,15.1420
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+equity +conformal,24,,,magnitude,2.1362,6.0638,0.8333,23.3048
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+news,24,,,magnitude,2.0283,5.3350,0.7083,14.1701
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+news +conformal,24,,,magnitude,2.0883,5.3350,0.8333,22.3196
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+traffic,24,,,magnitude,2.1661,5.3916,0.5000,11.1328
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+traffic +conformal,24,,,magnitude,2.0546,5.3916,0.7917,20.4687
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+traffic+news+equity,24,,,magnitude,2.1135,5.3424,0.6250,12.6277
+shanghai_rotterdam,1,market,select,boosting-quantile | reduced+traffic+news+equity +conformal,24,,,magnitude,2.0657,5.3424,0.7917,20.9984
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | champion(reduced),24,,,magnitude,2.0860,5.7643,0.7917,18.9435
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | champion(reduced) +conformal,24,,,magnitude,2.1122,5.7643,0.8333,23.7563
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | everything,24,,,magnitude,2.0092,5.3181,0.7500,17.3120
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | everything +conformal,24,,,magnitude,2.0374,5.3181,0.8750,22.9763
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+equity,24,,,magnitude,2.0502,5.6609,0.7917,18.2657
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+equity +conformal,24,,,magnitude,2.0764,5.6609,0.8333,23.9992
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+news,24,,,magnitude,1.9840,5.1982,0.7917,16.6567
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+news +conformal,24,,,magnitude,2.0126,5.1982,0.8333,20.3597
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+traffic,24,,,magnitude,2.0656,5.4091,0.7917,16.3883
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+traffic +conformal,24,,,magnitude,2.0913,5.4091,0.8333,21.5636
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity,24,,,magnitude,2.0069,5.1890,0.7500,16.2659
+shanghai_rotterdam,1,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,24,,,magnitude,2.0305,5.1890,0.8333,21.5614
+shanghai_rotterdam,1,market,select,kNN k=40 | champion(reduced),24,,,magnitude,2.0794,5.5809,0.7500,21.1200
+shanghai_rotterdam,1,market,select,kNN k=40 | champion(reduced) +conformal,24,,,magnitude,2.1335,5.5809,0.9167,26.6339
+shanghai_rotterdam,1,market,select,kNN k=40 | everything,24,,,magnitude,2.0984,5.5448,0.8333,22.3231
+shanghai_rotterdam,1,market,select,kNN k=40 | everything +conformal,24,,,magnitude,2.1881,5.5448,0.8750,26.9478
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+equity,24,,,magnitude,2.0655,5.4877,0.8333,21.3894
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+equity +conformal,24,,,magnitude,2.1264,5.4877,0.9167,26.6663
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+news,24,,,magnitude,2.0036,5.4088,0.7917,19.1433
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+news +conformal,24,,,magnitude,2.0770,5.4088,0.8750,23.8798
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+traffic,24,,,magnitude,2.1342,5.5380,0.8333,21.6438
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+traffic +conformal,24,,,magnitude,2.2189,5.5380,0.8750,26.0709
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+traffic+news+equity,24,,,magnitude,2.0185,5.3208,0.8333,19.9041
+shanghai_rotterdam,1,market,select,kNN k=40 | reduced+traffic+news+equity +conformal,24,,,magnitude,2.1078,5.3208,0.8750,24.5197
+shanghai_rotterdam,1,market,select,ref_no_change,24,,,magnitude,2.1115,5.9584,0.7917,18.5310
+shanghai_rotterdam,1,market,select,ref_no_change +conformal,24,,,magnitude,2.1611,5.9584,0.9167,23.2509
+shanghai_rotterdam,1,market,select,ref_trend,24,,,magnitude,1.9682,5.3067,0.8333,18.5310
+shanghai_rotterdam,1,market,select,ref_trend +conformal,24,,,magnitude,1.9951,5.3067,0.8750,21.1633
+shanghai_rotterdam,4,market,holdout,boosting | champion(reduced),67,0.1986,0.6119,direction,,,,
+shanghai_rotterdam,4,market,holdout,boosting | everything,67,0.2540,0.4478,direction,,,,
+shanghai_rotterdam,4,market,holdout,boosting | reduced+equity,67,0.2316,0.5224,direction,,,,
+shanghai_rotterdam,4,market,holdout,boosting | reduced+news,67,0.2023,0.5522,direction,,,,
+shanghai_rotterdam,4,market,holdout,boosting | reduced+traffic,67,0.2735,0.5075,direction,,,,
+shanghai_rotterdam,4,market,holdout,boosting | reduced+traffic+news+equity,67,0.2463,0.4925,direction,,,,
+shanghai_rotterdam,4,market,holdout,ensemble(logit+boosting+forest) | champion(reduced),67,0.1753,0.5970,direction,,,,
+shanghai_rotterdam,4,market,holdout,ensemble(logit+boosting+forest) | everything,67,0.2140,0.5075,direction,,,,
+shanghai_rotterdam,4,market,holdout,ensemble(logit+boosting+forest) | reduced+equity,67,0.1925,0.5373,direction,,,,
+shanghai_rotterdam,4,market,holdout,ensemble(logit+boosting+forest) | reduced+news,67,0.1788,0.6119,direction,,,,
+shanghai_rotterdam,4,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic,67,0.2183,0.5373,direction,,,,
+shanghai_rotterdam,4,market,holdout,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,67,0.2120,0.5224,direction,,,,
+shanghai_rotterdam,4,market,holdout,forest | champion(reduced),67,0.1931,0.5224,direction,,,,
+shanghai_rotterdam,4,market,holdout,forest | everything,67,0.2101,0.4925,direction,,,,
+shanghai_rotterdam,4,market,holdout,forest | reduced+equity,67,0.2041,0.5224,direction,,,,
+shanghai_rotterdam,4,market,holdout,forest | reduced+news,67,0.1848,0.5970,direction,,,,
+shanghai_rotterdam,4,market,holdout,forest | reduced+traffic,67,0.2215,0.4328,direction,,,,
+shanghai_rotterdam,4,market,holdout,forest | reduced+traffic+news+equity,67,0.2056,0.5224,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=10 | champion(reduced),67,0.1676,0.5672,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=10 | everything,67,0.2420,0.4776,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=10 | reduced+equity,67,0.1745,0.5672,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=10 | reduced+news,67,0.1865,0.5522,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=10 | reduced+traffic,67,0.2263,0.5373,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=10 | reduced+traffic+news+equity,67,0.2384,0.4627,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=30 | champion(reduced),67,0.1828,0.5672,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=30 | everything,67,0.2246,0.5075,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=30 | reduced+equity,67,0.1904,0.5672,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=30 | reduced+news,67,0.1917,0.5522,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=30 | reduced+traffic,67,0.2157,0.5672,direction,,,,
+shanghai_rotterdam,4,market,holdout,logit l2=30 | reduced+traffic+news+equity,67,0.2278,0.5224,direction,,,,
+shanghai_rotterdam,4,market,holdout,ref_no_change,67,0.2378,0.2836,direction,,,,
+shanghai_rotterdam,4,market,holdout,ref_trend,67,0.2490,0.3582,direction,,,,
+shanghai_rotterdam,4,market,select,boosting | champion(reduced),41,0.3299,0.4878,direction,,,,
+shanghai_rotterdam,4,market,select,boosting | everything,41,0.3141,0.4634,direction,,,,
+shanghai_rotterdam,4,market,select,boosting | reduced+equity,41,0.3009,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,boosting | reduced+news,41,0.3270,0.4634,direction,,,,
+shanghai_rotterdam,4,market,select,boosting | reduced+traffic,41,0.3083,0.5366,direction,,,,
+shanghai_rotterdam,4,market,select,boosting | reduced+traffic+news+equity,41,0.3013,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,ensemble(logit+boosting+forest) | champion(reduced),41,0.2251,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,ensemble(logit+boosting+forest) | everything,41,0.2438,0.5366,direction,,,,
+shanghai_rotterdam,4,market,select,ensemble(logit+boosting+forest) | reduced+equity,41,0.2231,0.5366,direction,,,,
+shanghai_rotterdam,4,market,select,ensemble(logit+boosting+forest) | reduced+news,41,0.2241,0.4634,direction,,,,
+shanghai_rotterdam,4,market,select,ensemble(logit+boosting+forest) | reduced+traffic,41,0.2252,0.5610,direction,,,,
+shanghai_rotterdam,4,market,select,ensemble(logit+boosting+forest) | reduced+traffic+news+equity,41,0.2212,0.6098,direction,,,,
+shanghai_rotterdam,4,market,select,forest | champion(reduced),41,0.2062,0.5366,direction,,,,
+shanghai_rotterdam,4,market,select,forest | everything,41,0.2396,0.4634,direction,,,,
+shanghai_rotterdam,4,market,select,forest | reduced+equity,41,0.2150,0.5366,direction,,,,
+shanghai_rotterdam,4,market,select,forest | reduced+news,41,0.2115,0.4878,direction,,,,
+shanghai_rotterdam,4,market,select,forest | reduced+traffic,41,0.2349,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,forest | reduced+traffic+news+equity,41,0.2229,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=10 | champion(reduced),41,0.2075,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=10 | everything,41,0.2528,0.3902,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=10 | reduced+equity,41,0.2139,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=10 | reduced+news,41,0.2055,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=10 | reduced+traffic,41,0.1949,0.6098,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=10 | reduced+traffic+news+equity,41,0.2101,0.4878,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=30 | champion(reduced),41,0.2207,0.5366,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=30 | everything,41,0.2467,0.4390,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=30 | reduced+equity,41,0.2199,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=30 | reduced+news,41,0.2219,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=30 | reduced+traffic,41,0.2221,0.5122,direction,,,,
+shanghai_rotterdam,4,market,select,logit l2=30 | reduced+traffic+news+equity,41,0.2227,0.4878,direction,,,,
+shanghai_rotterdam,4,market,select,ref_no_change,41,0.2512,0.1951,direction,,,,
+shanghai_rotterdam,4,market,select,ref_trend,41,0.2346,0.5122,direction,,,,
+shanghai_rotterdam,4,market,holdout,boosting-quantile | champion(reduced),67,,,magnitude,5.3577,13.4814,0.6866,50.8344
+shanghai_rotterdam,4,market,holdout,boosting-quantile | champion(reduced) +conformal,67,,,magnitude,5.2609,13.4814,0.8955,82.5907
+shanghai_rotterdam,4,market,holdout,boosting-quantile | everything,67,,,magnitude,5.7568,15.6955,0.7015,41.9947
+shanghai_rotterdam,4,market,holdout,boosting-quantile | everything +conformal,67,,,magnitude,5.6738,15.6955,0.8060,67.5814
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+equity,67,,,magnitude,5.4301,13.8329,0.6418,48.5506
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+equity +conformal,67,,,magnitude,5.2203,13.8329,0.8507,76.4436
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+news,67,,,magnitude,5.5820,13.6542,0.6567,48.8127
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+news +conformal,67,,,magnitude,5.3410,13.6542,0.7761,68.4521
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+traffic,67,,,magnitude,5.8817,15.5721,0.5672,39.1866
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+traffic +conformal,67,,,magnitude,5.4970,15.5721,0.8209,66.1495
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+traffic+news+equity,67,,,magnitude,5.5908,15.4322,0.6567,40.4801
+shanghai_rotterdam,4,market,holdout,boosting-quantile | reduced+traffic+news+equity +conformal,67,,,magnitude,5.4454,15.4322,0.7910,63.4335
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | champion(reduced),67,,,magnitude,4.7760,13.3376,0.7910,56.8330
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | champion(reduced) +conformal,67,,,magnitude,4.8423,13.3376,0.8358,67.9100
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | everything,67,,,magnitude,5.5132,15.8400,0.7612,52.2846
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | everything +conformal,67,,,magnitude,5.5728,15.8400,0.8358,64.1754
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+equity,67,,,magnitude,4.8525,13.8735,0.8060,54.8792
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+equity +conformal,67,,,magnitude,4.9601,13.8735,0.8657,66.7644
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+news,67,,,magnitude,5.0702,14.0494,0.7313,55.2139
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+news +conformal,67,,,magnitude,5.0919,14.0494,0.8060,64.4245
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic,67,,,magnitude,5.3396,15.1612,0.7164,47.1658
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic +conformal,67,,,magnitude,5.4517,15.1612,0.7910,57.4061
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity,67,,,magnitude,5.4778,16.0599,0.7463,49.5010
+shanghai_rotterdam,4,market,holdout,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,67,,,magnitude,5.4868,16.0599,0.8060,60.2110
+shanghai_rotterdam,4,market,holdout,kNN k=40 | champion(reduced),67,,,magnitude,4.8265,14.0947,0.8806,62.8316
+shanghai_rotterdam,4,market,holdout,kNN k=40 | champion(reduced) +conformal,67,,,magnitude,4.8751,14.0947,0.8806,61.1840
+shanghai_rotterdam,4,market,holdout,kNN k=40 | everything,67,,,magnitude,6.1002,18.5478,0.8507,62.5745
+shanghai_rotterdam,4,market,holdout,kNN k=40 | everything +conformal,67,,,magnitude,6.1626,18.5478,0.8657,61.6843
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+equity,67,,,magnitude,4.9860,14.7951,0.8657,61.2078
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+equity +conformal,67,,,magnitude,5.0344,14.7951,0.8358,56.2269
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+news,67,,,magnitude,5.3047,16.4299,0.8507,61.6151
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+news +conformal,67,,,magnitude,5.3458,16.4299,0.8507,61.1646
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+traffic,67,,,magnitude,5.9042,17.9531,0.8060,55.1450
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+traffic +conformal,67,,,magnitude,5.9949,17.9531,0.7910,55.1985
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+traffic+news+equity,67,,,magnitude,6.1297,19.2534,0.8060,58.5219
+shanghai_rotterdam,4,market,holdout,kNN k=40 | reduced+traffic+news+equity +conformal,67,,,magnitude,6.2136,19.2534,0.8060,58.5705
+shanghai_rotterdam,4,market,holdout,ref_no_change,67,,,magnitude,5.8723,18.4445,0.8209,56.3605
+shanghai_rotterdam,4,market,holdout,ref_no_change +conformal,67,,,magnitude,6.0386,18.4445,0.8806,73.0271
+shanghai_rotterdam,4,market,holdout,ref_trend,67,,,magnitude,7.5678,23.6639,0.6269,56.3605
+shanghai_rotterdam,4,market,holdout,ref_trend +conformal,67,,,magnitude,7.2665,23.6639,0.8358,83.1912
+shanghai_rotterdam,4,market,select,boosting-quantile | champion(reduced),18,,,magnitude,9.9603,24.9140,0.4444,72.5351
+shanghai_rotterdam,4,market,select,boosting-quantile | champion(reduced) +conformal,18,,,magnitude,8.8449,24.9140,0.7222,111.0336
+shanghai_rotterdam,4,market,select,boosting-quantile | everything,18,,,magnitude,7.4658,20.0463,0.6667,102.6914
+shanghai_rotterdam,4,market,select,boosting-quantile | everything +conformal,18,,,magnitude,7.7884,20.0463,0.9444,131.6324
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+equity,18,,,magnitude,9.5249,23.4507,0.4444,76.7957
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+equity +conformal,18,,,magnitude,8.6581,23.4507,0.7778,107.7827
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+news,18,,,magnitude,5.5309,16.2971,0.6667,56.7567
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+news +conformal,18,,,magnitude,5.7025,16.2971,0.9444,82.4051
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+traffic,18,,,magnitude,9.4177,26.8476,0.5000,94.5763
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+traffic +conformal,18,,,magnitude,8.8708,26.8476,0.8333,125.0797
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+traffic+news+equity,18,,,magnitude,7.1110,18.3859,0.6111,96.6973
+shanghai_rotterdam,4,market,select,boosting-quantile | reduced+traffic+news+equity +conformal,18,,,magnitude,7.2014,18.3859,0.9444,122.0020
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | champion(reduced),18,,,magnitude,7.4086,22.3466,0.7222,80.7330
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | champion(reduced) +conformal,18,,,magnitude,7.5609,22.3466,0.8889,102.2474
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | everything,18,,,magnitude,6.2090,18.6440,0.8889,88.5235
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | everything +conformal,18,,,magnitude,6.7208,18.6440,1.0000,108.4040
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+equity,18,,,magnitude,6.7855,20.4178,0.8333,77.8592
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+equity +conformal,18,,,magnitude,6.8964,20.4178,0.8333,94.7582
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+news,18,,,magnitude,5.1775,15.9079,0.8333,60.1684
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+news +conformal,18,,,magnitude,5.4531,15.9079,0.8889,75.8567
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+traffic,18,,,magnitude,7.3973,24.2475,0.7778,88.6456
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+traffic +conformal,18,,,magnitude,7.6593,24.2475,0.8889,100.6701
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity,18,,,magnitude,5.7963,17.3196,0.8889,80.5529
+shanghai_rotterdam,4,market,select,ensemble(kNN+boosting) | reduced+traffic+news+equity +conformal,18,,,magnitude,6.1882,17.3196,0.8889,97.1243
+shanghai_rotterdam,4,market,select,kNN k=40 | champion(reduced),18,,,magnitude,6.7038,20.6081,0.9444,88.9310
+shanghai_rotterdam,4,market,select,kNN k=40 | champion(reduced) +conformal,18,,,magnitude,6.9681,20.6081,0.9444,98.8109
+shanghai_rotterdam,4,market,select,kNN k=40 | everything,18,,,magnitude,5.9669,17.7932,0.8333,74.3556
+shanghai_rotterdam,4,market,select,kNN k=40 | everything +conformal,18,,,magnitude,6.0825,17.7932,0.8333,75.5865
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+equity,18,,,magnitude,5.7558,18.7505,1.0000,78.9228
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+equity +conformal,18,,,magnitude,5.8645,18.7505,1.0000,82.1823
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+news,18,,,magnitude,5.8930,17.8854,0.8333,63.5800
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+news +conformal,18,,,magnitude,6.0102,17.8854,0.8333,64.8596
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+traffic,18,,,magnitude,7.3355,21.7153,0.8333,82.7149
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+traffic +conformal,18,,,magnitude,7.4512,21.7153,0.8333,83.9458
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+traffic+news+equity,18,,,magnitude,6.0638,17.8841,0.8333,64.4084
+shanghai_rotterdam,4,market,select,kNN k=40 | reduced+traffic+news+equity +conformal,18,,,magnitude,6.1794,17.8841,0.8333,65.6393
+shanghai_rotterdam,4,market,select,ref_no_change,18,,,magnitude,5.6082,17.9104,0.7778,56.5289
+shanghai_rotterdam,4,market,select,ref_no_change +conformal,18,,,magnitude,5.7990,17.9104,0.8889,75.8172
+shanghai_rotterdam,4,market,select,ref_trend,18,,,magnitude,6.8205,20.4512,0.7222,56.5289
+shanghai_rotterdam,4,market,select,ref_trend +conformal,18,,,magnitude,6.7776,20.4512,0.7778,83.2485

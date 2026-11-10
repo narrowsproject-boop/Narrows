@@ -79,6 +79,67 @@ def _news(weeks: pd.DatetimeIndex) -> pd.DataFrame:
     return out
 
 
+RICH_STRAITS = {"Bab el-Mandeb Strait": "bab", "Suez Canal": "suez", "Cape of Good Hope": "cape",
+                "Malacca Strait": "malacca", "Strait of Hormuz": "hormuz", "Gibraltar Strait": "gibraltar"}
+RICH_NEWS = {"redsea": ["red_sea_bab_el_mandeb", "gulf_of_aden"], "suez": ["suez_canal"],
+             "hormuz": ["hormuz_gulf"], "china": ["china_coast"], "europe": ["north_europe_ports", "mediterranean"]}
+
+
+def _z(s: pd.Series, win: int = 52) -> pd.Series:
+    return ((s - s.rolling(win, min_periods=win // 2).mean().shift(1))
+            / s.rolling(win, min_periods=win // 2).std().shift(1)).clip(-5, 30)
+
+
+def _rich(weeks: pd.DatetimeIndex) -> pd.DataFrame:
+    """Richer inputs (v0.2 candidates): container traffic in 6 straits, the Cape
+    diversion share, detailed news by zone and class, carrier share prices."""
+    out = pd.DataFrame(index=weeks)
+    # traffic: container ships only, known with PORTWATCH_LAG_DAYS delay
+    p = pd.read_csv(CLEAN / "portwatch_straits.csv", parse_dates=["date"])
+    p = p[p["strait"].isin(RICH_STRAITS)]
+    cont = p.pivot_table(index="date", columns="strait", values="n_container").rename(columns=RICH_STRAITS).asfreq("D")
+    m14, m28, m364 = cont.rolling(14, min_periods=10).mean(), cont.rolling(28, min_periods=20).mean(), cont.rolling(364, min_periods=300).mean()
+    share = m28["cape"] / (m28["cape"] + m28["suez"]) * 100
+    lagged = weeks - pd.Timedelta(days=PORTWATCH_LAG_DAYS)
+    for k in RICH_STRAITS.values():
+        out[f"tc_{k}_vs_year"] = pct(m28[k], m364[k]).reindex(lagged).values
+        out[f"tc_{k}_speed"] = pct(m14[k], m28[k].shift(14)).reindex(lagged).values
+    out["cape_share"] = share.reindex(lagged).values
+    out["cape_share_4w"] = (share - share.shift(28)).reindex(lagged).values
+    # news: daily up to Wednesday
+    path = CLEAN / "news_events_by_zone.csv"
+    if path.exists():
+        n = pd.read_csv(path, parse_dates=["date"])
+        n["hostile"] = n["event_class"].isin(HOSTILE)
+        wed = weeks - pd.Timedelta(days=1)
+        for name, zones in RICH_NEWS.items():
+            g = n[n["zone"].isin(zones)]
+            host = g[g["hostile"]].groupby("date")["events"].sum().asfreq("D").fillna(0)
+            coop = g[g["event_class"] == "cooperation"].groupby("date")["events"].sum().asfreq("D").fillna(0)
+            arts = g.groupby("date")["articles"].sum().asfreq("D").fillna(0)
+            gw = (g["goldstein_avg"] * g["events"]).groupby(g["date"]).sum() / g.groupby("date")["events"].sum()
+            dz = _z(host, 365)                       # daily hostile z-score vs last year
+            out[f"nw_{name}_host_1w"] = _z(host.rolling(7).sum()).reindex(wed).values
+            out[f"nw_{name}_host_4w"] = _z(host.rolling(28).sum()).reindex(wed).values
+            out[f"nw_{name}_coop_1w"] = _z(coop.rolling(7).sum()).reindex(wed).values
+            out[f"nw_{name}_articles_1w"] = _z(arts.rolling(7).sum()).reindex(wed).values
+            out[f"nw_{name}_tone_1w"] = (gw.rolling(7, min_periods=3).mean()
+                                         - gw.rolling(365, min_periods=180).mean().shift(1)).reindex(wed).values
+            out[f"nw_{name}_shock"] = dz.rolling(7).max().reindex(wed).values
+            out[f"nw_{name}_pressure"] = dz.clip(lower=0).ewm(halflife=14).mean().reindex(wed).values
+        # shock confirmed by traffic: Red Sea news up AND Bab el-Mandeb container traffic falling
+        out["nw_x_redsea_confirmed"] = out["nw_redsea_pressure"] * (-out["tc_bab_speed"]).clip(lower=0) / 10
+    # carrier shares react the same day to news
+    m = pd.read_csv(CLEAN / "markets.csv", parse_dates=["date"])
+    for series, name in (("maersk_b_dkk", "maersk"), ("hapag_lloyd_eur", "hapag")):
+        s = m[m["series"] == series].set_index("date")["value"].sort_index()
+        now = s.reindex(weeks, method="ffill").values
+        for k in (1, 4):
+            before = s.reindex(weeks - pd.Timedelta(days=7 * k), method="ffill").values
+            out[f"eq_{name}_{k}w"] = pct(now, before)
+    return out
+
+
 def _brent(weeks: pd.DatetimeIndex) -> pd.Series:
     m = pd.read_csv(CLEAN / "markets.csv", parse_dates=["date"])
     b = m[m["series"] == "brent_usd_bbl"].set_index("date")["value"].sort_index()
@@ -130,7 +191,7 @@ def build() -> pd.DataFrame:
     weeks = dw.index
     ec = EC()
     feats = pd.DataFrame(index=weeks)
-    feats = feats.join(_traffic(weeks)).join(_brent(weeks)).join(_news(weeks))
+    feats = feats.join(_traffic(weeks)).join(_brent(weeks)).join(_news(weeks)).join(_rich(weeks))
 
     # EC features on the main contract
     ec1, ec4, slope, ec_basis = [], [], [], []
