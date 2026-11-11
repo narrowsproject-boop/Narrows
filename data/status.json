@@ -1,16 +1,16 @@
 {
-  "_last_run": "2026-11-10T13:01:25Z",
+  "_last_run": "2026-11-11T07:27:21Z",
   "bunker": {
-    "at": "2026-11-10T09:51:54Z",
+    "at": "2026-11-11T07:27:21Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "drewry": {
-    "at": "2026-11-10T13:01:23Z",
+    "at": "2026-11-11T07:18:20Z",
     "core": true,
     "ok": true,
-    "rows": 3107
+    "rows": 3111
   },
   "drewry_press": {
     "at": "2026-11-10T08:04:20Z",
@@ -19,34 +19,34 @@
     "rows": 0
   },
   "drewry_weekly": {
-    "at": "2026-11-10T13:01:25Z",
+    "at": "2026-11-11T07:27:21Z",
     "core": false,
     "ok": true,
-    "rows": 3245
+    "rows": 3246
   },
   "ec_futures": {
-    "at": "2026-11-10T08:04:45Z",
+    "at": "2026-11-11T07:18:43Z",
     "core": true,
     "ok": true,
     "rows": 779
   },
   "harpex": {
-    "at": "2026-11-10T09:51:54Z",
+    "at": "2026-11-11T07:27:21Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-10T13:01:25Z",
+    "at": "2026-11-11T07:27:14Z",
     "core": true,
     "ok": true,
-    "rows": 9967
+    "rows": 78
   },
   "news_articles": {
-    "at": "2026-11-10T07:14:01Z",
+    "at": "2026-11-11T07:27:17Z",
     "core": false,
-    "error": "GCP_SA_KEY / GCP_PROJECT secrets are not set",
-    "ok": false
+    "ok": true,
+    "rows": 20
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -55,10 +55,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-10T07:14:01Z",
+    "at": "2026-11-11T07:27:19Z",
     "core": false,
-    "error": "GCP_SA_KEY / GCP_PROJECT secrets are not set",
-    "ok": false
+    "ok": true,
+    "rows": 1126
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -73,15 +73,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-10T09:51:30Z",
+    "at": "2026-11-11T07:27:13Z",
     "core": false,
     "ok": true,
-    "rows": 1034
+    "rows": 51
   },
   "portwatch_straits": {
-    "at": "2026-11-10T08:09:19Z",
+    "at": "2026-11-11T07:18:43Z",
     "core": true,
     "ok": true,
-    "rows": 22896
+    "rows": 152
   }
 }
