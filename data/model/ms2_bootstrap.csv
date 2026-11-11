@@ -1,0 +1,19 @@
+method,vs,rps_gain,ci90_low,ci90_high,p_better
+multilogit L1 C=0.5 | reduced,ref_no_change,0.0979,0.0546,0.1413,1.0000
+multilogit L1 C=0.5 | reduced,ensemble(logit+boosting+forest) | reduced,0.0040,-0.0044,0.0162,0.8400
+SVM rbf C=0.3 | reduced,ref_no_change,0.0963,0.0624,0.1315,1.0000
+SVM rbf C=0.3 | reduced,ensemble(logit+boosting+forest) | reduced,0.0024,-0.0047,0.0138,0.7270
+MLP 8 units alpha=1.0 | reduced,ref_no_change,0.0915,0.0432,0.1383,0.9980
+MLP 8 units alpha=1.0 | reduced,ensemble(logit+boosting+forest) | reduced,-0.0024,-0.0138,0.0116,0.4830
+multilogit elastic-net C=0.5 | reduced,ref_no_change,0.0983,0.0548,0.1429,1.0000
+multilogit elastic-net C=0.5 | reduced,ensemble(logit+boosting+forest) | reduced,0.0045,-0.0044,0.0176,0.8555
+multilogit L2 C=0.5 pooled | reduced,ref_no_change,0.1002,0.0574,0.1453,1.0000
+multilogit L2 C=0.5 pooled | reduced,ensemble(logit+boosting+forest) | reduced,0.0064,-0.0030,0.0211,0.8945
+META weighted by recent error (tau=0.02),ref_no_change,0.0964,0.0671,0.1294,1.0000
+META weighted by recent error (tau=0.02),ensemble(logit+boosting+forest) | reduced,0.0026,-0.0090,0.0174,0.7165
+META average of 5 best of last 52 weeks,ref_no_change,0.0888,0.0559,0.1247,1.0000
+META average of 5 best of last 52 weeks,ensemble(logit+boosting+forest) | reduced,-0.0051,-0.0177,0.0096,0.3305
+META weighted by recent error (tau=0.005),ref_no_change,0.0906,0.0579,0.1250,1.0000
+META weighted by recent error (tau=0.005),ensemble(logit+boosting+forest) | reduced,-0.0033,-0.0166,0.0118,0.4160
+META follow the leader (best of last 52 weeks),ref_no_change,0.0752,0.0333,0.1148,0.9970
+META follow the leader (best of last 52 weeks),ensemble(logit+boosting+forest) | reduced,-0.0187,-0.0344,-0.0039,0.0170
