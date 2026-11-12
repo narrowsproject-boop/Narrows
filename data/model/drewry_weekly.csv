@@ -2424,6 +2424,7 @@ week,route,usd_per_40ft,filled
 2026-10-22,shanghai_genoa,4152.0,False
 2026-10-29,shanghai_genoa,4159.0,True
 2026-11-05,shanghai_genoa,4166.0,False
+2026-11-12,shanghai_genoa,4168.0,False
 2019-01-03,shanghai_los_angeles,2081.0,False
 2019-01-10,shanghai_los_angeles,1930.0,False
 2019-01-17,shanghai_los_angeles,1930.0,False
@@ -2834,7 +2835,9 @@ week,route,usd_per_40ft,filled
 2026-10-22,shanghai_los_angeles,8007.0,False
 2026-10-29,shanghai_los_angeles,7773.0,True
 2026-11-05,shanghai_los_angeles,7539.0,False
+2026-11-12,shanghai_los_angeles,7416.0,False
 2026-11-05,shanghai_new_york,9303.0,False
+2026-11-12,shanghai_new_york,9020.0,False
 2019-01-03,shanghai_rotterdam,2082.0,False
 2019-01-10,shanghai_rotterdam,1956.0,False
 2019-01-17,shanghai_rotterdam,1956.0,False
@@ -3245,3 +3248,4 @@ week,route,usd_per_40ft,filled
 2026-10-22,shanghai_rotterdam,3632.0,False
 2026-10-29,shanghai_rotterdam,3624.0,True
 2026-11-05,shanghai_rotterdam,3615.0,False
+2026-11-12,shanghai_rotterdam,3504.0,False
