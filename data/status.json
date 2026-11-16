@@ -1,13 +1,13 @@
 {
-  "_last_run": "2026-11-15T07:16:50Z",
+  "_last_run": "2026-11-16T08:59:20Z",
   "bunker": {
-    "at": "2026-11-15T07:16:50Z",
+    "at": "2026-11-16T08:59:20Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "drewry": {
-    "at": "2026-11-15T07:06:50Z",
+    "at": "2026-11-16T08:49:25Z",
     "core": true,
     "ok": true,
     "rows": 4
@@ -19,34 +19,34 @@
     "rows": 0
   },
   "drewry_weekly": {
-    "at": "2026-11-15T07:16:50Z",
+    "at": "2026-11-16T08:59:20Z",
     "core": false,
     "ok": true,
     "rows": 3250
   },
   "ec_futures": {
-    "at": "2026-11-15T07:07:28Z",
+    "at": "2026-11-16T08:49:54Z",
     "core": true,
     "ok": true,
-    "rows": 782
+    "rows": 783
   },
   "harpex": {
-    "at": "2026-11-15T07:16:49Z",
+    "at": "2026-11-16T08:59:20Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-15T07:16:43Z",
+    "at": "2026-11-16T08:59:12Z",
     "core": true,
     "ok": true,
-    "rows": 75
+    "rows": 80
   },
   "news_articles": {
-    "at": "2026-11-15T07:16:45Z",
+    "at": "2026-11-16T08:59:15Z",
     "core": false,
     "ok": true,
-    "rows": 39
+    "rows": 19
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -55,10 +55,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-15T07:16:47Z",
+    "at": "2026-11-16T08:59:18Z",
     "core": false,
     "ok": true,
-    "rows": 1119
+    "rows": 1125
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -73,15 +73,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-15T07:16:42Z",
+    "at": "2026-11-16T08:59:11Z",
     "core": false,
     "error": "PortWatch ports returned no rows",
     "ok": false
   },
   "portwatch_straits": {
-    "at": "2026-11-15T07:07:29Z",
+    "at": "2026-11-16T08:49:58Z",
     "core": true,
     "ok": true,
-    "rows": 120
+    "rows": 112
   }
 }
