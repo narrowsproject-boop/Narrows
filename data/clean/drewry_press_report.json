@@ -1,27 +1,118 @@
 {
-  "built_at": "2026-11-17T08:48:01Z",
+  "built_at": "2026-11-17T08:56:36Z",
   "release_posts": 307,
   "releases_parsed": 281,
   "releases": {
-    "accepted": 247,
-    "rejected": 23,
-    "unverified": 11
+    "accepted": 254,
+    "rejected": 17,
+    "chained": 10
   },
-  "values_checked": 1605,
-  "values_matching": 1566,
-  "match_rate": 0.9757,
+  "values_checked": 1623,
+  "values_matching": 1585,
+  "match_rate": 0.9766,
   "match_rate_prev_week": 0.975,
+  "pct_check_on_checked_releases": {
+    "agree": 1130,
+    "disagree": 10,
+    "rate": 0.9912
+  },
   "conflicting_weeks_dropped": 0,
+  "chart_values_suspect": [
+    {
+      "week": "2021-10-07",
+      "route": "composite",
+      "chart": 10310.0,
+      "release": 10129,
+      "stated_pct": -2.2,
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-2-2-this-week-but-289-higher-on-a-yearly-basis/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "composite",
+      "chart": 3383.0,
+      "release": 3145,
+      "stated_pct": -7.0,
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "shanghai_rotterdam",
+      "chart": 4436.0,
+      "release": 3845,
+      "stated_pct": -13.0,
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "shanghai_genoa",
+      "chart": 4614.0,
+      "release": 4200,
+      "stated_pct": -9.0,
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "shanghai_los_angeles",
+      "chart": 2497.0,
+      "release": 2412,
+      "stated_pct": -3.0,
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "new_york_rotterdam",
+      "chart": 1308.0,
+      "release": 1319,
+      "stated_pct": 1.0,
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2023-01-12",
+      "route": "rotterdam_new_york",
+      "chart": 6296.0,
+      "release": 6363,
+      "stated_pct": -3.0,
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-stable-over-the-past-week/"
+    },
+    {
+      "week": "2025-01-23",
+      "route": "composite",
+      "chart": 3455.0,
+      "release": 3445,
+      "stated_pct": -11.0,
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-11-last-week/"
+    },
+    {
+      "week": "2026-05-14",
+      "route": "shanghai_rotterdam",
+      "chart": 2127.0,
+      "release": 2413,
+      "stated_pct": 11.0,
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-up-12-last-week/"
+    },
+    {
+      "week": "2026-09-17",
+      "route": "shanghai_los_angeles",
+      "chart": 7212.0,
+      "release": 7712,
+      "stated_pct": 5.0,
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-up-1-last-week-3/"
+    }
+  ],
   "rebuilt_values": {
-    "composite": 7,
-    "los_angeles_shanghai": 2,
-    "new_york_rotterdam": 6,
-    "rotterdam_new_york": 6,
+    "composite": 14,
+    "los_angeles_shanghai": 3,
+    "new_york_rotterdam": 7,
+    "rotterdam_new_york": 7,
     "rotterdam_shanghai": 5,
-    "shanghai_genoa": 7,
-    "shanghai_los_angeles": 7,
-    "shanghai_new_york": 153,
-    "shanghai_rotterdam": 7
+    "shanghai_genoa": 11,
+    "shanghai_los_angeles": 13,
+    "shanghai_new_york": 163,
+    "shanghai_rotterdam": 11
+  },
+  "rebuilt_by_check": {
+    "accepted": 198,
+    "chained": 36
   },
   "rebuilt_range": {
     "composite": {
@@ -29,7 +120,7 @@
       "max": "2026-11-12"
     },
     "los_angeles_shanghai": {
-      "min": "2023-11-23",
+      "min": "2023-09-21",
       "max": "2025-04-24"
     },
     "new_york_rotterdam": {
@@ -63,116 +154,132 @@
   },
   "mismatches_sample": [
     {
-      "week": "2024-05-30",
-      "route": "shanghai_genoa",
-      "value": 5693,
-      "known": 5390.0,
-      "kind": "prev_week",
-      "url": "https://cyprusshippingnews.com/2024/06/11/world-container-index-up-12-last-week-181-versus-2023-by-drewry/"
-    },
-    {
-      "week": "2026-09-17",
-      "route": "shanghai_los_angeles",
-      "value": 7712,
-      "known": 7212.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-up-1-last-week-3/"
-    },
-    {
-      "week": "2026-07-30",
-      "route": "shanghai_genoa",
-      "value": 4677,
-      "known": 5630.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-7/"
-    },
-    {
-      "week": "2026-05-14",
-      "route": "shanghai_rotterdam",
-      "value": 2413,
-      "known": 2127.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-up-12-last-week/"
-    },
-    {
-      "week": "2025-01-23",
-      "route": "composite",
-      "value": 3445,
-      "known": 3455.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-11-last-week/"
-    },
-    {
-      "week": "2024-05-30",
-      "route": "shanghai_genoa",
-      "value": 5693,
-      "known": 5390.0,
-      "kind": "prev_week",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-up-12-last-week-181-versus-2023/"
-    },
-    {
-      "week": "2023-09-07",
-      "route": "shanghai_rotterdam",
-      "value": 1449,
-      "known": 1673.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-4-this-week/"
-    },
-    {
-      "week": "2023-08-31",
-      "route": "shanghai_rotterdam",
-      "value": 1615,
-      "known": 1673.0,
-      "kind": "prev_week",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-4-this-week/"
-    },
-    {
-      "week": "2023-08-31",
-      "route": "shanghai_rotterdam",
-      "value": 1615,
-      "known": 1673.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-6-this-week/"
-    },
-    {
-      "week": "2023-08-24",
-      "route": "shanghai_rotterdam",
-      "value": 1688,
-      "known": 1673.0,
-      "kind": "prev_week",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-6-this-week/"
-    },
-    {
-      "week": "2023-08-24",
-      "route": "shanghai_rotterdam",
-      "value": 1688,
-      "known": 1673.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-5-this-week/"
-    },
-    {
-      "week": "2023-03-30",
-      "route": "rotterdam_shanghai",
-      "value": 693,
-      "known": 701.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-2-this-week-3/"
-    },
-    {
-      "week": "2023-03-02",
-      "route": "new_york_rotterdam",
-      "value": 1573,
-      "known": 1153.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-by-2-this-week/"
-    },
-    {
-      "week": "2023-01-12",
+      "week": "2021-08-12",
       "route": "rotterdam_new_york",
-      "value": 6363,
-      "known": 6296.0,
+      "value": 1171,
+      "known": 6390.0,
       "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-stable-over-the-past-week/"
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-358-higher-than-the-same-week-of-2020/"
+    },
+    {
+      "week": "2021-08-26",
+      "route": "shanghai_los_angeles",
+      "value": 14136,
+      "known": 11362.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-up-2-1-last-week-351-higher-than-a-year-ago/"
+    },
+    {
+      "week": "2021-10-07",
+      "route": "composite",
+      "value": 10129,
+      "known": 10310.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-2-2-this-week-but-289-higher-on-a-yearly-basis/"
+    },
+    {
+      "week": "2022-02-10",
+      "route": "los_angeles_shanghai",
+      "value": 1250,
+      "known": 1247.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-remains-80-higher-than-a-year-ago/"
+    },
+    {
+      "week": "2022-02-24",
+      "route": "los_angeles_shanghai",
+      "value": 1213,
+      "known": 1247.0,
+      "kind": "prev_week",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-2-1-this-week/"
+    },
+    {
+      "week": "2022-04-14",
+      "route": "shanghai_genoa",
+      "value": 12904,
+      "known": 12094.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-2-this-week-still-62-higher-than-a-year-ago/"
+    },
+    {
+      "week": "2022-04-07",
+      "route": "shanghai_genoa",
+      "value": 13042,
+      "known": 12232.0,
+      "kind": "prev_week",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-1-2-this-week-still-62-higher-than-a-year-ago/"
+    },
+    {
+      "week": "2022-06-02",
+      "route": "composite",
+      "value": 7625,
+      "known": 7648.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-now-just-18-higher-than-a-year-ago/"
+    },
+    {
+      "week": "2022-06-02",
+      "route": "shanghai_genoa",
+      "value": 11676,
+      "known": 11681.0,
+      "kind": "prev_week",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-by-0-6-this-week-only-13-higher-than-a-year-ago/"
+    },
+    {
+      "week": "2022-06-02",
+      "route": "rotterdam_new_york",
+      "value": 7186,
+      "known": 7189.0,
+      "kind": "prev_week",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-by-0-6-this-week-only-13-higher-than-a-year-ago/"
+    },
+    {
+      "week": "2022-07-14",
+      "route": "shanghai_rotterdam",
+      "value": 6999,
+      "known": 9182.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-by-0-7-21-versus-same-week-last-year/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "composite",
+      "value": 3145,
+      "known": 3383.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "shanghai_rotterdam",
+      "value": 3845,
+      "known": 4436.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "shanghai_genoa",
+      "value": 4200,
+      "known": 4614.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "shanghai_los_angeles",
+      "value": 2412,
+      "known": 2497.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
+    },
+    {
+      "week": "2022-10-27",
+      "route": "new_york_rotterdam",
+      "value": 1319,
+      "known": 1308.0,
+      "kind": "direct",
+      "url": "https://www.hellenicshippingnews.com/world-container-index-down-by-7-this-week-35th-in-a-row/"
     },
     {
       "week": "2022-11-03",
@@ -203,22 +310,6 @@
       "route": "shanghai_genoa",
       "value": 4087,
       "known": 4614.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-this-week-2/"
-    },
-    {
-      "week": "2022-11-03",
-      "route": "shanghai_los_angeles",
-      "value": 2364,
-      "known": 2497.0,
-      "kind": "direct",
-      "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-this-week-2/"
-    },
-    {
-      "week": "2022-11-03",
-      "route": "los_angeles_shanghai",
-      "value": 1165,
-      "known": 1175.0,
       "kind": "direct",
       "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-this-week-2/"
     }
