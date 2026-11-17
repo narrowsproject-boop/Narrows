@@ -34,6 +34,7 @@ JOBS = {
         ("news_events_recent", False, lambda: gdelt_bq.events_history(start=RECENT)),
         ("harpex", False, context.harpex),
         ("bunker", False, context.bunker),
+        ("cancelled_sailings", False, context.cancelled_sailings),
         ("drewry_weekly", False, weekly.build),
     ],
     "prices": [

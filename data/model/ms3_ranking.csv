@@ -1,0 +1,22 @@
+method,hit_holdout,hit_select,rps_holdout,rps_select,rps_base_same_weeks_holdout,rps_base_same_weeks_select,weeks_holdout,weeks_select
+ensemble(logit+boosting+forest) | reduced,0.6213,0.4688,0.1482,0.1909,0.1254,0.1768,69.0,11.0
+multilogit L2 C=0.5 pooled | reduced+calendar+capacity,0.6259,0.5506,0.1583,0.1973,0.1279,0.302,71.0,46.0
+multilogit L2 C=0.5 pooled | reduced+calendar,0.6079,0.5562,0.1625,0.2038,0.1279,0.302,71.0,46.0
+multilogit L2 C=0.5 pooled | reduced+capacity,0.6367,0.4719,0.1442,0.2274,0.1279,0.302,71.0,46.0
+multilogit L2 C=0.5 pooled | reduced,0.6403,0.4831,0.1435,0.2297,0.1279,0.302,71.0,46.0
+ref_no_change,0.2316,0.4062,0.2413,0.2307,0.1254,0.1768,69.0,11.0
+multilogit L2 C=0.5 pooled | reduced+all new,0.6029,0.3922,0.1722,0.252,0.1277,0.3713,51.0,27.0
+multilogit L2 C=0.5 pooled | reduced+routes,0.5735,0.3627,0.1576,0.2683,0.1277,0.3713,51.0,27.0
+ref_trend,0.489,0.1562,0.224,0.2781,0.1254,0.1768,69.0,11.0
+ridge->classes a=30 pooled | reduced,0.7014,0.4326,0.1279,0.2854,0.1279,0.302,71.0,46.0
+ridge->classes a=30 pooled | reduced+capacity,0.6763,0.4213,0.1286,0.2908,0.1279,0.302,71.0,46.0
+ridge->classes a=30 pooled | reduced+calendar,0.6727,0.4551,0.1388,0.2967,0.1279,0.302,71.0,46.0
+ridge->classes a=3 pooled | reduced,0.6871,0.4326,0.1279,0.302,0.1279,0.302,71.0,46.0
+ridge->classes a=30 pooled | reduced+calendar+capacity,0.6619,0.4382,0.1407,0.303,0.1279,0.302,71.0,46.0
+ridge->classes a=30 pooled | reduced+routes,0.6275,0.3333,0.1425,0.3098,0.1277,0.3713,51.0,27.0
+ridge->classes a=3 pooled | reduced+capacity,0.6799,0.4101,0.1281,0.3126,0.1279,0.302,71.0,46.0
+ridge->classes a=3 pooled | reduced+calendar,0.6619,0.4382,0.1417,0.3301,0.1279,0.302,71.0,46.0
+ridge->classes a=30 pooled | reduced+all new,0.6176,0.3235,0.1612,0.3413,0.1277,0.3713,51.0,27.0
+ridge->classes a=3 pooled | reduced+routes,0.6471,0.3039,0.1459,0.3421,0.1277,0.3713,51.0,27.0
+ridge->classes a=3 pooled | reduced+calendar+capacity,0.6475,0.427,0.1453,0.3486,0.1279,0.302,71.0,46.0
+ridge->classes a=3 pooled | reduced+all new,0.6029,0.2745,0.1695,0.3983,0.1277,0.3713,51.0,27.0

@@ -1,0 +1,38 @@
+method,period,gain_vs_round2_winner,ci90_low,ci90_high,p_better
+ensemble(logit+boosting+forest) | reduced,holdout,-0.0223,-0.0419,-0.0096,0.0035
+multilogit L2 C=0.5 pooled | reduced,select,0.0709,0.0439,0.1143,1.0000
+multilogit L2 C=0.5 pooled | reduced,holdout,-0.0147,-0.0326,-0.0003,0.0470
+multilogit L2 C=0.5 pooled | reduced+all new,select,0.1070,0.0492,0.2413,0.9980
+multilogit L2 C=0.5 pooled | reduced+all new,holdout,-0.0445,-0.0914,-0.0112,0.0035
+multilogit L2 C=0.5 pooled | reduced+calendar,select,0.0954,0.0592,0.1689,1.0000
+multilogit L2 C=0.5 pooled | reduced+calendar,holdout,-0.0346,-0.0697,-0.0068,0.0180
+multilogit L2 C=0.5 pooled | reduced+calendar+capacity,select,0.1014,0.0488,0.2004,0.9960
+multilogit L2 C=0.5 pooled | reduced+calendar+capacity,holdout,-0.0303,-0.0665,0.0027,0.0645
+multilogit L2 C=0.5 pooled | reduced+capacity,select,0.0731,0.0371,0.1347,0.9960
+multilogit L2 C=0.5 pooled | reduced+capacity,holdout,-0.0155,-0.0347,0.0024,0.0765
+multilogit L2 C=0.5 pooled | reduced+routes,select,0.0953,0.0699,0.1641,1.0000
+multilogit L2 C=0.5 pooled | reduced+routes,holdout,-0.0299,-0.0605,-0.0084,0.0105
+ref_no_change,holdout,-0.1162,-0.1559,-0.0870,0.0000
+ref_trend,holdout,-0.0991,-0.1286,-0.0709,0.0000
+ridge->classes a=3 pooled | reduced+all new,select,-0.0262,-0.0932,0.0607,0.3355
+ridge->classes a=3 pooled | reduced+all new,holdout,-0.0417,-0.0712,-0.0093,0.0100
+ridge->classes a=3 pooled | reduced+calendar,select,-0.0272,-0.0838,0.0154,0.1530
+ridge->classes a=3 pooled | reduced+calendar,holdout,-0.0131,-0.0328,0.0020,0.0700
+ridge->classes a=3 pooled | reduced+calendar+capacity,select,-0.0471,-0.1104,0.0090,0.0890
+ridge->classes a=3 pooled | reduced+calendar+capacity,holdout,-0.0166,-0.0340,-0.0004,0.0480
+ridge->classes a=3 pooled | reduced+capacity,select,-0.0118,-0.0158,-0.0028,0.0060
+ridge->classes a=3 pooled | reduced+capacity,holdout,-0.0001,-0.0096,0.0103,0.5625
+ridge->classes a=3 pooled | reduced+routes,select,0.0256,0.0175,0.0601,0.9985
+ridge->classes a=3 pooled | reduced+routes,holdout,-0.0182,-0.0425,0.0003,0.0565
+ridge->classes a=30 pooled | reduced,select,0.0159,0.0126,0.0265,1.0000
+ridge->classes a=30 pooled | reduced,holdout,0.0000,-0.0021,0.0012,0.3120
+ridge->classes a=30 pooled | reduced+all new,select,0.0295,-0.0083,0.0928,0.8970
+ridge->classes a=30 pooled | reduced+all new,holdout,-0.0335,-0.0538,-0.0087,0.0075
+ridge->classes a=30 pooled | reduced+calendar,select,0.0051,-0.0106,0.0267,0.7555
+ridge->classes a=30 pooled | reduced+calendar,holdout,-0.0103,-0.0277,0.0024,0.0850
+ridge->classes a=30 pooled | reduced+calendar+capacity,select,-0.0013,-0.0183,0.0259,0.6110
+ridge->classes a=30 pooled | reduced+calendar+capacity,holdout,-0.0121,-0.0278,0.0020,0.0810
+ridge->classes a=30 pooled | reduced+capacity,select,0.0105,0.0048,0.0239,0.9905
+ridge->classes a=30 pooled | reduced+capacity,holdout,-0.0005,-0.0098,0.0090,0.4965
+ridge->classes a=30 pooled | reduced+routes,select,0.0578,0.0404,0.0976,1.0000
+ridge->classes a=30 pooled | reduced+routes,holdout,-0.0148,-0.0328,-0.0011,0.0320
