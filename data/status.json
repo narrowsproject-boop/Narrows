@@ -1,5 +1,5 @@
 {
-  "_last_run": "2026-11-17T07:24:27Z",
+  "_last_run": "2026-11-17T08:48:01Z",
   "bunker": {
     "at": "2026-11-17T07:24:27Z",
     "core": false,
@@ -13,16 +13,16 @@
     "rows": 4
   },
   "drewry_press": {
-    "at": "2026-11-10T08:04:20Z",
-    "core": false,
+    "at": "2026-11-17T08:48:01Z",
+    "core": true,
     "ok": true,
-    "rows": 0
+    "rows": 200
   },
   "drewry_weekly": {
-    "at": "2026-11-17T07:24:27Z",
+    "at": "2026-11-17T08:48:01Z",
     "core": false,
     "ok": true,
-    "rows": 3250
+    "rows": 3453
   },
   "ec_futures": {
     "at": "2026-11-17T07:24:17Z",
