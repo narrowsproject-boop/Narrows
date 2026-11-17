@@ -1,13 +1,13 @@
 {
-  "_last_run": "2026-11-16T08:59:20Z",
+  "_last_run": "2026-11-17T07:24:27Z",
   "bunker": {
-    "at": "2026-11-16T08:59:20Z",
+    "at": "2026-11-17T07:24:27Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "drewry": {
-    "at": "2026-11-16T08:49:25Z",
+    "at": "2026-11-17T07:23:38Z",
     "core": true,
     "ok": true,
     "rows": 4
@@ -19,34 +19,34 @@
     "rows": 0
   },
   "drewry_weekly": {
-    "at": "2026-11-16T08:59:20Z",
+    "at": "2026-11-17T07:24:27Z",
     "core": false,
     "ok": true,
     "rows": 3250
   },
   "ec_futures": {
-    "at": "2026-11-16T08:49:54Z",
+    "at": "2026-11-17T07:24:17Z",
     "core": true,
     "ok": true,
     "rows": 783
   },
   "harpex": {
-    "at": "2026-11-16T08:59:20Z",
+    "at": "2026-11-17T07:24:26Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-16T08:59:12Z",
+    "at": "2026-11-17T07:24:19Z",
     "core": true,
     "ok": true,
-    "rows": 80
+    "rows": 78
   },
   "news_articles": {
-    "at": "2026-11-16T08:59:15Z",
+    "at": "2026-11-17T07:24:21Z",
     "core": false,
     "ok": true,
-    "rows": 19
+    "rows": 24
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -55,10 +55,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-16T08:59:18Z",
+    "at": "2026-11-17T07:24:25Z",
     "core": false,
     "ok": true,
-    "rows": 1125
+    "rows": 1121
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -73,15 +73,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-16T08:59:11Z",
+    "at": "2026-11-17T07:24:18Z",
     "core": false,
     "error": "PortWatch ports returned no rows",
     "ok": false
   },
   "portwatch_straits": {
-    "at": "2026-11-16T08:49:58Z",
+    "at": "2026-11-17T07:24:18Z",
     "core": true,
-    "ok": true,
-    "rows": 112
+    "error": "{'code': 499, 'message': 'Token Required', 'messageCode': 'GWM_0003', 'details': ['Token Required']}",
+    "ok": false
   }
 }

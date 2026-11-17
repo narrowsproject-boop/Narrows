@@ -9981,8 +9981,11 @@ date,series,value
 2026-11-13,hapag_lloyd_eur,128.5
 2026-11-13,heating_oil_usd_gal,4.2585
 2026-11-13,maersk_b_dkk,20460.0
-2026-11-16,brent_usd_bbl,92.79
-2026-11-16,eurusd,1.1027
-2026-11-16,hapag_lloyd_eur,128.0
-2026-11-16,heating_oil_usd_gal,4.2635
-2026-11-16,maersk_b_dkk,20560.0
+2026-11-16,brent_usd_bbl,92.44
+2026-11-16,eurusd,1.1025
+2026-11-16,hapag_lloyd_eur,
+2026-11-16,heating_oil_usd_gal,4.0818
+2026-11-16,maersk_b_dkk,
+2026-11-17,brent_usd_bbl,91.6
+2026-11-17,eurusd,1.101
+2026-11-17,heating_oil_usd_gal,3.9535
