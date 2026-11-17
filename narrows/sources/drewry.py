@@ -6,7 +6,7 @@ other routes (backhauls, New York, transatlantic) are context for the dashboard.
 Published every Thursday at drewry.co.uk. Three ways in, tried in order:
   1. akshare.drewry_wci_index (reads the Infogram chart behind Drewry's page, multi-year weekly history)
   2. the Drewry page text for the current week ("Shanghai–Rotterdam ... to $2,443 per 40ft")
-  3. backfill from weekly press reprints of Drewry's release (see backfill_from_press)
+  3. press reprints of Drewry's weekly release, checked against 1 and 2 (see drewry_press.py)
 Unit: USD per 40ft container, spot.
 """
 from __future__ import annotations
@@ -97,8 +97,10 @@ def from_page() -> pd.DataFrame:
 
     html = get(PAGE).text
     text = BeautifulSoup(html, "lxml").get_text(" ")
-    d = parse_release_date(text)
-    vals = parse_release(text)
+    from .drewry_press import parse_date, parse_release as parse_press
+
+    d = parse_release_date(text) or parse_date(text)
+    vals = {v["route"]: v["value"] for v in parse_press(text) if v["kind"] == "direct"} or parse_release(text)
     if not d or not vals:
         raise RuntimeError("Could not parse the Drewry page this week")
     return pd.DataFrame([{"date": d, "route": r, "usd_per_40ft": v, "source": "drewry_page"} for r, v in vals.items()])
@@ -124,42 +126,3 @@ def fetch() -> pd.DataFrame:
     if not got:
         raise RuntimeError("; ".join(errors))
     return pd.concat(got, ignore_index=True)
-
-
-# ---------- press backfill (fills weeks the chart does not cover) ----------
-PRESS_SEARCH = "https://www.hellenicshippingnews.com/page/{page}/?s=Drewry+World+Container+Index"
-
-
-def backfill_from_press(max_pages: int = 60) -> pd.DataFrame:
-    """Crawl press reprints of Drewry's weekly release and parse route values. Slow, run once."""
-    from bs4 import BeautifulSoup
-
-    rows, seen = [], set()
-    for page in range(1, max_pages + 1):
-        try:
-            soup = BeautifulSoup(get(PRESS_SEARCH.format(page=page)).text, "lxml")
-        except Exception as e:
-            log.info("press search stopped at page %d: %s", page, e)
-            break
-        links = {a["href"] for a in soup.select("h2 a, h3 a") if "drewry" in a.get("href", "").lower() or "container-index" in a.get("href", "").lower()}
-        if not links:
-            break
-        for url in links - seen:
-            seen.add(url)
-            try:
-                text = BeautifulSoup(get(url).text, "lxml").get_text(" ")
-            except Exception:
-                continue
-            d, vals = parse_release_date(text), parse_release(text)
-            if d and vals:
-                rows += [{"date": d, "route": r, "usd_per_40ft": v, "source": "press:" + url} for r, v in vals.items()]
-    df = pd.DataFrame(rows)
-    if not df.empty:
-        df = df[df["date"] >= HISTORY_START]
-        # never overwrite values that came straight from Drewry
-        existing = pd.read_csv(OUT, dtype=str) if OUT.exists() else pd.DataFrame(columns=KEYS)
-        have = set(zip(existing.get("date", []), existing.get("route", [])))
-        df = df[[(d, r) not in have for d, r in zip(df["date"], df["route"])]]
-        merge_csv(df, OUT, KEYS)
-    log.info("Drewry press backfill: %d new rows", len(df))
-    return df

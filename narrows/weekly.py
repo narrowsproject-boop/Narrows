@@ -1,8 +1,9 @@
 """Build the clean weekly Drewry panel the model uses.
 
 - Every value is aligned to the Thursday of its week (some releases are dated Friday).
-- Missing weeks are filled by linear interpolation and flagged, never silently.
-  Christmas/New Year weeks are a known Drewry gap (no release).
+- Missing weeks are filled by linear interpolation and flagged, never silently, but only for gaps of up to
+  MAX_GAP weeks (Christmas/New Year weeks are a known Drewry gap). Longer gaps stay empty: a straight line over
+  months would invent a price path.
 """
 from __future__ import annotations
 
@@ -11,6 +12,7 @@ import pandas as pd
 from .common import CLEAN, DATA, log
 
 OUT = DATA / "model" / "drewry_weekly.csv"
+MAX_GAP = 4
 
 
 def build() -> pd.DataFrame:
@@ -22,8 +24,12 @@ def build() -> pd.DataFrame:
     for route, g in d.groupby("route"):
         idx = pd.date_range(g["week"].min(), g["week"].max(), freq="7D")
         s = g.set_index("week")["usd_per_40ft"].reindex(idx)
-        filled = s.isna()
-        s = s.interpolate(limit_area="inside")
+        gap = s.isna()
+        run = gap.groupby((~gap).cumsum()).transform("sum")  # length of the gap each missing week sits in
+        s = s.interpolate(limit_area="inside").where(~gap | (run <= MAX_GAP))
+        filled = gap & s.notna()
+        keep = s.notna()
+        idx, s, filled = idx[keep.values], s[keep], filled[keep]
         frames.append(pd.DataFrame({"week": idx.strftime("%Y-%m-%d"), "route": route,
                                     "usd_per_40ft": s.round(0).values,
                                     "filled": filled.values}))

@@ -2,6 +2,7 @@
 
   python scripts/collect.py daily      # every day: new values from every source
   python scripts/collect.py backfill   # once: full history since 2019 (EC since Aug 2023)
+  python scripts/collect.py press      # rebuild Drewry weeks missing from the chart, from checked press reprints
 
 Writes data/clean/*.csv and data/status.json. Exits with code 1 if a core source failed,
 so GitHub Actions marks the run red and emails the repository owner.
@@ -17,13 +18,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from narrows.common import log, now_utc, write_status  # noqa: E402
 from narrows import weekly  # noqa: E402
-from narrows.sources import context, drewry, ec_futures, gdelt_bq, markets, portwatch  # noqa: E402
+from narrows.sources import context, drewry, drewry_press, ec_futures, gdelt_bq, markets, portwatch  # noqa: E402
 
 RECENT = (date.today() - timedelta(days=21)).isoformat()
 
 JOBS = {
     "daily": [
         ("drewry", True, drewry.fetch),
+        ("drewry_press", False, lambda: drewry_press.run(max_pages=1)),
         ("ec_futures", True, ec_futures.fetch),
         ("portwatch_straits", True, lambda: portwatch.chokepoints(start=RECENT)),
         ("portwatch_ports", False, lambda: portwatch.ports(start=RECENT)),
@@ -39,12 +41,16 @@ JOBS = {
         ("markets", True, markets.fetch),
         ("drewry_weekly", False, weekly.build),
     ],
+    "press": [
+        ("drewry_press", True, drewry_press.run),
+        ("drewry_weekly", False, weekly.build),
+    ],
     "recent_news": [
         ("news_recent_15d", True, gdelt_bq.articles_15d),
     ],
     "backfill": [
         ("drewry", True, drewry.fetch),
-        ("drewry_press", False, drewry.backfill_from_press),
+        ("drewry_press", False, drewry_press.run),
         ("ec_futures", True, ec_futures.fetch),
         ("portwatch_straits", True, portwatch.chokepoints),
         ("portwatch_ports", False, portwatch.ports),
