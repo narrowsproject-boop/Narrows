@@ -44,3 +44,27 @@ def test_apr_2024_shared_verb():
     assert v[("shanghai_rotterdam", "direct")] == 3050 and v[("rotterdam_new_york", "direct")] == 2224
     assert v[("shanghai_new_york", "direct")] == 4710 and v[("shanghai_new_york", "prev_week")] == 4894
     assert v[("los_angeles_shanghai", "prev_week")] == 688
+
+SEP_2026 = (
+    "Our detailed assessment for Thursday, 24 Sep 2026 • The Drewry World Container Index (WCI), the benchmark widely "
+    "referenced by procurement teams, decreased 1% to $4,468 per 40ft container, due to a decrease in rates on the "
+    "Asia-Europe trade route. • On the Transpacific trade, rates from Shanghai to Los Angeles increased 2% to $7,838 per "
+    "40ft container, while those from Shanghai to New York remained stable at $10,373 per 40ft container. Despite capacity "
+    "reductions, Drewry expects rates to decrease next week. • On the Asia–Europe trade route, rates fell 5% to $3,835 "
+    "per 40ft container from Shanghai to Genoa and 4% to $3,485 per 40ft container from Shanghai to Rotterdam"
+)
+
+
+def test_2026_bullets_value_before_route():
+    v = {(x["route"], x["kind"]): (x["value"], x["pct"]) for x in parse_release(SEP_2026)}
+    assert parse_date(SEP_2026) == "2026-09-24"
+    assert v[("composite", "direct")] == (4468, -1.0)
+    assert v[("shanghai_genoa", "direct")] == (3835, -5.0)
+    assert v[("shanghai_rotterdam", "direct")] == (3485, -4.0)
+    assert v[("shanghai_los_angeles", "direct")] == (7838, 2.0)
+    assert v[("shanghai_new_york", "direct")][0] == 10373
+
+
+def test_pct_on_old_wording():
+    v = {(x["route"], x["kind"]): x["pct"] for x in parse_release(NOV_2024)}
+    assert v[("shanghai_genoa", "direct")] == 21.0 and v[("rotterdam_shanghai", "direct")] == -3.0

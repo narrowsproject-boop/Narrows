@@ -62,7 +62,8 @@ def _clean(text: str) -> str:
 
 
 def _sentences(text: str) -> list[str]:
-    return re.split(r"(?<=[a-z0-9%)\]])\.\s+(?=[A-Z])", text)
+    """Sentences, and the bullet points Drewry has used since 2026."""
+    return [x for x in re.split(r"(?<=[a-z0-9%)\]])\.\s+(?=[A-Z])|\s*[•▪]\s*|;\s+", text) if x.strip()]
 
 
 def _direction(seg: str) -> int:
@@ -92,27 +93,57 @@ def parse_date(text: str) -> str | None:
     return d.strftime("%Y-%m-%d") if d.dayofweek == 3 else None  # Drewry assesses on Thursdays
 
 
+PCT = r"(\d+(?:\.\d+)?)\s*%"
+# 2026 wording puts the value before the route: "fell 5% to $3,835 per 40ft container from Shanghai to Genoa"
+VALUE_FIRST_RE = re.compile(
+    r"(?:" + PCT + r"\s*(?:or\s*\$\s?[\d,]{1,7}\s*)?)?(?:\bto|\bat)\s*\$\s?([\d,]{3,7})\s*per\s*(?:40\s?ft|feu)"
+    r"(?:\s*(?:container|box))?\s*from\s*" + CITY + r"\s*(?:to|–|—|-)\s*" + CITY, re.I)
+
+
+def _pcts(seg: str) -> list[float]:
+    return [float(x) for x in re.findall(PCT, re.sub(DELTA, " ", seg, flags=re.I))]
+
+
 def parse_release(text: str) -> list[dict]:
-    """Every value quoted in one release: [{route, value, kind}] with kind 'direct' or 'prev_week'."""
+    """Every value quoted in one release: [{route, value, kind, pct}].
+
+    kind is 'direct' (this week's value) or 'prev_week' (last week's, from the dollar change); pct is the signed
+    weekly change the release states for a direct value, when it states one, used to check weeks Drewry's chart
+    does not cover.
+    """
     text = _clean(text)
     out = []
     for sent in _sentences(text):
-        mentions = [(m, PAIRS.get((m.group(1).lower(), m.group(2).lower()))) for m in PAIR_RE.finditer(sent)]
+        # pass 1: value before route
+        rest, last, sign_prev = sent, 0, 0
+        for m in VALUE_FIRST_RE.finditer(sent):
+            route = PAIRS.get((m.group(3).lower(), m.group(4).lower()))
+            if not route:
+                continue
+            sign = _direction(sent[last:m.start()]) or sign_prev  # "fell 5% to ... and 4% to ...": the verb carries over
+            sign_prev, last = sign, m.end()
+            pct = float(m.group(1)) * sign if m.group(1) and sign else None
+            out.append({"route": route, "value": _num(m.group(2)), "kind": "direct", "pct": pct})
+            rest = rest.replace(m.group(0), " | ", 1)
+        # pass 2: route before value
+        mentions = [(m, PAIRS.get((m.group(1).lower(), m.group(2).lower()))) for m in PAIR_RE.finditer(rest)]
         mentions = [(m, r) for m, r in mentions if r]
         if not mentions:
-            if re.search(r"composite|World Container Index|\bWCI\b", sent, re.I):
-                m = re.search(r"(?:composite(?: index)?|World Container Index|\bWCI\b)[^$]{0,90}?(?:\bto|\bat)\s*" + AMOUNT, sent, re.I)
+            if re.search(r"composite|World Container Index|\bWCI\b", rest, re.I):
+                m = re.search(r"(?:composite(?: index)?|World Container Index|\bWCI\b)[^$]{0,140}?(?:\bto|\bat)\s*" + AMOUNT, rest, re.I)
                 if m:
-                    out.append({"route": "composite", "value": _num(m.group(1)), "kind": "direct"})
-                    d = re.search(DELTA, sent[m.start():m.end()], re.I)
-                    sign = _direction(sent[m.start():m.end()])
+                    span = rest[m.start():m.end()]
+                    sign, pcts = _direction(span), _pcts(span)
+                    pct = pcts[0] * sign if pcts and sign else None
+                    out.append({"route": "composite", "value": _num(m.group(1)), "kind": "direct", "pct": pct})
+                    d = re.search(DELTA, span, re.I)
                     if d and sign:
-                        out.append({"route": "composite", "value": _num(m.group(1)) - sign * _num(d.group(1)), "kind": "prev_week"})
+                        out.append({"route": "composite", "value": _num(m.group(1)) - sign * _num(d.group(1)), "kind": "prev_week", "pct": None})
             continue
         pending = []
         for i, (m, route) in enumerate(mentions):
-            end = mentions[i + 1][0].start() if i + 1 < len(mentions) else len(sent)
-            seg = sent[m.end():end]
+            end = mentions[i + 1][0].start() if i + 1 < len(mentions) else len(rest)
+            seg = rest[m.end():end]
             deltas = re.findall(DELTA, seg, re.I)
             seg_v = re.sub(DELTA, " ", seg, flags=re.I)
             values = [_num(v) for v in re.findall(r"(?:\bto|\bat|\band|,)\s*" + AMOUNT, seg_v, re.I)]
@@ -120,18 +151,21 @@ def parse_release(text: str) -> list[dict]:
             if not values:
                 continue
             if len(values) == len(pending):
-                for r, v in zip(pending, values):
-                    out.append({"route": r, "value": v, "kind": "direct"})
-                if len(pending) == 1 and len(deltas) == 1:
-                    sign = _direction(seg)
-                    if sign:
-                        out.append({"route": route, "value": values[0] - sign * _num(deltas[0]), "kind": "prev_week"})
+                sign, pcts = _direction(seg), _pcts(seg)
+                if len(pcts) == 1:
+                    pcts = pcts * len(values)
+                for j, (r, v) in enumerate(zip(pending, values)):
+                    pct = pcts[j] * sign if len(pcts) == len(values) and sign else None
+                    out.append({"route": r, "value": v, "kind": "direct", "pct": pct})
+                if len(pending) == 1 and len(deltas) == 1 and sign:
+                    out.append({"route": route, "value": values[0] - sign * _num(deltas[0]), "kind": "prev_week", "pct": None})
             pending = []
     # one value per (route, kind); a release that quotes two different values for one route is ambiguous
-    by = defaultdict(set)
+    by, pct = defaultdict(set), {}
     for o in out:
         by[(o["route"], o["kind"])].add(o["value"])
-    return [{"route": r, "value": next(iter(v)), "kind": k} for (r, k), v in by.items() if len(v) == 1]
+        pct.setdefault((o["route"], o["kind"]), o["pct"])
+    return [{"route": r, "value": next(iter(v)), "kind": k, "pct": pct[(r, k)]} for (r, k), v in by.items() if len(v) == 1]
 
 
 def _strip_html(html: str) -> str:
@@ -146,7 +180,7 @@ POSTS = RAW / "drewry_press_posts.jsonl"
 def load_posts() -> list[dict]:
     if not POSTS.exists():
         return []
-    return [json.loads(line) for line in POSTS.read_text().splitlines() if line.strip()]
+    return [json.loads(line) for line in POSTS.read_text(encoding="utf-8").split("\n") if line.strip()]
 
 
 def crawl(max_pages: int = 60) -> list[dict]:
@@ -183,41 +217,94 @@ def crawl(max_pages: int = 60) -> list[dict]:
     return all_posts
 
 
+PCT_TOL = 0.6  # Drewry rounds weekly changes to whole percents
+
+
 def build(posts: list[dict] | None = None, known: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Parse every release, check it, and keep the values of the releases that pass.
+
+    A release passes when
+      - 'checked': every value we can compare with Drewry's own figures matches to $1 (at least one compared), or
+      - 'chained': nothing can be compared, but for at least two routes the weekly % change the release states
+        matches the change from the previous week's trusted value (Drewry's, or a release that passed), and no
+        route contradicts it. Releases are walked in date order, so a run of weeks chains from the last Drewry value.
+    A release where any check fails is rejected whole.
+    """
     posts = crawl() if posts is None else posts
     if known is None:
         wci = pd.read_csv(CLEAN / "drewry_wci.csv", dtype={"usd_per_40ft": float})
         known = wci[wci["source"].isin(["drewry_infogram", "drewry_page"])]  # values straight from Drewry
-    ref = {(d, r): v for d, r, v in zip(known["date"], known["route"], known["usd_per_40ft"])}
+    ref = {(d, r): float(v) for d, r, v in zip(known["date"], known["route"], known["usd_per_40ft"])}
 
     rows = []
     for p in posts:
-        d = parse_date(p["text"])
+        d = parse_date(_clean(p["text"]))
         if not d or d < HISTORY_START:
             continue
         prev = (pd.Timestamp(d) - pd.Timedelta(days=7)).strftime("%Y-%m-%d")
         for v in parse_release(p["text"]):
             week = d if v["kind"] == "direct" else prev
             rows.append({"week": week, "release": d, "route": v["route"], "value": v["value"], "kind": v["kind"],
-                         "source": p["source"], "url": p["url"], "known": ref.get((week, v["route"]))})
-    parsed = pd.DataFrame(rows, columns=["week", "release", "route", "value", "kind", "source", "url", "known"])
+                         "pct": v["pct"], "source": p["source"], "url": p["url"], "known": ref.get((week, v["route"]))})
+    cols = ["week", "release", "route", "value", "kind", "pct", "source", "url", "known"]
+    parsed = pd.DataFrame(rows, columns=cols)
     if parsed.empty:
         raise RuntimeError("Drewry press: no release could be parsed")
     parsed["checked"] = parsed["known"].notna()
     parsed["match"] = parsed["checked"] & ((parsed["value"] - parsed["known"]).abs() <= 1)
 
-    # a release is accepted if it has at least one checkable value and every checkable value matches
-    per = parsed.groupby("url").agg(n_checked=("checked", "sum"), n_match=("match", "sum"))
-    per["status"] = "unverified"
-    per.loc[(per["n_checked"] > 0) & (per["n_match"] == per["n_checked"]), "status"] = "accepted"
-    per.loc[(per["n_checked"] > 0) & (per["n_match"] < per["n_checked"]), "status"] = "rejected"
-    parsed = parsed.merge(per["status"], left_on="url", right_index=True)
+    trusted = dict(ref)
+    status, pct_known = {}, []
+
+    def pct_check(g: pd.DataFrame) -> tuple[int, int]:
+        ok = bad = 0
+        for _, r in g[(g["kind"] == "direct") & g["pct"].notna()].iterrows():
+            prev = trusted.get(((pd.Timestamp(r["week"]) - pd.Timedelta(days=7)).strftime("%Y-%m-%d"), r["route"]))
+            if prev:
+                good = abs((r["value"] / prev - 1) * 100 - r["pct"]) <= PCT_TOL
+                ok, bad = ok + good, bad + (not good)
+        return ok, bad
+
+    suspects = []
+
+    def base_suspect(r) -> bool:
+        """The release disagrees with Drewry's chart, but Drewry's own stated % change backs the release:
+        from the previous week, the release value fits the % and the chart value does not (a chart typo)."""
+        prev = trusted.get(((pd.Timestamp(r["week"]) - pd.Timedelta(days=7)).strftime("%Y-%m-%d"), r["route"]))
+        if r["kind"] != "direct" or pd.isna(r["pct"]) or not prev:
+            return False
+        fits = lambda v: abs((v / prev - 1) * 100 - r["pct"]) <= PCT_TOL  # noqa: E731
+        return fits(r["value"]) and not fits(r["known"])
+
+    for (_, url), g in parsed.sort_values("release").groupby(["release", "url"], sort=False):
+        n_checked, n_match = int(g["checked"].sum()), int(g["match"].sum())
+        miss = g[g["checked"] & ~g["match"]]
+        sus = [r for _, r in miss.iterrows() if base_suspect(r)]
+        if sus and len(sus) == len(miss) and n_match >= 1:
+            for r in sus:
+                suspects.append({"week": r["week"], "route": r["route"], "chart": r["known"], "release": r["value"],
+                                 "stated_pct": r["pct"], "url": url})
+                trusted[(r["week"], r["route"])] = float(r["value"])  # chain on from the consistent value
+            n_checked -= len(sus)
+        if n_checked:
+            st = "accepted" if n_match == n_checked else "rejected"
+            if st == "accepted":  # how often the % check agrees where Drewry's values exist: the check's own track record
+                pct_known.append(pct_check(g))
+        else:
+            ok, bad = pct_check(g)
+            st = "chained" if ok >= 2 and bad == 0 else ("rejected" if bad else "unverified")
+        status[url] = st
+        if st in ("accepted", "chained"):
+            for _, r in g.iterrows():
+                trusted.setdefault((r["week"], r["route"]), float(r["value"]))
+    parsed["status"] = parsed["url"].map(status)
 
     # candidate values for weeks we do not already hold
     cand = parsed[(~parsed["checked"]) & (parsed["status"] != "rejected")]
+    ok_status = ["accepted", "chained"]
     accepted_rows, conflicts = [], 0
     for (week, route), g in cand.groupby(["week", "route"]):
-        acc = g[g["status"] == "accepted"]
+        acc = g[g["status"].isin(ok_status)]
         values = set(acc["value"])
         n_sources = acc["url"].nunique()
         if not values:  # only unverified releases: need two distinct releases agreeing
@@ -230,22 +317,29 @@ def build(posts: list[dict] | None = None, known: pd.DataFrame | None = None) ->
             continue
         best = (acc if not acc.empty else g).sort_values("kind").iloc[0]  # 'direct' before 'prev_week'
         accepted_rows.append({"date": week, "route": route, "usd_per_40ft": int(next(iter(values))),
-                              "source": "press:" + best["url"], "kind": best["kind"], "n_sources": int(n_sources)})
-    clean = pd.DataFrame(accepted_rows, columns=["date", "route", "usd_per_40ft", "source", "kind", "n_sources"])
+                              "source": "press:" + best["url"], "kind": best["kind"], "check": best["status"],
+                              "n_sources": int(n_sources)})
+    clean = pd.DataFrame(accepted_rows, columns=["date", "route", "usd_per_40ft", "source", "kind", "check", "n_sources"])
     clean = clean[clean["date"] >= HISTORY_START]
 
     chk = parsed[parsed["checked"]]
+    pk_ok, pk_bad = sum(a for a, _ in pct_known), sum(b for _, b in pct_known)
+    per = pd.Series(status)
     report = {
         "built_at": now_utc(),
         "release_posts": len(posts),
         "releases_parsed": int(parsed["url"].nunique()),
-        "releases": per["status"].value_counts().to_dict(),
+        "releases": per.value_counts().to_dict(),
         "values_checked": int(len(chk)),
         "values_matching": int(chk["match"].sum()),
         "match_rate": round(float(chk["match"].mean()), 4) if len(chk) else None,
         "match_rate_prev_week": round(float(chk[chk["kind"] == "prev_week"]["match"].mean()), 4) if (chk["kind"] == "prev_week").any() else None,
+        "pct_check_on_checked_releases": {"agree": pk_ok, "disagree": pk_bad,
+                                          "rate": round(pk_ok / (pk_ok + pk_bad), 4) if pk_ok + pk_bad else None},
         "conflicting_weeks_dropped": conflicts,
+        "chart_values_suspect": suspects,
         "rebuilt_values": clean.groupby("route").size().to_dict(),
+        "rebuilt_by_check": clean.groupby("check").size().to_dict(),
         "rebuilt_range": clean.groupby("route")["date"].agg(["min", "max"]).to_dict("index"),
         "mismatches_sample": chk[~chk["match"]].head(20)[["week", "route", "value", "known", "kind", "url"]].to_dict("records"),
     }
