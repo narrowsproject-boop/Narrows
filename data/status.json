@@ -1,52 +1,58 @@
 {
-  "_last_run": "2026-11-17T08:56:36Z",
+  "_last_run": "2026-11-18T07:32:24Z",
   "bunker": {
-    "at": "2026-11-17T07:24:27Z",
+    "at": "2026-11-18T07:32:23Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
+  "cancelled_sailings": {
+    "at": "2026-11-18T07:32:24Z",
+    "core": false,
+    "ok": true,
+    "rows": 1
+  },
   "drewry": {
-    "at": "2026-11-17T07:23:38Z",
+    "at": "2026-11-18T07:22:00Z",
     "core": true,
     "ok": true,
-    "rows": 4
+    "rows": 5
   },
   "drewry_press": {
-    "at": "2026-11-17T08:56:36Z",
-    "core": true,
+    "at": "2026-11-18T07:22:30Z",
+    "core": false,
     "ok": true,
-    "rows": 234
+    "rows": 233
   },
   "drewry_weekly": {
-    "at": "2026-11-17T08:56:36Z",
+    "at": "2026-11-18T07:32:24Z",
     "core": false,
     "ok": true,
     "rows": 3465
   },
   "ec_futures": {
-    "at": "2026-11-17T07:24:17Z",
+    "at": "2026-11-18T07:23:00Z",
     "core": true,
     "ok": true,
-    "rows": 783
+    "rows": 784
   },
   "harpex": {
-    "at": "2026-11-17T07:24:26Z",
+    "at": "2026-11-18T07:32:23Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-17T07:24:19Z",
+    "at": "2026-11-18T07:32:15Z",
     "core": true,
     "ok": true,
     "rows": 78
   },
   "news_articles": {
-    "at": "2026-11-17T07:24:21Z",
+    "at": "2026-11-18T07:32:18Z",
     "core": false,
     "ok": true,
-    "rows": 24
+    "rows": 86
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -55,10 +61,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-17T07:24:25Z",
+    "at": "2026-11-18T07:32:21Z",
     "core": false,
     "ok": true,
-    "rows": 1121
+    "rows": 1124
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -73,15 +79,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-17T07:24:18Z",
+    "at": "2026-11-18T07:32:14Z",
     "core": false,
-    "error": "PortWatch ports returned no rows",
-    "ok": false
+    "ok": true,
+    "rows": 17
   },
   "portwatch_straits": {
-    "at": "2026-11-17T07:24:18Z",
+    "at": "2026-11-18T07:23:00Z",
     "core": true,
-    "error": "{'code': 499, 'message': 'Token Required', 'messageCode': 'GWM_0003', 'details': ['Token Required']}",
-    "ok": false
+    "ok": true,
+    "rows": 152
   }
 }

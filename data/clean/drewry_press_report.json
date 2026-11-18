@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-17T08:56:36Z",
+  "built_at": "2026-11-18T07:22:30Z",
   "release_posts": 307,
   "releases_parsed": 281,
   "releases": {
@@ -7,8 +7,8 @@
     "rejected": 17,
     "chained": 10
   },
-  "values_checked": 1623,
-  "values_matching": 1585,
+  "values_checked": 1624,
+  "values_matching": 1586,
   "match_rate": 0.9766,
   "match_rate_prev_week": 0.975,
   "pct_check_on_checked_releases": {
@@ -100,7 +100,7 @@
     }
   ],
   "rebuilt_values": {
-    "composite": 14,
+    "composite": 13,
     "los_angeles_shanghai": 3,
     "new_york_rotterdam": 7,
     "rotterdam_new_york": 7,
@@ -111,13 +111,13 @@
     "shanghai_rotterdam": 11
   },
   "rebuilt_by_check": {
-    "accepted": 198,
+    "accepted": 197,
     "chained": 36
   },
   "rebuilt_range": {
     "composite": {
       "min": "2023-09-14",
-      "max": "2026-11-12"
+      "max": "2026-11-05"
     },
     "los_angeles_shanghai": {
       "min": "2023-09-21",
