@@ -1,58 +1,58 @@
 {
-  "_last_run": "2026-11-19T07:31:17Z",
+  "_last_run": "2026-11-19T16:35:44Z",
   "bunker": {
-    "at": "2026-11-19T07:31:16Z",
+    "at": "2026-11-19T16:35:44Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "cancelled_sailings": {
-    "at": "2026-11-19T07:31:17Z",
+    "at": "2026-11-19T16:35:44Z",
     "core": false,
     "ok": true,
     "rows": 1
   },
   "drewry": {
-    "at": "2026-11-19T07:22:34Z",
+    "at": "2026-11-19T16:33:43Z",
     "core": true,
     "ok": true,
     "rows": 5
   },
   "drewry_press": {
-    "at": "2026-11-19T07:23:06Z",
+    "at": "2026-11-19T16:34:14Z",
     "core": false,
     "ok": true,
     "rows": 233
   },
   "drewry_weekly": {
-    "at": "2026-11-19T07:31:17Z",
+    "at": "2026-11-19T16:35:44Z",
     "core": false,
     "ok": true,
-    "rows": 3465
+    "rows": 3470
   },
   "ec_futures": {
-    "at": "2026-11-19T07:23:37Z",
+    "at": "2026-11-19T16:34:46Z",
     "core": true,
     "ok": true,
-    "rows": 785
+    "rows": 786
   },
   "harpex": {
-    "at": "2026-11-19T07:31:16Z",
+    "at": "2026-11-19T16:35:43Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-19T07:31:08Z",
+    "at": "2026-11-19T16:35:35Z",
     "core": true,
     "ok": true,
-    "rows": 78
+    "rows": 80
   },
   "news_articles": {
-    "at": "2026-11-19T07:31:11Z",
+    "at": "2026-11-19T16:35:39Z",
     "core": false,
     "ok": true,
-    "rows": 21
+    "rows": 39
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -61,10 +61,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-19T07:31:14Z",
+    "at": "2026-11-19T16:35:41Z",
     "core": false,
     "ok": true,
-    "rows": 1120
+    "rows": 1123
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -79,13 +79,13 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-19T07:31:07Z",
+    "at": "2026-11-19T16:35:34Z",
     "core": false,
     "ok": true,
-    "rows": 112
+    "rows": 144
   },
   "portwatch_straits": {
-    "at": "2026-11-19T07:23:37Z",
+    "at": "2026-11-19T16:34:46Z",
     "core": true,
     "ok": true,
     "rows": 144
