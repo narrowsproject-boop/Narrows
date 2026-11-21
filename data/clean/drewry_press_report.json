@@ -1,20 +1,20 @@
 {
-  "built_at": "2026-11-20T07:23:07Z",
-  "release_posts": 307,
-  "releases_parsed": 281,
+  "built_at": "2026-11-21T07:14:33Z",
+  "release_posts": 308,
+  "releases_parsed": 282,
   "releases": {
-    "accepted": 254,
+    "accepted": 255,
     "rejected": 17,
     "chained": 10
   },
-  "values_checked": 1624,
-  "values_matching": 1586,
-  "match_rate": 0.9766,
+  "values_checked": 1629,
+  "values_matching": 1591,
+  "match_rate": 0.9767,
   "match_rate_prev_week": 0.975,
   "pct_check_on_checked_releases": {
-    "agree": 1130,
+    "agree": 1134,
     "disagree": 10,
-    "rate": 0.9912
+    "rate": 0.9913
   },
   "conflicting_weeks_dropped": 0,
   "chart_values_suspect": [
