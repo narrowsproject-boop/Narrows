@@ -1,58 +1,58 @@
 {
-  "_last_run": "2026-11-21T07:23:29Z",
+  "_last_run": "2026-11-22T07:22:44Z",
   "bunker": {
-    "at": "2026-11-21T07:23:28Z",
+    "at": "2026-11-22T07:22:43Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "cancelled_sailings": {
-    "at": "2026-11-21T07:23:29Z",
+    "at": "2026-11-22T07:22:44Z",
     "core": false,
     "ok": true,
     "rows": 1
   },
   "drewry": {
-    "at": "2026-11-21T07:14:02Z",
+    "at": "2026-11-22T07:14:16Z",
     "core": true,
     "ok": true,
     "rows": 5
   },
   "drewry_press": {
-    "at": "2026-11-21T07:14:33Z",
+    "at": "2026-11-22T07:14:45Z",
     "core": false,
     "ok": true,
     "rows": 233
   },
   "drewry_weekly": {
-    "at": "2026-11-21T07:23:29Z",
+    "at": "2026-11-22T07:22:44Z",
     "core": false,
     "ok": true,
     "rows": 3470
   },
   "ec_futures": {
-    "at": "2026-11-21T07:15:11Z",
+    "at": "2026-11-22T07:15:18Z",
     "core": true,
     "ok": true,
     "rows": 787
   },
   "harpex": {
-    "at": "2026-11-21T07:23:28Z",
+    "at": "2026-11-22T07:22:43Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-21T07:23:21Z",
+    "at": "2026-11-22T07:22:37Z",
     "core": true,
     "ok": true,
     "rows": 75
   },
   "news_articles": {
-    "at": "2026-11-21T07:23:24Z",
+    "at": "2026-11-22T07:22:39Z",
     "core": false,
     "ok": true,
-    "rows": 11
+    "rows": 7
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -61,7 +61,7 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-21T07:23:26Z",
+    "at": "2026-11-22T07:22:41Z",
     "core": false,
     "ok": true,
     "rows": 1116
@@ -79,15 +79,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-21T07:23:20Z",
+    "at": "2026-11-22T07:22:35Z",
     "core": false,
     "ok": true,
-    "rows": 42
+    "rows": 78
   },
   "portwatch_straits": {
-    "at": "2026-11-21T07:15:12Z",
+    "at": "2026-11-22T07:15:18Z",
     "core": true,
     "ok": true,
-    "rows": 128
+    "rows": 120
   }
 }
