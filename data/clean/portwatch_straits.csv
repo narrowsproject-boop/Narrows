@@ -22926,7 +22926,7 @@ date,portid,strait,n_total,n_container,n_tanker,n_dry_bulk,capacity,capacity_con
 2026-11-05,chokepoint5,Malacca Strait,218,51,75,62,8845208,1574852
 2026-11-05,chokepoint6,Strait of Hormuz,5,0,1,4,168171,0
 2026-11-05,chokepoint1,Suez Canal,52,14,21,13,2673200,887851
-2026-11-05,chokepoint11,Taiwan Strait,237,90,41,72,5963745,2212905
+2026-11-05,chokepoint11,Taiwan Strait,237,90,41,72,5963746,2212905
 2026-11-06,chokepoint4,Bab el-Mandeb Strait,25,4,8,9,983506,136536
 2026-11-06,chokepoint3,Bosporus Strait,47,6,7,11,322086,46084
 2026-11-06,chokepoint7,Cape of Good Hope,65,9,10,43,4703743,456484
@@ -22998,7 +22998,7 @@ date,portid,strait,n_total,n_container,n_tanker,n_dry_bulk,capacity,capacity_con
 2026-11-14,chokepoint5,Malacca Strait,228,69,71,63,11584796,2672563
 2026-11-14,chokepoint6,Strait of Hormuz,1,0,0,1,0,0
 2026-11-14,chokepoint1,Suez Canal,36,12,15,7,1174603,325895
-2026-11-14,chokepoint11,Taiwan Strait,253,96,59,78,7257653,2389014
+2026-11-14,chokepoint11,Taiwan Strait,253,96,59,78,7257654,2389014
 2026-11-15,chokepoint4,Bab el-Mandeb Strait,34,11,9,10,1244148,339601
 2026-11-15,chokepoint3,Bosporus Strait,57,5,12,8,266388,30372
 2026-11-15,chokepoint7,Cape of Good Hope,87,12,26,42,5672285,617732
@@ -23007,3 +23007,59 @@ date,portid,strait,n_total,n_container,n_tanker,n_dry_bulk,capacity,capacity_con
 2026-11-15,chokepoint6,Strait of Hormuz,2,1,0,0,4297,3504
 2026-11-15,chokepoint1,Suez Canal,44,12,14,11,1883625,953591
 2026-11-15,chokepoint11,Taiwan Strait,223,80,44,60,5793128,1658985
+2026-11-16,chokepoint4,Bab el-Mandeb Strait,36,7,12,11,1579509,253433
+2026-11-16,chokepoint3,Bosporus Strait,55,4,20,11,697331,29810
+2026-11-16,chokepoint7,Cape of Good Hope,69,9,18,35,4213383,250480
+2026-11-16,chokepoint8,Gibraltar Strait,142,34,45,30,3346854,1140952
+2026-11-16,chokepoint5,Malacca Strait,204,46,74,60,8203168,1446247
+2026-11-16,chokepoint6,Strait of Hormuz,3,1,0,2,31048,11247
+2026-11-16,chokepoint1,Suez Canal,41,13,13,10,1694073,703717
+2026-11-16,chokepoint11,Taiwan Strait,234,91,46,61,5734341,1780732
+2026-11-17,chokepoint4,Bab el-Mandeb Strait,25,4,9,11,1109844,56199
+2026-11-17,chokepoint3,Bosporus Strait,69,8,18,14,871350,43844
+2026-11-17,chokepoint7,Cape of Good Hope,59,7,18,25,2817713,270383
+2026-11-17,chokepoint8,Gibraltar Strait,136,38,38,31,3704070,1038750
+2026-11-17,chokepoint5,Malacca Strait,224,62,78,51,8269882,1894413
+2026-11-17,chokepoint6,Strait of Hormuz,1,0,0,1,73830,0
+2026-11-17,chokepoint1,Suez Canal,49,15,16,8,2015590,878723
+2026-11-17,chokepoint11,Taiwan Strait,222,74,49,64,5564883,1462114
+2026-11-18,chokepoint4,Bab el-Mandeb Strait,25,6,5,9,730223,282243
+2026-11-18,chokepoint3,Bosporus Strait,32,5,12,5,339779,45444
+2026-11-18,chokepoint7,Cape of Good Hope,70,14,19,29,4120464,764679
+2026-11-18,chokepoint8,Gibraltar Strait,134,33,46,31,4246712,1358210
+2026-11-18,chokepoint5,Malacca Strait,228,58,79,66,8243786,1547834
+2026-11-18,chokepoint6,Strait of Hormuz,3,0,0,2,154072,0
+2026-11-18,chokepoint1,Suez Canal,49,16,18,2,1771294,946431
+2026-11-18,chokepoint11,Taiwan Strait,233,93,46,65,5664762,1853017
+2026-11-19,chokepoint4,Bab el-Mandeb Strait,23,5,8,6,868152,97135
+2026-11-19,chokepoint3,Bosporus Strait,33,2,16,5,524478,48923
+2026-11-19,chokepoint7,Cape of Good Hope,72,15,13,37,4594038,686471
+2026-11-19,chokepoint8,Gibraltar Strait,129,35,39,26,3406246,1024999
+2026-11-19,chokepoint5,Malacca Strait,208,53,76,57,8350953,1635092
+2026-11-19,chokepoint6,Strait of Hormuz,3,0,1,2,79182,0
+2026-11-19,chokepoint1,Suez Canal,52,19,11,11,2114784,1082263
+2026-11-19,chokepoint11,Taiwan Strait,206,74,44,60,4552008,1987325
+2026-11-20,chokepoint4,Bab el-Mandeb Strait,28,6,10,8,1056712,208336
+2026-11-20,chokepoint3,Bosporus Strait,42,4,15,10,902497,15402
+2026-11-20,chokepoint7,Cape of Good Hope,57,10,16,29,3665018,604718
+2026-11-20,chokepoint8,Gibraltar Strait,94,21,32,29,2589539,380840
+2026-11-20,chokepoint5,Malacca Strait,218,60,77,60,7259700,1889319
+2026-11-20,chokepoint6,Strait of Hormuz,4,0,0,3,155221,0
+2026-11-20,chokepoint1,Suez Canal,52,16,20,9,2097069,807989
+2026-11-20,chokepoint11,Taiwan Strait,234,102,43,61,5023127,2038635
+2026-11-21,chokepoint4,Bab el-Mandeb Strait,32,6,9,7,964435,166202
+2026-11-21,chokepoint3,Bosporus Strait,43,8,13,4,434938,77544
+2026-11-21,chokepoint7,Cape of Good Hope,69,7,16,40,4932837,336095
+2026-11-21,chokepoint8,Gibraltar Strait,109,32,32,23,2763614,859709
+2026-11-21,chokepoint5,Malacca Strait,218,57,69,65,7253237,1983583
+2026-11-21,chokepoint6,Strait of Hormuz,4,1,1,1,77749,3415
+2026-11-21,chokepoint1,Suez Canal,43,10,15,13,1891216,533049
+2026-11-21,chokepoint11,Taiwan Strait,195,82,36,51,5302949,2149784
+2026-11-22,chokepoint4,Bab el-Mandeb Strait,20,3,5,7,785002,110966
+2026-11-22,chokepoint3,Bosporus Strait,69,2,12,9,312006,19559
+2026-11-22,chokepoint7,Cape of Good Hope,84,10,27,41,4641523,555647
+2026-11-22,chokepoint8,Gibraltar Strait,136,41,26,44,3054850,1065075
+2026-11-22,chokepoint5,Malacca Strait,233,65,78,61,10462334,1981737
+2026-11-22,chokepoint6,Strait of Hormuz,1,0,0,1,0,0
+2026-11-22,chokepoint1,Suez Canal,33,15,12,3,1720069,897222
+2026-11-22,chokepoint11,Taiwan Strait,240,94,48,66,5555691,1988349
