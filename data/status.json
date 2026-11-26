@@ -1,58 +1,58 @@
 {
-  "_last_run": "2026-11-26T07:28:58Z",
+  "_last_run": "2026-11-26T16:43:51Z",
   "bunker": {
-    "at": "2026-11-26T07:28:57Z",
+    "at": "2026-11-26T16:43:50Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "cancelled_sailings": {
-    "at": "2026-11-26T07:28:58Z",
+    "at": "2026-11-26T16:43:51Z",
     "core": false,
     "ok": true,
     "rows": 1
   },
   "drewry": {
-    "at": "2026-11-26T07:26:11Z",
+    "at": "2026-11-26T16:37:14Z",
     "core": true,
     "ok": true,
     "rows": 5
   },
   "drewry_press": {
-    "at": "2026-11-26T07:26:46Z",
+    "at": "2026-11-26T16:37:43Z",
     "core": false,
     "ok": true,
     "rows": 233
   },
   "drewry_weekly": {
-    "at": "2026-11-26T07:28:58Z",
+    "at": "2026-11-26T16:43:51Z",
     "core": false,
     "ok": true,
-    "rows": 3470
+    "rows": 3475
   },
   "ec_futures": {
-    "at": "2026-11-26T07:27:14Z",
+    "at": "2026-11-26T16:38:34Z",
     "core": true,
     "ok": true,
-    "rows": 790
+    "rows": 791
   },
   "harpex": {
-    "at": "2026-11-26T07:28:57Z",
+    "at": "2026-11-26T16:43:50Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-26T07:28:50Z",
+    "at": "2026-11-26T16:43:43Z",
     "core": true,
     "ok": true,
-    "rows": 78
+    "rows": 80
   },
   "news_articles": {
-    "at": "2026-11-26T07:28:53Z",
+    "at": "2026-11-26T16:43:46Z",
     "core": false,
     "ok": true,
-    "rows": 63
+    "rows": 258
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -61,10 +61,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-26T07:28:55Z",
+    "at": "2026-11-26T16:43:48Z",
     "core": false,
     "ok": true,
-    "rows": 1108
+    "rows": 1114
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -79,13 +79,13 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-26T07:28:49Z",
+    "at": "2026-11-26T16:43:42Z",
     "core": false,
     "ok": true,
     "rows": 144
   },
   "portwatch_straits": {
-    "at": "2026-11-26T07:27:14Z",
+    "at": "2026-11-26T16:38:34Z",
     "core": true,
     "ok": true,
     "rows": 144
