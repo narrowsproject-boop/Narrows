@@ -1,58 +1,58 @@
 {
-  "_last_run": "2026-11-26T16:43:51Z",
+  "_last_run": "2026-11-27T07:34:47Z",
   "bunker": {
-    "at": "2026-11-26T16:43:50Z",
+    "at": "2026-11-27T07:34:46Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "cancelled_sailings": {
-    "at": "2026-11-26T16:43:51Z",
+    "at": "2026-11-27T07:34:47Z",
     "core": false,
     "ok": true,
     "rows": 1
   },
   "drewry": {
-    "at": "2026-11-26T16:37:14Z",
+    "at": "2026-11-27T07:26:12Z",
     "core": true,
     "ok": true,
     "rows": 5
   },
   "drewry_press": {
-    "at": "2026-11-26T16:37:43Z",
+    "at": "2026-11-27T07:26:46Z",
     "core": false,
     "ok": true,
     "rows": 233
   },
   "drewry_weekly": {
-    "at": "2026-11-26T16:43:51Z",
+    "at": "2026-11-27T07:34:47Z",
     "core": false,
     "ok": true,
     "rows": 3475
   },
   "ec_futures": {
-    "at": "2026-11-26T16:38:34Z",
+    "at": "2026-11-27T07:27:14Z",
     "core": true,
     "ok": true,
     "rows": 791
   },
   "harpex": {
-    "at": "2026-11-26T16:43:50Z",
+    "at": "2026-11-27T07:34:46Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-26T16:43:43Z",
+    "at": "2026-11-27T07:34:38Z",
     "core": true,
     "ok": true,
-    "rows": 80
+    "rows": 76
   },
   "news_articles": {
-    "at": "2026-11-26T16:43:46Z",
+    "at": "2026-11-27T07:34:41Z",
     "core": false,
     "ok": true,
-    "rows": 258
+    "rows": 72
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -61,10 +61,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-26T16:43:48Z",
+    "at": "2026-11-27T07:34:43Z",
     "core": false,
     "ok": true,
-    "rows": 1114
+    "rows": 1108
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -79,15 +79,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-26T16:43:42Z",
+    "at": "2026-11-27T07:34:37Z",
     "core": false,
     "ok": true,
-    "rows": 144
+    "rows": 75
   },
   "portwatch_straits": {
-    "at": "2026-11-26T16:38:34Z",
+    "at": "2026-11-27T07:27:16Z",
     "core": true,
     "ok": true,
-    "rows": 144
+    "rows": 136
   }
 }
