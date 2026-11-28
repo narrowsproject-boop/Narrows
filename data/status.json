@@ -1,58 +1,58 @@
 {
-  "_last_run": "2026-11-27T07:34:47Z",
+  "_last_run": "2026-11-28T07:28:40Z",
   "bunker": {
-    "at": "2026-11-27T07:34:46Z",
+    "at": "2026-11-28T07:28:40Z",
     "core": false,
     "ok": true,
     "rows": 2
   },
   "cancelled_sailings": {
-    "at": "2026-11-27T07:34:47Z",
+    "at": "2026-11-28T07:28:40Z",
     "core": false,
     "ok": true,
     "rows": 1
   },
   "drewry": {
-    "at": "2026-11-27T07:26:12Z",
+    "at": "2026-11-28T07:19:31Z",
     "core": true,
     "ok": true,
     "rows": 5
   },
   "drewry_press": {
-    "at": "2026-11-27T07:26:46Z",
+    "at": "2026-11-28T07:20:05Z",
     "core": false,
     "ok": true,
     "rows": 233
   },
   "drewry_weekly": {
-    "at": "2026-11-27T07:34:47Z",
+    "at": "2026-11-28T07:28:40Z",
     "core": false,
     "ok": true,
     "rows": 3475
   },
   "ec_futures": {
-    "at": "2026-11-27T07:27:14Z",
+    "at": "2026-11-28T07:20:40Z",
     "core": true,
     "ok": true,
-    "rows": 791
+    "rows": 792
   },
   "harpex": {
-    "at": "2026-11-27T07:34:46Z",
+    "at": "2026-11-28T07:28:39Z",
     "core": false,
     "ok": true,
     "rows": 4
   },
   "markets": {
-    "at": "2026-11-27T07:34:38Z",
+    "at": "2026-11-28T07:28:33Z",
     "core": true,
     "ok": true,
-    "rows": 76
+    "rows": 73
   },
   "news_articles": {
-    "at": "2026-11-27T07:34:41Z",
+    "at": "2026-11-28T07:28:35Z",
     "core": false,
     "ok": true,
-    "rows": 72
+    "rows": 63
   },
   "news_events_history": {
     "at": "2026-11-10T09:51:52Z",
@@ -61,10 +61,10 @@
     "rows": 145274
   },
   "news_events_recent": {
-    "at": "2026-11-27T07:34:43Z",
+    "at": "2026-11-28T07:28:37Z",
     "core": false,
     "ok": true,
-    "rows": 1108
+    "rows": 1109
   },
   "news_recent_15d": {
     "at": "2026-11-10T09:52:28Z",
@@ -79,15 +79,15 @@
     "ok": false
   },
   "portwatch_ports": {
-    "at": "2026-11-27T07:34:37Z",
+    "at": "2026-11-28T07:28:31Z",
     "core": false,
     "ok": true,
-    "rows": 75
+    "rows": 42
   },
   "portwatch_straits": {
-    "at": "2026-11-27T07:27:16Z",
+    "at": "2026-11-28T07:20:40Z",
     "core": true,
     "ok": true,
-    "rows": 136
+    "rows": 128
   }
 }

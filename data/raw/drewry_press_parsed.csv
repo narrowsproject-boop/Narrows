@@ -1973,3 +1973,8 @@ week,release,route,value,kind,pct,source,url,known,checked,match,status
 2026-11-19,2026-11-19,shanghai_los_angeles,7026,direct,-5.0,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-8/,7026.0,True,True,accepted
 2026-11-19,2026-11-19,shanghai_genoa,4436,direct,6.0,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-8/,4436.0,True,True,accepted
 2026-11-19,2026-11-19,shanghai_rotterdam,3496,direct,,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-8/,3496.0,True,True,accepted
+2026-11-26,2026-11-26,composite,4032,direct,-3.0,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-9/,4032.0,True,True,accepted
+2026-11-26,2026-11-26,shanghai_new_york,7615,direct,-7.0,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-9/,7615.0,True,True,accepted
+2026-11-26,2026-11-26,shanghai_los_angeles,6437,direct,-8.0,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-9/,6437.0,True,True,accepted
+2026-11-26,2026-11-26,shanghai_genoa,4802,direct,8.0,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-9/,4802.0,True,True,accepted
+2026-11-26,2026-11-26,shanghai_rotterdam,3485,direct,,hellenicshippingnews,https://www.hellenicshippingnews.com/drewry-world-container-index-down-3-last-week-9/,3485.0,True,True,accepted
